@@ -1,0 +1,249 @@
+---
+title: "SQL_schema"
+output: html_document
+date: "2024-03-05"
+---
+
+```{r} 
+library(RSQLite)
+library(DBI)
+library(tidyverse)
+```
+
+```{r message=FALSE}
+setwd("/cloud/project/Modified Data")
+TRANSACTION <- read_csv("TRANSACTION1.csv")
+SUPPLY <- read_csv("SUPPLY1.csv")
+SUPPLIER <- read_csv("SUPPLIER1.csv")
+SHIPMENT <- read_csv("SHIPMENT1.csv")
+REVIEW <- read_csv("REVIEW1.csv")
+PRODUCT <- read_csv("PRODUCT1.csv")
+ORDER <- read_csv("ORDER1.csv")
+CUSTOMER <- read_csv("CUSTOMER1.csv")
+CATEGORY <- read_csv("CATEGORY1.csv")
+SUPPLIER_address <- read_csv("SUPPLIER_address1.csv")
+CUSTOMER_address <- read_csv("CUSTOMER_address1.csv")
+SHIPMENT_address <- read_csv("SHIPMENT_address1.csv")
+
+```
+
+
+```{r} 
+project <- dbConnect(RSQLite::SQLite(),"project.db") 
+```
+
+```{sql connection=project}  
+CREATE TABLE 'customers' (  
+    'customer_id' INT PRIMARY KEY,  
+    'username' VARCHAR(200) NOT NULL UNIQUE, 
+    'first_name' VARCHAR(200) NOT NULL,  
+    'last_name' VARCHAR(200) NOT NULL, 
+    'password' VARCHAR(200) NOT NULL,  
+    'email' VARCHAR(200) NOT NULL UNIQUE,  
+    'mobile' VARCHAR(20) NOT NULL UNIQUE,  
+    'membership' INT  
+)
+```
+
+
+```{r}  
+dbWriteTable(conn = project, name = "customers", value = CUSTOMER, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+CREATE TABLE 'suppliers'(  
+    'supplier_id' INT PRIMARY KEY,  
+    'supplier_name' VARCHAR(200) NOT NULL,  
+    'supplier_phone' VARCHAR(15) NOT NULL UNIQUE
+ )  
+```
+
+```{r}
+dbWriteTable(conn = project, name = "suppliers", value = SUPPLIER, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+CREATE TABLE 'supply'(  
+    'supply_id' INT PRIMARY KEY,  
+    'supplier_id' INT, 
+    'product_id' INT, 
+    FOREIGN KEY ('supplier_id') REFERENCES supplier('supplier_id'), 
+    FOREIGN KEY ('product_id') REFERENCES product('product_id') 
+)  
+``` 
+
+```{r}
+dbWriteTable(conn = project, name = "supply", value = SUPPLY, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+CREATE TABLE 'product' (  
+    'product_id' INT PRIMARY KEY,  
+    'product_name' VARCHAR(200) NOT NULL,  
+    'unit_price' DECIMAL(10,2) NOT NULL,  
+    'brand_name' VARCHAR(200),  
+    'color' VARCHAR(200),  
+    'size' VARCHAR(200), 
+    'category_id' INT, 
+    'shipment_id' INT, 
+    FOREIGN KEY ('category_id') REFERENCES category('category_id'), 
+    FOREIGN KEY ('shipment_id') REFERENCES shipment('shipment_id') 
+)  
+```  
+
+```{r}
+dbWriteTable(conn = project, name = "product", value = PRODUCT, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+CREATE TABLE 'category' (  
+    'category_id' INT PRIMARY KEY,  
+    'category_name' VARCHAR(200) NOT NULL,  
+    'filter_by' VARCHAR(200) NOT NULL,
+    'parent_id' INT,  
+    'parent_category' VARCHAR(200) NOT NULL
+)  
+```  
+
+```{r}
+dbWriteTable(conn = project, name = "category", value = CATEGORY, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+CREATE TABLE 'order' (  
+    'order_id' INT PRIMARY KEY,  
+    'order_date' DATE NOT NULL,  
+    'customer_id' INT,  
+    'product_id' INT, 
+    'quantity' VARCHAR(200) NOT NULL, 
+    'total_price' DECIMAL(10,2) NOT NULL,  
+    FOREIGN KEY ('customer_id') REFERENCES customer('customer_id'),  
+    FOREIGN KEY ('product_id') REFERENCES product('product_id')
+)  
+```  
+
+```{r}
+dbWriteTable(conn = project, name = "order", value = ORDER, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+DROP TABLE IF EXISTS 'transaction';
+CREATE TABLE 'transaction' (  
+    'transaction_id' INT PRIMARY KEY,  
+    'transaction_date' DATE NOT NULL,   
+    'transaction_status' TEXT NOT NULL,   
+    'transaction_method' TEXT NOT NULL, 
+    'order_id' INT,
+    FOREIGN KEY ('order_id') REFERENCES 'order'('order_id') 
+) 
+```  
+
+```{r}
+dbWriteTable(conn = project, name = "transaction", value = TRANSACTION, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+CREATE TABLE 'review' (  
+    'review_id' INT PRIMARY KEY,  
+    'ratings' INT NOT NULL,  
+    'reviews' TEXT NOT NULL,  
+    'product_id' INT,  
+    'customer_id' INT,  
+    FOREIGN KEY ('product_id') REFERENCES products('product_id'),  
+    FOREIGN KEY ('customer_id') REFERENCES customers('customer_id') 
+)  
+``` 
+
+```{r}
+dbWriteTable(conn = project, name = "review", value = REVIEW, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+DROP TABLE IF EXISTS 'shipment';
+CREATE TABLE 'shipment' (  
+    'shipment_id' INT PRIMARY KEY,  
+    'shipping_status' VARCHAR(200) NOT NULL,  
+    'shipment_method' VARCHAR(200) NOT NULL
+)  
+``` 
+
+```{r}
+dbWriteTable(conn = project, name = "shipment", value = SHIPMENT, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}  
+CREATE TABLE 'shipment_address' (  
+    'saddress_id' INT PRIMARY KEY,  
+    'shipment_id' INT NOT NULL,
+    'country' VARCHAR (200) NOT NULL, 
+    'city' VARCHAR (200) NOT NULL, 
+    'street' VARCHAR (200) NOT NULL, 
+    'postcode' VARCHAR (200) NOT NULL, 
+    FOREIGN KEY ('shipment_id') REFERENCES shipment('shipment_id')  
+)  
+``` 
+
+```{sql connection=project}  
+DROP TABLE IF EXISTS 'supplier_address';
+CREATE TABLE 'supplier_address' (  
+    'supaddress_id' INT PRIMARY KEY,  
+    'supplier_id' INT NOT NULL,
+    'country' VARCHAR (200) NOT NULL, 
+    'city' VARCHAR (200) NOT NULL, 
+    'street' VARCHAR (200) NOT NULL, 
+    'postcode' VARCHAR (200) NOT NULL, 
+    FOREIGN KEY ('supplier_id') REFERENCES supplier('supplier_id')  
+)  
+``` 
+
+```{sql connection=project}  
+CREATE TABLE 'customer_address' (  
+    'caddress_id' INT PRIMARY KEY,  
+    'customer_id' INT NOT NULL,
+    'country' VARCHAR (200) NOT NULL, 
+    'city' VARCHAR (200) NOT NULL, 
+    'street' VARCHAR (200) NOT NULL, 
+    'postcode' VARCHAR (200) NOT NULL, 
+    FOREIGN KEY ('customer_id') REFERENCES customer('customer_id')  
+)  
+``` 
+
+```{r}
+dbWriteTable(conn = project, name = "shipment_address", value = SHIPMENT_address, append = TRUE, row.names = FALSE)
+dbWriteTable(conn = project, name = "supplier_address", value = SUPPLIER_address, append = TRUE, row.names = FALSE)
+dbWriteTable(conn = project, name = "customer_address", value = CUSTOMER_address, append = TRUE, row.names = FALSE)
+```
+
+```{sql connection=project}
+SELECT *
+FROM "shipment"
+```
+
+```{r} 
+tables <- dbListTables(project) 
+print(tables) 
+``` 
+
+```{r} 
+sch_sup <- dbGetQuery(project, "PRAGMA table_info(suppliers)") 
+sch_cat <- dbGetQuery(project, "PRAGMA table_info(category)") 
+sch_cus <- dbGetQuery(project, "PRAGMA table_info(customer)") 
+sch_ord <- dbGetQuery(project, "PRAGMA table_info(order)") 
+sch_prod <- dbGetQuery(project, "PRAGMA table_info(product)") 
+sch_ret <- dbGetQuery(project, "PRAGMA table_info(supply)") 
+sch_rev <- dbGetQuery(project, "PRAGMA table_info(review)") 
+sch_trans <- dbGetQuery(project, "PRAGMA table_info(transaction)") 
+sch_ship<- dbGetQuery(project, "PRAGMA table_info(shipment)") 
+``` 
+
+
+# Checking for duplicate entries
+```{sql connection=project}
+SELECT email, COUNT(*)
+FROM customers
+GROUP BY email
+HAVING COUNT(*) > 1;
+
+```
+
+

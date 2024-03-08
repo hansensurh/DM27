@@ -1,0 +1,801 @@
+shipment_id,shipment_method,shipment_status,country,street,city,postcode
+YQO-52820,parcel,shipped,United Kingdom ,Ridgeview, London,KW10
+RMQ-58062,ground,delivered,United Kingdom ,Victoria, London,
+MZY-97101,overnight,shipped,United Kingdom ,Westridge, London,
+DVX-48074,truckload,returned,United Kingdom ,Erie, Bristol,464 01
+OVZ-42251,ground,delivered,Scotland ,Rusk, Kilmarnock,
+UPX-82874,priority,delivered,China,Pierstorff,Shanghai,
+QJM-66746,freight,delivered,United States,Havey,Dallas,471 41
+AER-75825,express,out for delivery,United States,Northport,Houston,
+KUW-78655,freight,delivered,United Kingdom ,Rusk, Hull,
+DZW-28249,parcel,out for delivery,Switzerland ,Fordem, St. Gallen,
+KHY-06895,overnight,delivered,United Kingdom ,Corscot, Cardiff,10140
+WWA-79792,ground,delayed,United Kingdom ,Carpenter, London,
+TSC-55128,courier,shipped,United Kingdom ,Di Loreto, Edinburgh,
+EDH-52214,overnight,out for delivery,United Kingdom ,6th, London,
+WRV-18235,parcel,returned,United Kingdom ,Twin Pines, Portsmouth,
+PLN-37821,airmail,out for delivery,Iceland ,4th, Reykjavik,K36
+ZNY-61995,standard,out for delivery,United Kingdom ,Bayside, Manchester,11604
+KNB-10906,courier,delivered,United Kingdom ,Sommers, Leicester,34058 CEDEX 1
+YIZ-88097,express,delayed,Scotland ,3rd, Inverness,
+PZH-12199,courier,returned,Portugal ,Dottie, Amadora,92974 CEDEX
+QKJ-05077,airmail,shipped,United Kingdom ,Florence, Cardiff,4515
+OLO-68598,priority,delivered,United Kingdom ,Schlimgen, Leeds,
+CII-71756,airmail,delivered,United Kingdom ,Melrose, Reading,1231
+SJM-44248,courier,out for delivery,United Kingdom ,Bobwhite, Liverpool,
+ZWO-63002,standard,shipped,United Kingdom ,Goodland, Leeds,
+RGE-11387,parcel,shipped,United Kingdom ,Blue Bill Park, London,3776
+LIJ-70784,priority,returned,India ,Elmside, Mumbai,
+MGV-82071,ground,out for delivery,Iceland ,Golf, Fjar?abygg?,
+BLA-77049,airmail,delayed,United Kingdom ,Warner, London,
+HKC-81549,overnight,shipped,United Kingdom ,Basil, Bristol,
+WIQ-37638,overnight,delivered,United Kingdom ,Pleasure, Liverpool,14700-000
+ERP-50812,express,shipped,United Kingdom ,Darwin, Liverpool,
+KBO-76744,priority,returned,China,Scofield,Hangzhou,2525
+DTA-38295,courier,out for delivery,United States,Blaine,New York City,
+XUM-14431,parcel,shipped,China ,Lyons, Shanghai,6306
+ZLP-47495,parcel,returned,China,Spaight,Shanghai,13599
+WST-47759,overnight,shipped,United Kingdom ,Texas, London,
+FUE-24960,ground,delivered,United Kingdom ,2nd, Leicester,10601
+AKX-37800,standard,out for delivery,United States,Warrior,New York City,
+DJJ-40359,airmail,delivered,Japan ,High Crossing, Kawasaki,
+FQN-61642,airmail,delivered,Belgium ,Jackson, Mons,
+TXB-31696,airmail,delayed,Japan ,Hooker, Nagoya,
+ERF-40305,freight,shipped,United Kingdom ,Larry, Manchester,5590
+GZA-71961,courier,shipped,United Kingdom ,3rd, Manchester,567 24
+IPF-06013,overnight,shipped,Netherlands ,Merry, Eindhoven,35160-000
+VOB-42851,priority,returned,Iceland ,Waxwing, Akranes,
+SKK-01686,overnight,delivered,United Kingdom ,Westport, London,73028
+YKW-03203,airmail,shipped,United Kingdom ,Magdeline, Southampton,
+EGC-29314,express,delayed,United Kingdom ,Northfield, London,35513 CEDEX
+QYL-04009,ground,shipped,Belgium ,Village Green, Bruges,2840-146
+RPL-44782,standard,out for delivery,United Kingdom ,Swallow, Glasgow,
+HJX-04732,standard,shipped,United Kingdom ,Portage, Leeds,50090
+UXK-95873,priority,delayed,China,Schlimgen,Hong Kong,
+KUP-11505,airmail,shipped,United States,Mandrake,New York City,43280
+BJZ-87355,priority,delivered,Ireland ,Hauk, Galway,
+QIG-69460,truckload,out for delivery,China,Lakewood,Shanghai,89519
+DRI-32632,priority,delayed,United States,Doe Crossing,Los Angeles,20249
+VBG-11058,parcel,shipped,United Kingdom ,Kensington, Portsmouth,87330
+SFE-63606,priority,returned,Spain ,Dexter, Seville,4495-103
+IPL-88269,truckload,returned,United Kingdom ,Little Fleur, London,
+RSU-61760,truckload,delayed,United States,Annamark,Houston,113 90
+MIF-50316,overnight,delayed,United Kingdom ,Lindbergh, London,32224
+YRZ-56124,truckload,delivered,United Kingdom ,Macpherson, London,903 01
+OUP-63969,priority,delayed,Ireland ,Warner, Swords,
+LJS-06290,courier,delivered,United Kingdom ,Scofield, Leeds,
+LZK-52447,parcel,out for delivery,United Kingdom ,Kim, Bristol,155644
+NVK-74090,truckload,returned,United Kingdom ,Spohn, Bristol,4850-304
+OIW-64264,standard,out for delivery,United Kingdom ,Golf, Leicester,
+GID-45026,freight,out for delivery,United Kingdom ,Dixon, Leicester,2446
+RDQ-51888,standard,delayed,Belgium ,Meadow Valley, Li¨¨ge,
+TOH-94422,courier,out for delivery,Italy ,Lyons, Milan,82-550
+NNQ-99937,ground,shipped,Ireland ,Redwing, Dundalk,42-256
+IKI-50846,ground,returned,United States ,Beilfuss, Los Angeles,V7Y
+ALP-05362,overnight,out for delivery,United Kingdom ,Spenser, Coventry,40041
+RFD-71098,airmail,shipped,United Kingdom ,Clemons, Hull,
+OPY-64233,freight,shipped,China,Kropf,Nanjing,
+BLM-91894,express,returned,Scotland ,Ridgeview, Cumbernauld,
+FAV-04660,freight,delayed,Northern Ireland ,Debs, Derry,61650
+YXW-52195,express,delayed,United Kingdom ,Schlimgen, Bristol,762538
+LKR-14186,express,returned,Portugal ,John Wall, Lisbon,
+SDF-44750,standard,delivered,United States,Glacier Hill,New York City,88-160
+RNK-09952,freight,returned,United Kingdom ,Red Cloud, London,
+YWW-52330,standard,returned,United Kingdom ,Menomonie, Sheffield,87505
+IWQ-01758,ground,returned,United Kingdom ,Merry, Reading,38610-000
+WMX-53940,priority,delivered,Ireland ,Tennyson, Waterford,
+ZYV-65424,airmail,delayed,United States,Fair Oaks,"Washington, D.C.",
+ARF-13786,freight,out for delivery,United Kingdom ,5th, Hull,
+RNI-70591,standard,shipped,China,Becker,Beijing,
+RLN-58184,parcel,delivered,Sweden ,Vahlen, Uppsala,
+RCP-17106,truckload,delivered,United States,Superior,San Jose,
+VYB-79487,parcel,returned,Wales ,Doe Crossing, Port Talbot,
+KJM-95093,overnight,delayed,United Kingdom ,Anhalt, Reading,24109
+MFZ-15865,priority,returned,United Kingdom ,Bayside, Edinburgh,
+XTK-49280,express,delivered,United Kingdom ,Darwin, Manchester,
+IUG-84543,overnight,shipped,United States,Melvin,Charlotte,
+SOW-06472,parcel,shipped,China,Forster,Beijing,
+ORC-14738,airmail,returned,China ,Hanover, Guangzhou,
+NGT-46053,airmail,returned,United Kingdom ,International, Birmingham,743 01
+XCX-56598,standard,delivered,United Kingdom ,Hanson, London,196658
+SGC-23944,express,delivered,United Kingdom ,4th, Manchester,
+NTC-82271,courier,shipped,Sweden ,Spaight, Link?ping,
+GXJ-48709,express,out for delivery,United Kingdom ,Tony, Leicester,311-1500
+ZRG-63495,truckload,returned,France ,Anhalt, Nantes,7119
+VPA-46238,freight,out for delivery,United Kingdom ,Waubesa, London,
+YAV-84542,parcel,shipped,United Kingdom ,Fuller, Sheffield,36200
+LHO-05328,parcel,returned,Wales ,Red Cloud, Neath,369-0137
+MKZ-36831,overnight,out for delivery,United Kingdom ,Jackson, Belfast,3706
+WQZ-27159,truckload,delayed,India ,Comanche, Jaipur,A75
+HGN-36671,priority,shipped,United Kingdom ,Red Cloud, Coventry,4560-832
+UYM-25095,overnight,returned,United Kingdom ,Graedel, Manchester,
+JTZ-25899,express,delayed,Switzerland ,Gerald, Biel/Bienne,
+CCL-00740,overnight,delayed,Iceland ,Fuller, ?rborg,66-220
+FCZ-63799,parcel,delivered,United Kingdom ,Hansons, Southampton,
+FAW-51424,overnight,delivered,Germany ,Morning, Dortmund,155007
+ODE-50455,standard,shipped,United Kingdom ,Nancy, Birmingham,
+SSY-40316,standard,returned,China,Melody,Nanjing,07-320
+KXO-34659,priority,shipped,United Kingdom ,Cambridge, Edinburgh,5425-055
+XOW-72664,parcel,out for delivery,United Kingdom ,David, Glasgow,372 34
+FKM-85259,overnight,delayed,United Kingdom ,Drewry, Southampton,
+YQR-56534,express,delivered,Netherlands ,Lillian, Utrecht,3060-629
+LAT-08036,truckload,delayed,United Kingdom ,Milwaukee, London,
+ZRM-63504,courier,shipped,United Kingdom ,Clarendon, Liverpool,37-232
+AFM-48725,airmail,out for delivery,United Kingdom ,Utah, London,
+XBI-01337,truckload,out for delivery,United Kingdom ,School, London,
+QAT-07657,parcel,out for delivery,United Kingdom ,Fairview, Edinburgh,503 04
+QWQ-83982,standard,delivered,United Kingdom ,Fisk, Southampton,13409
+QYC-10112,ground,shipped,China ,Summit, Shenzhen,
+YMO-28743,express,delayed,Germany ,Autumn Leaf, Essen,
+BHD-80322,courier,shipped,United States,Northfield,Seattle,739 04
+XEH-13611,standard,out for delivery,Belgium ,Nelson, Brussels,
+ZSZ-67057,airmail,returned,United Kingdom ,Kingsford, Leicester,94631 CEDEX 1
+MFL-86943,freight,returned,United Kingdom ,Blue Bill Park, Manchester,
+SWL-33136,standard,delayed,United Kingdom ,Blaine, London,195509
+GUI-93614,priority,delivered,United Kingdom ,Schurz, London,
+NKC-85551,truckload,shipped,Austria ,Heath, Sankt P?lten,14400-000
+OWW-24046,parcel,shipped,Portugal ,Spaight, Funchal,
+GAG-90322,freight,out for delivery,United Kingdom ,Elka, Glasgow,
+VRD-08242,express,delayed,Norway ,Merry, Troms?,520-0111
+REO-63491,standard,delivered,United Kingdom ,Schmedeman, Sheffield,92684 CEDEX
+LDN-83295,ground,delayed,China,Warrior,Shanghai,
+SSQ-62799,overnight,returned,United Kingdom ,Southridge, Belfast,
+KIR-33671,express,out for delivery,United Kingdom ,Hudson, London,
+BUV-98358,courier,out for delivery,Spain ,Hayes, Valencia,366818
+LIK-87021,courier,delayed,Switzerland ,Badeau, Geneva,52150
+IFS-92167,ground,delayed,United Kingdom ,Swallow, London,84019 CEDEX 1
+YIM-09350,express,out for delivery,China,Morrow,Shanghai,
+RFX-29943,express,delivered,United Kingdom ,Artisan, Portsmouth,2677
+HYJ-55966,express,returned,Finland ,Porter, Turku,32605
+ROA-96332,ground,out for delivery,United Kingdom ,Hoffman, London,2808
+UVN-73621,parcel,out for delivery,Spain ,Fulton, Murcia,86-260
+ZKG-23440,standard,returned,South Korea ,Weeping Birch, Gwangju,10152
+FBC-57810,truckload,out for delivery,United Kingdom ,Stephen, Edinburgh,
+BOC-00085,parcel,delivered,United Kingdom ,1st, Glasgow,
+QJG-65032,standard,returned,Austria ,Cambridge, Innsbruck,68500-000
+IZS-22890,courier,returned,United States,Oneill,New York City,73800-000
+HNL-80787,truckload,shipped,Belgium ,Summerview, Ghent,
+TXN-02067,priority,shipped,Italy ,Ramsey, Genoa,2005
+FVC-08427,ground,returned,China,Huxley,Beijing,
+KXR-00462,parcel,delayed,United Kingdom ,Loomis, London,
+MGC-06913,priority,out for delivery,China,Daystar,Shanghai,P1A
+KVT-91832,standard,out for delivery,France ,Hazelcrest, Marseille,
+KBK-53741,standard,out for delivery,Austria ,Amoth, Wels,43656
+TUO-44400,priority,out for delivery,United Kingdom ,Vermont, London,11504
+WLZ-69674,priority,shipped,Austria ,West, Sankt P?lten,2640-394
+KSB-84452,courier,delivered,Sweden ,Hoepker, Malm?,J9P
+SHU-74025,airmail,returned,United Kingdom ,Hansons, Southampton,
+OJX-06185,parcel,out for delivery,United Kingdom ,Morningstar, London,50205
+DKJ-73860,truckload,delivered,United Kingdom ,Pierstorff, Birmingham,181370
+QZW-01517,express,delayed,United Kingdom ,Westport, Edinburgh,97-565
+XQT-02648,freight,delayed,China,Loomis,Wuhan,
+PXD-73061,truckload,delivered,United Kingdom ,Mosinee, Cardiff,92337 CEDEX
+VJG-32567,truckload,shipped,Austria ,Delaware, Klagenfurt,
+FTU-63323,standard,delivered,United Kingdom ,Independence, Sheffield,
+RBU-85152,express,returned,Netherlands ,Garrison, The Hague,
+XVF-43095,overnight,returned,United Kingdom ,Karstens, Birmingham,4207
+NGP-01097,airmail,returned,United Kingdom ,Morning, Liverpool,
+QPM-56476,parcel,delayed,United Kingdom ,Sherman, Edinburgh,
+ZMX-81399,truckload,delayed,United Kingdom ,Marcy, Aberdeen,
+LSV-01576,parcel,delayed,United Kingdom ,Mandrake, Bristol,
+ZLV-65190,courier,returned,Northern Ireland ,Marcy, Newtownabbey,
+IDV-64946,overnight,shipped,United Kingdom ,Thierer, London,20249
+IQL-16620,standard,delayed,Japan ,Farwell, Kobe,
+DML-93628,ground,delivered,Netherlands ,Ludington, Breda,76420-000
+HAS-64357,parcel,returned,Ireland ,Monterey, Navan,
+QPO-65411,courier,delivered,United Kingdom ,Delaware, Liverpool,
+YTF-04965,standard,delayed,Austria ,Burning Wood, Dornbirn,
+RDW-52199,ground,returned,United States,Ilene,New York City,
+AXH-21476,freight,delivered,United Kingdom ,Randy, Newcastle upon Tyne,8357
+SKJ-61914,parcel,out for delivery,Switzerland ,Del Mar, Geneva,
+ZVG-59252,standard,out for delivery,United Kingdom ,Lyons, London,
+XGF-78253,standard,delivered,United Kingdom ,Mosinee, London,G5J
+RZK-11013,courier,delivered,Germany ,Portage, Hamburg,31300
+JLP-78616,overnight,delayed,United Kingdom ,Del Mar, London,
+SXZ-86906,truckload,returned,Portugal ,Bultman, Aveiro,
+XBQ-28470,standard,returned,Spain ,Memorial, Bilbao,7241
+VSF-36397,airmail,delayed,United Kingdom ,Butterfield, Manchester,
+YFU-19025,ground,delayed,United Kingdom ,Nova, Edinburgh,30001
+SJX-57144,priority,shipped,United Kingdom ,Westerfield, London,300040
+CID-18442,standard,delivered,Norway ,Birchwood, Fredrikstad,161250
+UDP-97335,airmail,shipped,United Kingdom ,Butterfield, Cardiff,3378
+QOU-55133,truckload,delivered,United Kingdom ,Rieder, London,
+RMJ-64576,express,returned,Germany ,Brown, Berlin,N2B
+THM-00750,express,shipped,United Kingdom ,Ridge Oak, Sheffield,
+CTE-51943,express,delayed,Spain ,Katie, M¨¢laga,4570-308
+GHU-85025,freight,returned,United Kingdom ,South, London,
+URE-43339,ground,shipped,United Kingdom ,Corry, Birmingham,
+TOU-22688,truckload,shipped,United Kingdom ,Debs, London,811 53
+CKL-61352,courier,delivered,United States,Banding,"Washington, D.C.",186793
+QZF-65463,parcel,returned,United States,5th,New York City,
+WQW-52009,overnight,shipped,United Kingdom ,Del Sol, Reading,682574
+EUA-00391,priority,delivered,United Kingdom ,Grasskamp, Edinburgh,15600
+QJD-79529,truckload,delayed,United States,Florence,New York City,2248
+BML-91917,ground,delayed,Japan ,Troy, Saitama,
+ZNA-59860,standard,out for delivery,United Kingdom ,Clyde Gallagher, Coventry,7000
+XLK-23602,ground,returned,United Kingdom ,Northview, Leeds,
+WXU-92623,express,out for delivery,United Kingdom ,Cascade, London,102 46
+VRR-55675,freight,returned,United Kingdom ,Sunfield, Nottingham,357637
+GNH-00215,overnight,delayed,United Kingdom ,Melby, Birmingham,65715-000
+IIZ-28489,courier,out for delivery,United Kingdom ,Killdeer, Sheffield,4089
+PAI-74178,parcel,delivered,Sweden ,Loeprich, Malm?,
+GJB-23307,ground,returned,United Kingdom ,Badeau, Portsmouth,398 53
+DRV-03457,airmail,delayed,United States ,Eggendart, Philadelphia,
+CBI-55296,freight,out for delivery,United Kingdom ,Barby, Newcastle upon Tyne,
+BQE-90336,standard,delayed,United Kingdom ,Homewood, Reading,67130
+VTJ-89871,ground,out for delivery,United Kingdom ,Del Sol, London,431355
+EVW-03400,standard,shipped,Japan ,Schiller, Osaka,391 75
+BTN-77510,ground,delayed,United Kingdom ,Vernon, London,33982
+FPV-21383,courier,delayed,United States ,Pawling, Phoenix,
+DBN-04821,overnight,out for delivery,United Kingdom ,Dapin, London,523 32
+RMR-71399,parcel,delivered,United Kingdom ,Harper, Birmingham,
+RWB-58072,truckload,returned,Italy ,Elmside, Catania,
+SHM-93145,truckload,delayed,United Kingdom ,Loeprich, London,
+THT-73413,ground,delayed,Italy ,Basil, Rome,175038
+ZFC-22466,truckload,returned,United Kingdom ,Riverside, Nottingham,78285
+TFA-82905,express,delivered,France ,Vermont, Montpellier,3500
+TKV-49782,express,shipped,United Kingdom ,Hooker, London,5152
+MSQ-68745,priority,out for delivery,United Kingdom ,Acker, London,253048
+RXD-79955,express,out for delivery,China,Farmco,Xi'an,11-042
+HSP-66132,airmail,returned,United Kingdom ,Springview, Newcastle upon Tyne,
+IRR-81268,priority,out for delivery,United Kingdom ,Trailsway, Glasgow,
+VTX-04975,priority,out for delivery,South Korea ,Fallview, Daegu,
+GMO-32903,priority,delivered,United Kingdom ,Mccormick, Cardiff,
+LGF-47626,courier,delayed,United Kingdom ,Summit, Birmingham,5881
+ZQZ-36830,ground,returned,United Kingdom ,Hoffman, Coventry,5856
+CSE-86350,parcel,delivered,United Kingdom ,Green Ridge, London,
+PIZ-49895,priority,delivered,United Kingdom ,Debra, Hull,
+JMZ-49279,priority,returned,United Kingdom ,Moland, Reading,88598-000
+XYV-82171,truckload,shipped,United States,Dahle,Columbus,
+QZP-77777,freight,delayed,United Kingdom ,Burrows, Edinburgh,
+MBA-72481,ground,out for delivery,United Kingdom ,Darwin, Aberdeen,69485-000
+QKF-92849,standard,shipped,France ,Evergreen, Marseille,
+NEC-43945,airmail,delayed,United Kingdom ,Haas, Nottingham,
+FXX-91880,courier,delayed,Scotland ,Mifflin, Aberdeen,40612
+PIE-74764,courier,delivered,United Kingdom ,Loftsgordon, Sheffield,
+VCE-73700,ground,delivered,United Kingdom ,7th, Manchester,
+GLF-37691,truckload,delayed,United States,Riverside,Los Angeles,352174
+YWC-19526,priority,delayed,Japan ,Gerald, Sapporo,
+WKV-66631,express,returned,United Kingdom ,Briar Crest, Sheffield,2106
+GKF-46248,freight,returned,United Kingdom ,1st, London,
+SEU-86177,courier,delayed,China ,Clemons, Xi'an,71115
+HVA-47085,priority,returned,Germany ,Lakewood Gardens, Leipzig,614513
+NSS-06108,ground,returned,United Kingdom ,Blackbird, Leicester,
+IFJ-85317,truckload,delayed,South Korea ,Havey, Daejeon,
+IRP-96502,truckload,returned,United Kingdom ,Nancy, London,14740-000
+FUD-98001,priority,delivered,Sweden ,Monterey, Helsingborg,3570-014
+GCK-16488,ground,delayed,China ,Burning Wood, Tianjin,
+MRP-79654,courier,returned,United States,Jackson,Indianapolis,3707
+DMT-25651,express,returned,United Kingdom ,Bartelt, London,7213
+LCT-86449,courier,delayed,Sweden ,Cody, J?nk?ping,34280
+BRW-14033,express,delivered,United Kingdom ,Oxford, Cardiff,43-474
+ALJ-55175,ground,delayed,United Kingdom ,Morningstar, Edinburgh,
+PKV-69417,truckload,delayed,Spain ,Fairfield, Murcia,
+FQB-68445,parcel,shipped,United Kingdom ,Sutteridge, London,
+VXA-99220,overnight,delayed,China,Dayton,Shenzhen,
+NKR-84978,airmail,delivered,Scotland ,Hollow Ridge, Greenock,37-550
+GGN-36996,freight,shipped,China,Farragut,Beijing,1105
+YEW-68812,ground,out for delivery,United States,Nova,San Jose,4525-355
+QVH-10483,courier,returned,United Kingdom ,Barnett, Leeds,
+ACK-41900,priority,delayed,United Kingdom ,Clemons, Liverpool,
+XFQ-21161,freight,delayed,United Kingdom ,Burning Wood, Edinburgh,2840-044
+EHK-08169,overnight,out for delivery,Italy ,Meadow Vale, Palermo,83040 CEDEX 9
+CSP-24826,truckload,returned,Scotland ,Namekagon, Dunfermline,
+SET-45973,courier,delayed,United Kingdom ,Dixon, Southampton,30351
+ADD-61038,freight,delivered,Italy ,Utah, Catania,
+HVP-47038,priority,shipped,China,Corscot,Chengdu,27-580
+OQN-32617,overnight,shipped,United Kingdom ,Amoth, Newcastle upon Tyne,
+YUU-89098,overnight,delayed,United Kingdom ,Hallows, Coventry,
+PXO-21151,parcel,out for delivery,Germany ,Hayes, Munich,
+XNW-76986,overnight,returned,Italy ,Fordem, Naples,9803
+VDF-59082,express,shipped,United States,Cody,Columbus,
+BGC-35875,truckload,out for delivery,United Kingdom ,Forster, London,32-437
+WCG-50530,overnight,returned,United Kingdom ,Kipling, Manchester,89280-000
+DPO-06454,parcel,delivered,Belgium ,Brickson Park, Aalst,59-141
+OCK-15121,airmail,delivered,United Kingdom ,Londonderry, London,
+WWT-44312,priority,delivered,United States ,Cambridge, Dallas,
+ODB-15676,courier,out for delivery,Italy ,Kipling, Palermo,6612
+KJA-27034,airmail,delivered,United Kingdom ,Buell, Manchester,957-0353
+AQR-84149,freight,shipped,Finland ,Banding, Oulu,
+BNH-10962,airmail,delivered,United Kingdom ,Cherokee, Newcastle upon Tyne,20067
+PTQ-64398,overnight,delayed,Belgium ,Moland, Ghent,
+IPS-69541,truckload,shipped,Scotland ,Brickson Park, Paisley,
+XGY-83748,standard,out for delivery,United Kingdom ,Buena Vista, Edinburgh,4940-025
+CQZ-76294,freight,delivered,United Kingdom ,Hazelcrest, Sheffield,289-1343
+PEO-16001,ground,shipped,Portugal ,Crescent Oaks, Coimbra,426-0025
+EMV-75759,express,returned,United States ,Loftsgordon, San Antonio,
+OBM-73502,express,delayed,Norway ,Logan, Sandnes,36-030
+WBF-16879,freight,returned,United Kingdom ,Fisk, Liverpool,36164
+HAR-22578,freight,out for delivery,United Kingdom ,Hallows, Newcastle upon Tyne,27-440
+RGR-11469,truckload,out for delivery,United Kingdom ,Arizona, London,
+LVG-79918,overnight,delivered,United Kingdom ,Monument, Glasgow,
+PUF-89682,standard,returned,United Kingdom ,Del Sol, Leeds,
+EJL-91111,courier,out for delivery,United Kingdom ,Esker, London,9512
+GDY-30790,priority,out for delivery,Austria ,West, Dornbirn,
+TUS-11926,express,delivered,China ,Burning Wood, Chongqing,3740-228
+QIX-15056,airmail,out for delivery,Germany ,Oriole, Hamburg,1047
+SVU-93791,overnight,delivered,France ,Corry, Lyon,
+RZW-26722,standard,returned,United Kingdom ,Troy, London,368551
+QUY-88158,airmail,delayed,United States,Buena Vista,"Washington, D.C.",D11
+ZWH-69069,truckload,delivered,Switzerland ,Di Loreto, Winterthur,
+YTD-33179,priority,returned,France ,Arapahoe, Paris,
+MZX-10370,parcel,shipped,United Kingdom ,Tomscot, Hull,
+AFW-69793,courier,delivered,United Kingdom ,7th, London,05-280
+JRB-02431,courier,returned,United Kingdom ,Carey, London,63870-000
+MLT-95923,airmail,delayed,United Kingdom ,Golden Leaf, London,
+FXH-36524,standard,returned,United Kingdom ,Nelson, Southampton,
+GHF-09628,truckload,shipped,United Kingdom ,Carberry, Bristol,815 92
+RVZ-20037,airmail,out for delivery,United Kingdom ,Hallows, Newcastle upon Tyne,606084
+YOZ-51374,courier,returned,Spain ,Dexter, Las Palmas de Gran Canaria,456684
+OLG-83303,priority,shipped,United Kingdom ,Bellgrove, Nottingham,
+DPT-44886,freight,shipped,China,Oak Valley,Hong Kong,
+KCA-09675,express,returned,United Kingdom ,Dayton, Reading,8650-104
+XVQ-22350,courier,out for delivery,United States,New Castle,Chicago,9950-325
+IEB-59564,truckload,returned,China,Rigney,Harbin,98600-000
+TKW-80061,airmail,delayed,United States ,Everett, Houston,309975
+HFX-27843,parcel,delayed,Netherlands ,Northview, Eindhoven,
+JXQ-14185,ground,delayed,Northern Ireland ,Burning Wood, Bangor,357870
+VAR-99444,priority,shipped,Germany ,Northfield, Stuttgart,14910-000
+KNM-45949,courier,returned,France ,Elgar, Nice,94237
+SNJ-93984,express,returned,Japan ,Muir, Kyoto,
+HZM-38537,ground,shipped,Belgium ,Redwing, Antwerp,547 01
+JLM-58268,priority,delivered,United Kingdom ,Bellgrove, London,
+VFD-81350,parcel,out for delivery,China,Banding,Wuhan,1005
+VIT-62611,courier,shipped,United Kingdom ,Maple Wood, Newcastle upon Tyne,
+MQU-23539,courier,delayed,South Korea ,Di Loreto, BUnited Statesn,
+FTB-74358,priority,delivered,United Kingdom ,Dorton, Edinburgh,2420-231
+TIZ-24782,airmail,delivered,Portugal ,6th, Queluz,
+UFI-56226,parcel,shipped,United Kingdom ,Coolidge, Aberdeen,
+PBJ-42226,priority,returned,United Kingdom ,Canary, Portsmouth,
+NZQ-67481,courier,delayed,United Kingdom ,Monterey, Edinburgh,28031
+MQO-98534,priority,delivered,United Kingdom ,Veith, Southampton,5000
+ZEO-94858,express,out for delivery,Italy ,8th, Genoa,
+ZUT-46446,freight,returned,United Kingdom ,Cody, Leeds,
+KQL-73902,truckload,returned,United Kingdom ,Union, London,11403
+JUT-18927,ground,out for delivery,United States,Coolidge,Austin,
+PBD-78223,truckload,returned,United Kingdom ,School, London,88020 CEDEX
+CCA-97414,truckload,delivered,United Kingdom ,Ronald Regan, London,
+CEN-48020,freight,returned,United Kingdom ,Banding, Edinburgh,94110
+TAW-66746,standard,delivered,Portugal ,Sundown, Braga,
+CBS-73058,ground,out for delivery,United Kingdom ,Sugar, Reading,
+CLR-09109,standard,delayed,Austria ,Declaration, Klagenfurt,10220
+LAD-05633,courier,delayed,Scotland ,Knutson, Ayr,
+CGK-09378,overnight,delayed,Italy ,Mifflin, Bari,
+ZWT-18507,priority,returned,United Kingdom ,East, Glasgow,
+PPZ-63191,overnight,shipped,United Kingdom ,Schmedeman, Birmingham,633224
+KWP-34784,courier,delayed,United Kingdom ,Gina, Leeds,
+BGV-24853,parcel,delayed,United Kingdom ,John Wall, Hull,721 57
+IJQ-15681,express,delayed,United Kingdom ,Mcbride, Aberdeen,
+ZDE-67156,courier,out for delivery,United States,5th,Jacksonville,
+ZZY-80768,airmail,out for delivery,United Kingdom ,Thompson, Glasgow,
+TEZ-94281,parcel,returned,United Kingdom ,Buena Vista, Leeds,966-0033
+TML-90641,ground,out for delivery,United Kingdom ,Chinook, Leeds,72029 CEDEX 2
+YRZ-45952,airmail,out for delivery,United Kingdom ,Haas, Portsmouth,5400-006
+SPI-53273,freight,returned,Belgium ,Menomonie, Bruges,6680
+QTU-06974,freight,returned,United Kingdom ,South, Edinburgh,468 22
+DOQ-61788,truckload,delivered,United Kingdom ,Scoville, London,92398 CEDEX
+AOZ-11102,overnight,delivered,United Kingdom ,Eagle Crest, Birmingham,31136
+LAE-59686,freight,out for delivery,United Kingdom ,Southridge, London,
+LJM-59667,overnight,delayed,United Kingdom ,Roxbury, Leeds,20508
+KEQ-41571,airmail,returned,United Kingdom ,Birchwood, Southampton,
+OYG-26182,truckload,out for delivery,Sweden ,Rieder, Link?ping,
+AJJ-15954,ground,delayed,United Kingdom ,Loomis, Coventry,22119
+TJQ-17662,parcel,delivered,United Kingdom ,Waywood, Aberdeen,4011
+CIX-91983,parcel,out for delivery,India ,Porter, Pune,85936
+UGT-79827,truckload,delivered,United Kingdom ,Kinsman, Newcastle upon Tyne,404102
+CXA-47437,ground,shipped,United Kingdom ,Vera, London,13260
+IKW-27026,standard,returned,China ,Bashford, Beijing,
+JII-43884,courier,delivered,United States,Tony,New York City,65200-000
+HGE-16486,express,delivered,United Kingdom ,Towne, London,
+JRO-09263,parcel,shipped,United Kingdom ,Roth, London,1283
+GEB-72421,courier,delayed,United Kingdom ,Johnson, London,
+MMJ-69667,overnight,delivered,Switzerland ,Lighthouse Bay, Zurich,655131
+HRP-34167,overnight,returned,United States,Goodland,San Francisco,925-0145
+EMR-54088,priority,delayed,United Kingdom ,Ridgeview, London,
+HUV-05024,airmail,delayed,United Kingdom ,Daystar, Cardiff,
+IYC-13702,airmail,returned,United States,Iowa,"Washington, D.C.",
+VZC-17407,priority,returned,United Kingdom ,Southridge, Manchester,4930-250
+UKW-44205,freight,delivered,United Kingdom ,Park Meadow, London,757 59
+KFG-88294,airmail,out for delivery,Sweden ,Hallows, Norrk?ping,
+DXL-43618,parcel,returned,India ,Grayhawk, Surat,7220-565
+EVV-59635,parcel,returned,United Kingdom ,Monica, Leicester,15370-000
+GJA-70102,airmail,delivered,United Kingdom ,Laurel, Reading,2740-023
+WHK-65061,priority,delivered,United Kingdom ,Fisk, London,
+PTX-13323,airmail,delivered,Japan ,Acker, Yokohama,58353
+FCT-14531,express,delayed,France ,Packers, Montpellier,49170-000
+HIU-26726,truckload,shipped,United States,7th,Columbus,
+SAQ-66658,priority,shipped,United Kingdom ,Hollow Ridge, Cardiff,N8V
+NQU-01987,overnight,delayed,United States,Novick,San Diego,413028
+NRO-05110,parcel,out for delivery,United States,Welch,Fort Worth,
+LOZ-17749,courier,returned,Belgium ,Jenifer, Charleroi,
+ARI-57457,truckload,returned,United Kingdom ,Stang, Coventry,
+GTD-36268,parcel,delivered,United Kingdom ,Ridgeway, Hull,65204 CEDEX
+OYJ-02741,freight,returned,United Kingdom ,Larry, London,
+RUO-63367,standard,delayed,United States,4th,Chicago,34-722
+SCR-27327,overnight,returned,Italy ,Gina, Milan,87505
+CAH-53474,courier,out for delivery,United States,Melrose,Denver,636450
+IQU-63157,overnight,returned,Spain ,6th, M¨¢laga,P5E
+QRP-27328,courier,shipped,United Kingdom ,Elgar, Aberdeen,
+HEA-58442,freight,returned,United Kingdom ,Fremont, Glasgow,623287
+LCR-37268,parcel,returned,United Kingdom ,Carey, London,2635-483
+DUA-21239,express,delivered,United Kingdom ,Arrowood, Glasgow,1290
+YGF-79397,courier,returned,United Kingdom ,Scoville, London,
+POE-41197,overnight,returned,China,Pierstorff,Shanghai,
+RDY-02139,courier,returned,United Kingdom ,Michigan, Reading,2350-323
+KGL-05675,parcel,delivered,United Kingdom ,Green, Leicester,
+FCW-06581,express,delivered,Norway ,Stone Corner, Oslo,54455
+JVC-95394,express,returned,Northern Ireland ,Derek, Ballymena,60686
+KSK-15379,ground,returned,United Kingdom ,Transport, Birmingham,
+IWF-82715,truckload,out for delivery,United States,Comanche,Los Angeles,3522
+MAK-09212,standard,returned,South Korea ,Graedel, Seongnam,27000-000
+SZH-86572,courier,delivered,United Kingdom ,Fordem, Reading,445550
+LUK-18981,priority,shipped,United Kingdom ,Stang, London,
+SRE-70639,parcel,delivered,United Kingdom ,Superior, London,
+ZZY-14469,truckload,returned,United Kingdom ,Rieder, Leeds,252 68
+YLT-23425,priority,delivered,South Korea ,Bartillon, Changwon,
+YHM-13224,express,shipped,United Kingdom ,Summerview, Manchester,3162
+VHW-72557,priority,out for delivery,United Kingdom ,Sullivan, London,470017
+XSC-80700,priority,returned,United Kingdom ,Sage, Leeds,
+NOJ-37232,standard,out for delivery,United Kingdom ,Old Shore, London,
+YLS-69822,express,out for delivery,United States ,Coolidge, San Jose,
+MWT-07707,standard,delayed,Northern Ireland ,Cambridge, Castlereagh,
+KNI-79689,ground,out for delivery,Italy ,Clyde Gallagher, Bari,
+BLY-30045,airmail,out for delivery,Finland ,Pawling, Vantaa,768 11
+VXG-59367,standard,delayed,United Kingdom ,Crowley, Edinburgh,
+BCO-59329,priority,shipped,Scotland ,Rockefeller, Perth,
+DYT-31206,courier,out for delivery,United Kingdom ,Texas, London,
+RTJ-04713,courier,delayed,United Kingdom ,Nobel, Leeds,
+BYG-41550,courier,out for delivery,United Kingdom ,Blackbird, Edinburgh,
+WJT-14125,overnight,out for delivery,United Kingdom ,Riverside, Belfast,65213-000
+KZW-92140,express,out for delivery,United Kingdom ,Onsgard, London,
+SVS-43484,priority,delivered,United States,Spenser,Fort Worth,10612
+WXK-76748,overnight,returned,Denmark ,Lakewood, Odense,63104
+PTK-08550,freight,delivered,United Kingdom ,Meadow Valley, Manchester,
+PTX-38961,overnight,shipped,Denmark ,Sullivan, Randers,
+VTB-42026,airmail,out for delivery,United Kingdom ,Pine View, Edinburgh,
+VOF-40143,ground,out for delivery,Scotland ,Sullivan, Dundee,43-410
+EYQ-23823,courier,delayed,United Kingdom ,Buell, Reading,404 32
+QRU-94573,standard,returned,France ,Arkansas, Lille,
+FBF-05432,airmail,shipped,Iceland ,Mcbride, Hafnarfj?r?ur,75562 CEDEX 12
+RMP-54780,ground,returned,Spain ,Shelley, Valencia,
+ZPQ-78910,freight,returned,Sweden ,Redwing, V?ster?s,
+ENU-63550,freight,out for delivery,United Kingdom ,Mockingbird, Edinburgh,
+IZZ-78554,express,returned,United Kingdom ,Lake View, Leeds,91841
+DNB-60266,airmail,delayed,United Kingdom ,Talisman, Edinburgh,
+YKS-47183,freight,shipped,India ,Myrtle, Hyderabad,413 11
+BHZ-23518,express,out for delivery,United Kingdom ,Briar Crest, Manchester,
+MBW-59724,freight,out for delivery,United Kingdom ,Nova, Leeds,9009
+UUR-46166,overnight,shipped,United Kingdom ,Coleman, Sheffield,
+ABZ-35748,priority,returned,South Korea ,Portage, Incheon,399778
+QIQ-49871,priority,returned,United Kingdom ,Thompson, Glasgow,999-2256
+QPM-15099,parcel,returned,Switzerland ,Springview, Lucerne,
+LHA-23055,express,delivered,Japan ,Dahle, Fukuoka,
+MXG-84542,parcel,returned,United Kingdom ,Colorado, Manchester,618460
+KFB-55625,parcel,shipped,United Kingdom ,Glendale, Coventry,
+HJV-00142,freight,delayed,United Kingdom ,Dapin, London,2720
+TEH-58652,priority,delivered,United Kingdom ,Stuart, London,11009
+WTL-88134,parcel,delivered,United Kingdom ,Bartelt, London,393028
+YYW-28076,express,out for delivery,United States,Rusk,"Washington, D.C.",6538
+GMD-26335,parcel,delivered,Germany ,7th, Frankfurt,
+QDP-84214,express,shipped,United Kingdom ,Buena Vista, Leeds,31079 CEDEX 5
+TLO-13546,parcel,delivered,United Kingdom ,Fremont, Liverpool,7047
+IRS-13493,priority,out for delivery,United Kingdom ,Mesta, Sheffield,
+ZHI-58973,priority,shipped,United Kingdom ,Jackson, Birmingham,
+MTH-96141,airmail,shipped,United Kingdom ,Arapahoe, Manchester,
+NTZ-42790,priority,returned,United Kingdom ,Drewry, Birmingham,859-0413
+PTE-45627,airmail,delivered,United Kingdom ,Talisman, Edinburgh,
+YGN-64592,priority,returned,Switzerland ,Ridgeway, Zurich,
+JKE-52922,parcel,delayed,United Kingdom ,Atwood, Manchester,
+GCZ-32454,priority,shipped,United Kingdom ,Cardinal, London,
+EAY-34601,freight,returned,Netherlands ,Melby, Groningen,
+HWW-24459,overnight,delayed,United Kingdom ,Charing Cross, London,
+DVK-11724,priority,delayed,United Kingdom ,Waywood, Edinburgh,55460-000
+RKW-27660,overnight,out for delivery,Ireland ,Bluestem, Drogheda,
+SHJ-00925,priority,returned,Sweden ,Lotheville, V?ster?s,
+ZZH-77082,ground,delayed,Sweden ,6th, Norrk?ping,83-210
+UAZ-36054,ground,out for delivery,United Kingdom ,Prentice, Bristol,72240
+BCP-90420,overnight,shipped,United States,Lerdahl,Los Angeles,606083
+UIG-75978,parcel,delayed,United Kingdom ,Carpenter, Leeds,691 45
+LPI-19356,airmail,returned,United Kingdom ,Grayhawk, Manchester,
+KQZ-24675,overnight,returned,United Kingdom ,Beilfuss, Edinburgh,10001
+GNI-76639,overnight,returned,Scotland ,Harper, Livingston,
+QJQ-50940,freight,out for delivery,United Kingdom ,Summerview, London,
+VUF-41526,truckload,delayed,United Kingdom ,Golden Leaf, Belfast,69281 CEDEX 01
+XVD-47281,truckload,delayed,Netherlands ,Mayer, Rotterdam,
+IKL-51929,priority,delivered,Northern Ireland ,Westerfield, Newtownards,10250
+CYM-44377,overnight,delayed,United States,Talisman,San Antonio,10009
+LTM-52652,parcel,returned,United Kingdom ,Blaine, Bristol,659642
+NEH-97159,standard,delivered,United Kingdom ,Bowman, London,3860-205
+DIS-29870,parcel,delivered,France ,Blackbird, Bordeaux,79150-000
+KVB-91700,freight,shipped,United Kingdom ,Farragut, Manchester,
+VGS-64747,truckload,out for delivery,Ireland ,Menomonie, Limerick,
+IHF-62257,express,out for delivery,United Kingdom ,Little Fleur, Manchester,J6N
+HXC-87079,ground,shipped,United Kingdom ,John Wall, London,
+MMA-10445,freight,delayed,United Kingdom ,Rieder, London,64058 CEDEX 9
+RYE-30653,courier,shipped,Scotland ,Esker, Edinburgh,3423
+VBF-66169,priority,out for delivery,United Kingdom ,High Crossing, Bristol,439 23
+BXA-22860,truckload,shipped,United States,Lyons,San Francisco,H9K
+NJO-69296,express,delivered,United Kingdom ,Texas, Leeds,
+MLK-68383,overnight,shipped,India ,Bay, Delhi,
+AOJ-73434,parcel,delayed,United Kingdom ,Harbort, London,
+NTW-08882,ground,delayed,Germany ,Marcy, Munich,692425
+POA-38149,ground,out for delivery,United Kingdom ,Continental, Newcastle upon Tyne,3523
+UBD-07568,priority,shipped,United Kingdom ,Banding, Sheffield,99-320
+RUP-04758,ground,returned,China,Sunfield,Changchun,252 82
+WMY-63842,overnight,delayed,China,Manley,Chongqing,
+FIA-60158,parcel,returned,United Kingdom ,South, London,
+JSK-62208,airmail,delayed,United Kingdom ,Heffernan, London,9913
+JES-02285,airmail,out for delivery,United Kingdom ,Comanche, Leeds,
+VNR-13040,parcel,shipped,United Kingdom ,Lakeland, London,523 90
+TNX-59660,priority,delayed,United Kingdom ,Spenser, London,47405
+COA-65179,parcel,delivered,United States,Quincy,Dallas,
+MQL-02582,truckload,delivered,Belgium ,Walton, Antwerp,
+XXK-61880,truckload,delivered,Northern Ireland ,Truax, Belfast,748
+ORY-45180,airmail,out for delivery,United Kingdom ,Manitowish, Belfast,
+DOJ-14511,overnight,out for delivery,Belgium ,Fisk, Brussels,250258
+ZYN-60769,ground,out for delivery,United Kingdom ,Larry, Edinburgh,
+COF-75265,truckload,delivered,United Kingdom ,Kings, Edinburgh,64300-000
+ICS-07582,freight,delayed,United Kingdom ,Oxford, London,2000
+AXQ-42281,standard,out for delivery,United Kingdom ,Sauthoff, London,
+EQR-89794,airmail,delayed,United Kingdom ,Waubesa, Coventry,
+YIG-95564,truckload,delayed,China,East,Suzhou,38-247
+HAK-86449,overnight,delayed,Spain ,Basil, Madrid,
+KUU-19784,overnight,delivered,United Kingdom ,Waubesa, Belfast,
+SCX-81237,priority,out for delivery,United Kingdom ,Clove, Edinburgh,14016
+XEY-89889,ground,out for delivery,United Kingdom ,Manitowish, London,7304
+IKE-64924,truckload,out for delivery,United Kingdom ,Roxbury, Nottingham,83164 CEDEX
+TJU-52466,standard,delivered,United Kingdom ,Grasskamp, Glasgow,
+HUE-68155,ground,returned,United States,Linden,Jacksonville,6802
+FZP-81251,airmail,shipped,Netherlands ,Arizona, Nijmegen,
+ZJY-02828,parcel,returned,Portugal ,Summit, Coimbra,152850
+NCS-94857,ground,returned,Finland ,International, Pori,
+JLU-49349,truckload,delivered,China,Declaration,Shanghai,6606
+VAI-84449,freight,out for delivery,United Kingdom ,Manitowish, Manchester,
+QQJ-48657,priority,shipped,Portugal ,Linden, Vila Nova de Gaia,
+QVH-92349,standard,out for delivery,United Kingdom ,Sauthoff, Newcastle upon Tyne,
+BIS-07742,priority,delayed,Switzerland ,Nelson, Basel,75419 CEDEX 08
+XXO-92655,express,out for delivery,United Kingdom ,Coleman, Nottingham,4910-060
+RDZ-54636,freight,returned,South Korea ,Hollow Ridge, Seoul,
+XIO-28726,courier,delayed,United Kingdom ,Linden, London,L-8069
+UFW-37583,courier,delayed,United Kingdom ,Meadow Vale, Belfast,48206
+QPX-72312,overnight,out for delivery,United Kingdom ,Rusk, Portsmouth,
+UGW-89615,standard,delivered,United Kingdom ,Banding, Sheffield,
+ZOL-28270,parcel,returned,United Kingdom ,Summit, Sheffield,93571 CEDEX
+DUL-87166,overnight,delivered,United Kingdom ,Village Green, London,
+DLG-56415,truckload,delayed,United Kingdom ,Fuller, Leeds,
+LAG-16695,standard,shipped,United Kingdom ,Warner, London,65110
+AGX-69017,courier,delayed,China,Roth,Shanghai,96970
+EWB-32684,ground,delayed,United States,Thierer,Denver,
+XMT-71040,standard,out for delivery,United Kingdom ,Ramsey, Coventry,90110
+IJN-27854,parcel,shipped,United Kingdom ,Mcguire, London,
+MLS-90290,truckload,out for delivery,Austria ,Fairfield, Vienna,
+ICC-99521,parcel,out for delivery,United Kingdom ,Lighthouse Bay, Manchester,3109
+ZMQ-52290,overnight,returned,United States,Sundown,Philadelphia,2154
+EAU-98403,priority,shipped,United Kingdom ,Ryan, London,869-1237
+HNP-76876,truckload,delayed,United Kingdom ,Mayer, London,34-322
+MSX-56988,courier,delivered,United Kingdom ,Hazelcrest, Leicester,
+HGY-58755,overnight,shipped,India ,Bonner, Kolkata,11001
+CCC-65669,courier,out for delivery,Sweden ,Havey, Gothenburg,4404
+MGU-19135,ground,delayed,United Kingdom ,Grasskamp, Hull,3007
+YXH-23985,airmail,delayed,United Kingdom ,Hintze, Reading,95960-000
+LOQ-27839,express,out for delivery,United Kingdom ,Fordem, London,
+PXE-28439,courier,shipped,China ,Walton, Wuhan,96970
+KLB-70395,airmail,returned,United Kingdom ,Green Ridge, London,
+WFT-51973,standard,returned,United Kingdom ,Mosinee, Aberdeen,659070
+WTV-24522,express,delayed,Germany ,Fremont, Essen,
+LJM-32158,parcel,shipped,Germany ,Laurel, D¨¹sseldorf,
+UPU-24968,express,shipped,Scotland ,Russell, East Kilbride,
+KRK-98174,parcel,returned,United Kingdom ,Sundown, London,
+QQU-83626,standard,returned,United States,Rusk,Seattle,
+ODS-21485,express,returned,Switzerland ,Transport, Bern,
+IAS-82699,airmail,out for delivery,United Kingdom ,Bultman, London,72011
+PLW-49583,airmail,delivered,United Kingdom ,Buhler, London,
+WZP-53704,ground,returned,United Kingdom ,Coleman, Manchester,542 87
+KTB-11837,truckload,shipped,Northern Ireland ,Spaight, Lisburn,4323
+JMQ-20487,standard,out for delivery,Netherlands ,Clove, Amsterdam,94590
+HXW-67761,freight,returned,United States,Judy,New York City,
+UUD-00518,freight,delayed,Spain ,Graedel, Zaragoza,73-121
+GIG-38418,courier,delivered,United Kingdom ,Charing Cross, Southampton,2565-650
+ULU-83468,priority,delayed,Austria ,Melby, Salzburg,
+MPT-86934,overnight,shipped,United Kingdom ,Declaration, Portsmouth,10315
+MWH-12959,standard,out for delivery,United Kingdom ,Lyons, Manchester,
+OWM-68688,ground,out for delivery,United States,Jenna,Charlotte,
+GAZ-03231,priority,delivered,United Kingdom ,Corry, London,601136
+NUH-67861,courier,delivered,United Kingdom ,Coleman, Aberdeen,
+CZW-80277,ground,out for delivery,United Kingdom ,Lakewood Gardens, Nottingham,27705
+ZGI-84369,express,out for delivery,Germany ,5th, Frankfurt,369228
+APC-01768,truckload,delayed,Spain ,School, Barcelona,58322-000
+ZIJ-65662,standard,delivered,Iceland ,Knutson, Mosfellsb?r,44984 CEDEX
+IWC-92479,airmail,out for delivery,United Kingdom ,Heath, Leeds,341 92
+PYM-68349,parcel,delivered,Denmark ,Mayfield, Gentofte,
+YQU-81456,freight,delivered,United Kingdom ,Prentice, Hull,34800-000
+DBP-24429,overnight,out for delivery,Italy ,Carey, Florence,
+VSM-53471,standard,out for delivery,United Kingdom ,Elka, Leeds,
+FOO-44106,standard,delivered,United Kingdom ,American Ash, Cardiff,
+XTK-90532,express,out for delivery,United Kingdom ,Lawn, London,
+JUM-91291,express,returned,Sweden ,Mesta, Stockholm,3262
+DDE-74819,freight,shipped,United Kingdom ,Pleasure, London,5616
+BSH-38777,ground,out for delivery,United States ,Burning Wood, Chicago,
+LYK-21539,parcel,returned,Austria ,Emmet, Vienna,57-403
+FMY-46392,standard,out for delivery,United Kingdom ,Thackeray, Birmingham,
+UDK-78779,express,delayed,United Kingdom ,Welch, Portsmouth,
+SBV-33758,ground,shipped,France ,Dovetail, Strasbourg,94049 CEDEX
+NZV-94456,parcel,returned,China,Hagan,Beijing,
+QHK-74746,freight,delivered,United Kingdom ,Randy, Cardiff,
+KDM-30579,truckload,out for delivery,United Kingdom ,Memorial, Coventry,
+FLX-44262,parcel,shipped,United Kingdom ,Birchwood, Portsmouth,7100
+OEH-22635,parcel,out for delivery,Netherlands ,Tony, Breda,520-0111
+JCQ-09224,courier,shipped,United Kingdom ,Huxley, London,150627
+QNA-93735,priority,out for delivery,Spain ,Corry, Barcelona,95719 CEDEX 1
+ZWJ-10125,express,delayed,United Kingdom ,Gina, Leeds,9261
+LTD-38334,freight,out for delivery,Switzerland ,Red Cloud, Lucerne,8521
+VEU-52201,express,returned,Austria ,Everett, Linz,603 86
+QTN-24773,freight,out for delivery,United Kingdom ,Talmadge, Manchester,5050-401
+RRC-98678,standard,out for delivery,Portugal ,Rutledge, Braga,9212
+VUI-20863,priority,delivered,China ,Gina, Chengdu,
+FMK-45964,parcel,delayed,United Kingdom ,Veith, Reading,68704 CEDEX
+JMV-63650,overnight,shipped,Austria ,Summer Ridge, Innsbruck,461 37
+FYW-82378,ground,delivered,United Kingdom ,Magdeline, Newcastle upon Tyne,95324 CEDEX
+QMB-42913,truckload,delayed,United Kingdom ,Ridge Oak, Reading,
+VML-90123,parcel,delivered,Germany ,Forster, Dortmund,9494
+QGZ-86770,standard,shipped,Wales ,Westerfield, Wrexham,22-610
+QNK-21884,airmail,delayed,India ,Fallview, Ahmedabad,452 24
+RCE-74356,courier,returned,United Kingdom ,Grim, Manchester,453259
+QUK-15821,priority,delayed,United Kingdom ,Laurel, Sheffield,2802
+XLR-65815,courier,delivered,France ,Roth, Lyon,
+AFW-66138,overnight,delayed,United Kingdom ,Golf, London,6160-402
+IQS-21743,express,shipped,China,Graedel,Beijing,181370
+SYX-74952,standard,delayed,United Kingdom ,Parkside, Coventry,22-672
+PNA-60587,overnight,returned,Spain ,Stang, Palma,
+KQK-24032,freight,delivered,China,Knutson,Guangzhou,
+PFB-50825,priority,returned,United Kingdom ,Erie, London,4650-127
+KNV-44610,priority,returned,United Kingdom ,Transport, Manchester,
+IXR-04321,standard,delayed,United Kingdom ,Continental, Newcastle upon Tyne,NR29
+UXJ-14471,express,returned,United Kingdom ,Hermina, Reading,2529
+UIJ-93892,ground,delivered,United Kingdom ,Springview, Manchester,49003
+TPX-63014,airmail,shipped,United Kingdom ,Prairie Rose, Birmingham,
+VSI-91745,parcel,out for delivery,Wales ,Troy, Llanelli,
+TGR-48548,truckload,out for delivery,Sweden ,Crest Line, Uppsala,78700-000
+FJN-80678,freight,delivered,United Kingdom ,Buhler, Southampton,1600
+NDT-13901,priority,delivered,United Kingdom ,Village, Sheffield,69-210
+LXW-01086,ground,delayed,Finland ,Charing Cross, Helsinki,1225
+CST-99897,express,delivered,Iceland ,Coleman, Gar?ab?r,3405-400
+QZA-08469,standard,delivered,United Kingdom ,Cordelia, Nottingham,54801
+BEJ-75137,standard,out for delivery,United Kingdom ,Sugar, Sheffield,
+AHO-09209,overnight,delayed,Switzerland ,Sherman, Bern,120 30
+QKN-03516,truckload,out for delivery,China,Muir,Shanghai,636330
+BGN-68986,parcel,delivered,United Kingdom ,Lerdahl, London,319-1111
+BIE-51939,express,delivered,United Kingdom ,Fieldstone, Bristol,2445-705
+VWR-42732,freight,delivered,Norway ,Birchwood, Trondheim,94180
+MOR-40739,freight,delayed,United Kingdom ,Killdeer, Reading,9015
+EJP-62441,freight,out for delivery,United Kingdom ,Lien, Birmingham,1980
+NLW-98713,parcel,shipped,United Kingdom ,Farwell, London,
+IHQ-86490,courier,delivered,United Kingdom ,Ronald Regan, Belfast,761517
+CIH-52506,overnight,shipped,China ,Paget, Nanjing,4187
+LED-69134,ground,out for delivery,United Kingdom ,Judy, Liverpool,90160
+MIP-26327,priority,out for delivery,United Kingdom ,Vidon, Portsmouth,
+KDI-76812,ground,shipped,United Kingdom ,Ramsey, Leeds,5002
+UFI-48558,overnight,delivered,United Kingdom ,3rd, Southampton,90035
+JVA-90505,standard,out for delivery,United Kingdom ,Buell, Bristol,
+YXL-14030,freight,out for delivery,Germany ,Graedel, Cologne,10514
+VCZ-90464,courier,out for delivery,United Kingdom ,Welch, London,4110
+CIT-45280,parcel,shipped,Portugal ,Anderson, Set¨²bal,13230
+HTD-12367,standard,returned,Netherlands ,Goodland, Tilburg,
+EXR-99791,truckload,delayed,United Kingdom ,Jenna, Leeds,
+SNM-90126,express,delayed,South Korea ,Green, Ulsan,
+FPS-10159,courier,out for delivery,United Kingdom ,Atwood, London,
+IWS-33890,courier,out for delivery,Wales ,Oak Valley, Bridgend,06400-000
+KEC-57238,ground,returned,Denmark ,Gateway, Gladsaxe,
+NDC-71905,ground,returned,United States,Corscot,"Washington, D.C.",
+SHG-68132,truckload,out for delivery,United Kingdom ,Delaware, London,20270
+AIR-77248,parcel,out for delivery,United Kingdom ,Iowa, London,413067
+EOV-29622,overnight,out for delivery,United Kingdom ,Barnett, London,511 01
+RVQ-69259,priority,shipped,United States,Drewry,New York City,
+UGM-39967,freight,out for delivery,Austria ,Little Fleur, Salzburg,
+CJB-72824,airmail,out for delivery,United Kingdom ,Talisman, London,4514
+JQX-01785,priority,out for delivery,United Kingdom ,Brown, Birmingham,
+HMM-87657,parcel,delayed,United Kingdom ,Kipling, Manchester,
+JDZ-46807,express,out for delivery,Italy ,Independence, Naples,984-0075
+TZZ-56960,airmail,returned,China,Reindahl,Chengdu,6010
+LQW-93851,ground,shipped,Switzerland ,Graceland, Lugano,369-1201
+FLN-91785,ground,delayed,United Kingdom ,Mitchell, Coventry,60070
+SSQ-95080,standard,delayed,Switzerland ,Cherokee, LaUnited Statesnne,
+QLM-68637,parcel,returned,United Kingdom ,Knutson, London,
+KTS-18464,priority,delayed,United Kingdom ,Esker, Newcastle upon Tyne,36-212
+FUF-54113,express,returned,United Kingdom ,Colorado, Manchester,55407
+TZD-59879,priority,shipped,Northern Ireland ,Oxford, Carrickfergus,2049
+ZCE-14171,express,delayed,Germany ,Brickson Park, Cologne,
+GKG-61060,courier,delivered,Austria ,Morning, Villach,416372
+NSQ-58515,courier,delayed,United States,Starling,Chicago,2725
+BWO-64577,express,delivered,Finland ,Warrior, Kuopio,
+YNC-00796,ground,out for delivery,India ,Mariners Cove, Chennai,
+DCD-29828,ground,out for delivery,China,Susan,Beijing,41200
+CYT-48537,overnight,delayed,Norway ,Loomis, Drammen,2424
+JRR-80185,overnight,delayed,United Kingdom ,Mayer, Southampton,4425
+VPI-04430,standard,delayed,Italy ,Mitchell, Rome,
+TRS-30767,standard,shipped,United Kingdom ,Ohio, Manchester,607614
+JWN-82668,overnight,delayed,United Kingdom ,Ruskin, Sheffield,10505
+TXO-90762,priority,out for delivery,United Kingdom ,Carioca, Edinburgh,42275 CEDEX
+EQH-41157,truckload,out for delivery,United Kingdom ,Pepper Wood, London,3505-209
+ZKU-53935,freight,delivered,United Kingdom ,Center, Glasgow,44958 CEDEX 9
+UHS-19087,overnight,delivered,United Kingdom ,Merchant, London,
+XDV-26179,airmail,out for delivery,United Kingdom ,Nobel, Southampton,
+DDK-78895,overnight,delivered,United Kingdom ,Cordelia, London,
+NWB-87449,parcel,out for delivery,United Kingdom ,Oriole, Manchester,
+PPQ-61775,freight,shipped,United Kingdom ,Anderson, London,92398 CEDEX
+HTO-63167,priority,shipped,United Kingdom ,Helena, Glasgow,169510
+UGL-64107,parcel,delayed,United Kingdom ,Bobwhite, London,
+KZN-82278,courier,shipped,Italy ,Schlimgen, Turin,371 23
+GCV-82748,truckload,delayed,Belgium ,Sugar, Aalst,6525
+VRD-83323,priority,returned,United Kingdom ,Crowley, Birmingham,
+ZPC-98889,courier,delivered,Wales ,Delaware, Cwmbran,
+YVL-56905,parcel,delivered,United Kingdom ,Veith, Leeds,83120
+JXQ-82558,standard,delayed,United Kingdom ,Moose, Sheffield,
+QVD-94116,freight,returned,United Kingdom ,Bonner, Bristol,
+FZR-57246,priority,out for delivery,United Kingdom ,Hudson, London,
+FND-75160,express,delivered,United Kingdom ,Butterfield, Liverpool,
+UZY-04994,standard,delivered,United Kingdom ,Bonner, Leicester,
+QXK-22891,freight,out for delivery,United Kingdom ,Kinsman, Nottingham,11205
+AKM-37896,priority,delayed,United Kingdom ,Jana, London,
+BCR-00831,airmail,shipped,Belgium ,Lawn, Leuven,46130
+ZLW-45405,freight,out for delivery,United Kingdom ,Westend, Edinburgh,
+AKY-54705,parcel,out for delivery,United Kingdom ,Holmberg, Sheffield,99-352
+ANP-07586,airmail,delayed,Switzerland ,Manufacturers, Biel/Bienne,
+UZT-05381,courier,returned,China,Westport,Shanghai,
+QBZ-02779,airmail,delayed,France ,Almo, Nantes,
+UQK-28043,airmail,delivered,Scotland ,Grasskamp, Hamilton,1728
+DOF-13139,priority,delayed,China,Old Shore,Beijing,8301
+NEM-81652,overnight,delivered,United Kingdom ,Rieder, London,
+QOU-48886,truckload,out for delivery,Germany ,Starling, Leipzig,
+IHU-74705,priority,out for delivery,United Kingdom ,Chive, Portsmouth,
+SVU-94600,freight,shipped,France ,Green, Bordeaux,
+ZFY-12077,freight,delivered,United Kingdom ,Glendale, Bristol,5719
+AJF-50197,freight,shipped,United Kingdom ,Elmside, Glasgow,
+UKT-19648,courier,out for delivery,United Kingdom ,Summer Ridge, London,11-130
+OOU-79498,airmail,delivered,United Kingdom ,Cottonwood, Leicester,8045
+DDF-99711,parcel,delayed,United Kingdom ,Namekagon, Birmingham,2415-177
+RWJ-49085,freight,delivered,United Kingdom ,Clyde Gallagher, London,453444
+EEF-42944,airmail,delayed,United Kingdom ,Bunting, Bristol,
+JMH-88330,express,out for delivery,Finland ,Ridgeview, Espoo,
+EGX-96267,courier,out for delivery,United Kingdom ,Susan, Aberdeen,2710-470
+HCI-82099,freight,delivered,United States,Jay,Houston,142717
+GOO-46071,priority,delivered,United Kingdom ,Pond, London,5155-505
+JMM-98523,overnight,delayed,United Kingdom ,Donald, Birmingham,
+MBO-11389,ground,delayed,Spain ,Comanche, Palma,
+YJB-45844,airmail,shipped,Spain ,Marquette, Zaragoza,2416
+QYD-59778,overnight,delayed,Belgium ,Hanson, Namur,
+XOF-92243,standard,delivered,United Kingdom ,Garrison, Hull,
+CLJ-14938,truckload,out for delivery,United Kingdom ,Merrick, London,
+LWE-18087,standard,delayed,United Kingdom ,Jenifer, Leeds,75729 CEDEX 15
+MCY-44994,airmail,delivered,Denmark ,Saint Paul, Esbjerg,
+OTL-23680,standard,out for delivery,United Kingdom ,Warrior, London,
+XBY-00724,parcel,delivered,China,Warbler,Chongqing,3800-596
+TMU-90195,airmail,shipped,United Kingdom ,6th, London,
+XMP-64561,airmail,delayed,United Kingdom ,Victoria, Nottingham,
+HMN-77531,truckload,delivered,United Kingdom ,Bonner, London,2356
+FSF-24402,truckload,shipped,South Korea ,Montana, Suwon,742-0021
+PXO-00479,standard,delivered,United Kingdom ,Loftsgordon, Edinburgh,620995
+PPF-50418,ground,delayed,China,Annamark,Tianjin,
+FXX-31379,freight,delivered,United Kingdom ,Scott, London,
+MZW-48414,truckload,returned,Netherlands ,Summer Ridge, Groningen,
+GGA-97972,courier,delivered,United Kingdom ,Sheridan, Birmingham,
+LSY-40707,airmail,delayed,United Kingdom ,Oriole, London,
+NOK-69162,freight,delivered,Norway ,Blue Bill Park, Kristiansand,
+UEI-48215,standard,delayed,United Kingdom ,Hudson, Leeds,352574
+HEA-28649,courier,shipped,France ,Magdeline, Paris,45045 CEDEX 1
+NBL-63912,express,delivered,United Kingdom ,Spenser, London,
+XOO-91709,overnight,delayed,Sweden ,Sundown, J?nk?ping,4610-695
+LCY-21128,standard,returned,United Kingdom ,Westend, Coventry,280
+ITF-74124,priority,delayed,United Kingdom ,Tennyson, Edinburgh,79600-000
+IMV-36141,ground,delayed,United Kingdom ,Hollow Ridge, Newcastle upon Tyne,95201
+HAA-52810,priority,returned,United Kingdom ,Helena, London,
+EQB-05280,priority,shipped,United Kingdom ,Bartelt, London,
+IHO-25195,freight,delayed,Iceland ,Messerschmidt, Reykjanesb?r,9401
+ZVR-05991,truckload,delayed,Belgium ,Sunnyside, Namur,86-055
+NBG-71108,airmail,delivered,United Kingdom ,Blackbird, Aberdeen,5850
+JFI-74685,priority,delayed,Switzerland ,Beilfuss, Winterthur,38-535
+EYW-62171,airmail,delayed,United Kingdom ,Forest, London,
+NMU-01030,priority,delivered,United Kingdom ,Elka, Belfast,3601
+AYP-00297,express,delivered,United Kingdom ,Dapin, London,446849
+ZVF-72846,freight,out for delivery,Switzerland ,Steensland, Basel,
+VCE-35587,standard,delivered,United Kingdom ,, Bristol,

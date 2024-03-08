@@ -1,0 +1,223 @@
+---
+title: "DATA"
+author: "Xuanhao Yang"
+date: "2024-03-01"
+output: html_document
+---
+
+
+```{r include=FALSE}
+library(tidyverse)
+library(readr)
+```
+
+# Data Generation and Management 
+## Input data
+```{r include=FALSE}
+setwd("/cloud/project/Raw Data")
+TRANSACTION <- read_csv("TRANSACTION.csv")
+SUPPLY <- read_csv("SUPPLY.csv")
+SUPPLIER <- read_csv("SUPPLIER.csv")
+SHIPMENT <- read_csv("SHIPMENT.csv")
+REVIEW <- read_csv("REVIEW.csv")
+PRODUCT <- read_csv("PRODUCT.csv")
+ORDER <- read_csv("ORDER.csv")
+CUSTOMER <- read_csv("CUSTOMER.csv")
+CATEGORY <- read_csv("CATEGORY.csv")
+```
+## Data Quality Assurance
+
+```{r}
+# Email format
+
+## Defining Email Format checking function
+check_email_format <- function(emails) {
+  pattern <- "^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  grepl(pattern, emails)
+}
+valid_emails <- check_email_format(CUSTOMER$email)
+
+## Print the amount of invaild email address
+print(sum(!valid_emails))
+
+```
+
+```{r}
+# Deal with transaction date and order date
+
+# Ensure the data in the date formate
+ORDER$order_date <- as.Date(ORDER$order_date, format="%m/%d/%Y")
+
+# Combine two sheets
+ORDER_TRANSACTION <- merge(ORDER, TRANSACTION, by = "order_id")
+
+# Defining Date function
+check_order_date <- function(order_date) {
+  # Assign the date within the same day or up to 2 days after the order date.
+  delay <- sample(0:2, 1) 
+  order_date + delay # transaction date
+}
+ORDER_TRANSACTION$transaction_date <- sapply(ORDER_TRANSACTION$order_date, check_order_date)
+
+# Update transaction
+TRANSACTION <- ORDER_TRANSACTION[, c("transaction_id","transaction_date","transaction_status","transaction_method","order_id")]
+TRANSACTION$transaction_date <- as.Date(TRANSACTION$transaction_date, origin = "1970-01-01")
+```
+
+```{r}
+# Deal with review date
+```
+
+```{r}
+# Category sheet cleaning
+CATEGORY <- CATEGORY %>% select("category_id", "category_name", "filter_by") %>% na.omit()
+
+# Rename the category_id
+NEWID <- c("1001-1","1002-1","1003-1","1003-2","1003-3","1004-1","1005-1","1006-1","1007-1","1007-2","1008-1","1009-1")
+mapping_category_id <- data.frame(
+  old_category_id = CATEGORY$category_id,
+  new_category_id = NEWID
+)
+
+# Update category sheet
+CATEGORY$category_id <- mapping_category_id$new_category_id
+
+# Adding parent category
+parentid <- c(101,102,103,101,103,101,101,101,103,103,104,105)
+parentcat <- c("Home & Lifestyle","Sports & Outdoor Activities","Fashion & Beauty","Fashion & Beauty","Fashion & Beauty","Home & Lifestyle","Home & Lifestyle","Home & Lifestyle","Fashion & Beauty","Fashion & Beauty","Electronics & Technology","Others")
+
+CATEGORY$parent_id <- parentid
+CATEGORY$parent_category <- parentcat
+
+# Update product sheet
+PRODUCT <- merge(PRODUCT, mapping_category_id, by.x = "category_id", by.y = "old_category_id")
+PRODUCT$category_id <- PRODUCT$new_category_id
+PRODUCT$new_category_id <- NULL
+
+# Description
+PRODUCT$product_description <- NULL
+```
+
+
+```{r}
+# Deal with ORDER product id
+ORDER$product_id <- sample(PRODUCT$product_id, nrow(ORDER), replace = TRUE)
+
+# Generate total price in order in 3NF
+ORDER_PRODUCT <- merge(ORDER, PRODUCT, by = "product_id")
+
+# Defining Total price function
+total_price_func <- function(quantity, unit_price) {
+  Price <- quantity*unit_price 
+  VAT_discount <- runif(1, min = -0.5, max = 0.2)
+  Price * (1 + VAT_discount) # total price after random vat and discount
+}
+
+# Apply function
+ORDER_PRODUCT$total_price <- round(mapply(total_price_func, ORDER_PRODUCT$quantity, ORDER_PRODUCT$unit_price), digits = 2)
+
+# Update order sheet
+ORDER <- ORDER_PRODUCT[,c("order_id", "product_id", "quantity", "customer_id", "order_date", "total_price")]
+```
+
+```{r}
+# Create new table for address
+CUSTOMER_address <- CUSTOMER %>% select(customer_id,country:city)
+
+## Add primary key `customer address id` for CUSTOMER_address
+CUSTOMER_address$caddress_id <- paste0("A",CUSTOMER_address$customer_id)
+CUSTOMER_address <- CUSTOMER_address %>% select(caddress_id, customer_id:city)
+```
+
+
+```{r}
+# Filled the missing value in postcode
+
+## Defining postal code function
+postcode_func <- function(n=1) {
+  letters <- toupper(LETTERS[1:26])
+  numbers <- 0:9
+  
+  # Function of generate the first and second parts
+  generate_first <- function() {
+    # The first part(1-2 letters, 1-2 numbers)
+    part1 <- paste0(sample(letters, sample(1:2, 1), replace = TRUE), collapse = "")
+    part2 <- paste0(sample(numbers, sample(1:2, 1), replace = TRUE), collapse = "")
+    return(paste0(part1, part2))
+  }
+  
+  generate_second <- function() {
+    # The second part(1 number, 2 letters)
+    part3 <- paste0(sample(numbers, 1), collapse = "")
+    part4 <- paste0(sample(letters, 2, replace = TRUE), collapse = "")
+    return(paste0(part3, part4))
+  }
+  
+  # Combine two parts
+  postal_codes <- replicate(n, paste0(generate_first(), " ", generate_second()))
+  return(postal_codes)
+}
+
+# Update the table
+missing_indices <- which(is.na(CUSTOMER_address$postcode))
+CUSTOMER_address$postcode[missing_indices] <- postcode_func(length(missing_indices))
+CUSTOMER <- CUSTOMER %>% select(customer_id:membership)
+```
+
+```{r}
+# Deal with the address in shipment and supplier in the same process
+
+## SHIPMENT
+# Create new table for address
+SHIPMENT_address <- SHIPMENT %>% select(shipment_id,country:postcode)
+
+SHIPMENT_address$saddress_id <- paste0("A-",SHIPMENT_address$shipment_id)
+
+SHIPMENT_address <- SHIPMENT_address %>% select(saddress_id, shipment_id:postcode)
+# Filled missing value in postcode
+missing_indices2 <- which(is.na(SHIPMENT_address$postcode))
+
+SHIPMENT_address$postcode[missing_indices2] <- postcode_func(length(missing_indices2))
+
+SHIPMENT_address <- SHIPMENT_address %>% na.omit()
+
+SHIPMENT <- SHIPMENT %>% select(shipment_id:shipment_status)
+
+## SUPPLIER
+# Create new table for address
+SUPPLIER_address <- SUPPLIER %>% select(supplier_id,country:postcode)
+
+SUPPLIER_address$supaddress_id <- paste0("A-",SUPPLIER_address$supplier_id)
+
+SUPPLIER_address <- SUPPLIER_address %>% select(supaddress_id, supplier_id:postcode)
+# Filled missing value in postcode
+missing_indices3 <- which(is.na(SUPPLIER_address$postcode))
+
+SUPPLIER_address$postcode[missing_indices3] <- postcode_func(length(missing_indices3))
+
+SUPPLIER <- SUPPLIER %>% select(supplier_id:supplier_phone)
+
+
+```
+
+
+
+```{r}
+# Print data
+setwd("/cloud/project/Modified Data")
+write_csv(CUSTOMER, "CUSTOMER1.csv")
+write_csv(CATEGORY, "CATEGORY1.csv")
+write_csv(ORDER, "ORDER1.csv")
+write_csv(REVIEW, "REVIEW1.csv")
+write_csv(SHIPMENT, "SHIPMENT1.csv")
+write_csv(TRANSACTION, "TRANSACTION1.csv")
+write_csv(SUPPLY, "SUPPLY1.csv")
+write_csv(SUPPLIER, "SUPPLIER1.csv")
+write_csv(PRODUCT, "PRODUCT1.csv")
+write_csv(SUPPLIER_address, "SUPPLIER_address1.csv")
+write_csv(CUSTOMER_address, "CUSTOMER_address1.csv")
+write_csv(SHIPMENT_address, "SHIPMENT_address1.csv")
+
+
+```
+

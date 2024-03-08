@@ -1,0 +1,801 @@
+shipment_id,shipment_method,shipment_status
+YQO-52820,parcel,shipped
+RMQ-58062,ground,delivered
+MZY-97101,overnight,shipped
+DVX-48074,truckload,returned
+OVZ-42251,ground,delivered
+UPX-82874,priority,delivered
+QJM-66746,freight,delivered
+AER-75825,express,out for delivery
+KUW-78655,freight,delivered
+DZW-28249,parcel,out for delivery
+KHY-06895,overnight,delivered
+WWA-79792,ground,delayed
+TSC-55128,courier,shipped
+EDH-52214,overnight,out for delivery
+WRV-18235,parcel,returned
+PLN-37821,airmail,out for delivery
+ZNY-61995,standard,out for delivery
+KNB-10906,courier,delivered
+YIZ-88097,express,delayed
+PZH-12199,courier,returned
+QKJ-05077,airmail,shipped
+OLO-68598,priority,delivered
+CII-71756,airmail,delivered
+SJM-44248,courier,out for delivery
+ZWO-63002,standard,shipped
+RGE-11387,parcel,shipped
+LIJ-70784,priority,returned
+MGV-82071,ground,out for delivery
+BLA-77049,airmail,delayed
+HKC-81549,overnight,shipped
+WIQ-37638,overnight,delivered
+ERP-50812,express,shipped
+KBO-76744,priority,returned
+DTA-38295,courier,out for delivery
+XUM-14431,parcel,shipped
+ZLP-47495,parcel,returned
+WST-47759,overnight,shipped
+FUE-24960,ground,delivered
+AKX-37800,standard,out for delivery
+DJJ-40359,airmail,delivered
+FQN-61642,airmail,delivered
+TXB-31696,airmail,delayed
+ERF-40305,freight,shipped
+GZA-71961,courier,shipped
+IPF-06013,overnight,shipped
+VOB-42851,priority,returned
+SKK-01686,overnight,delivered
+YKW-03203,airmail,shipped
+EGC-29314,express,delayed
+QYL-04009,ground,shipped
+RPL-44782,standard,out for delivery
+HJX-04732,standard,shipped
+UXK-95873,priority,delayed
+KUP-11505,airmail,shipped
+BJZ-87355,priority,delivered
+QIG-69460,truckload,out for delivery
+DRI-32632,priority,delayed
+VBG-11058,parcel,shipped
+SFE-63606,priority,returned
+IPL-88269,truckload,returned
+RSU-61760,truckload,delayed
+MIF-50316,overnight,delayed
+YRZ-56124,truckload,delivered
+OUP-63969,priority,delayed
+LJS-06290,courier,delivered
+LZK-52447,parcel,out for delivery
+NVK-74090,truckload,returned
+OIW-64264,standard,out for delivery
+GID-45026,freight,out for delivery
+RDQ-51888,standard,delayed
+TOH-94422,courier,out for delivery
+NNQ-99937,ground,shipped
+IKI-50846,ground,returned
+ALP-05362,overnight,out for delivery
+RFD-71098,airmail,shipped
+OPY-64233,freight,shipped
+BLM-91894,express,returned
+FAV-04660,freight,delayed
+YXW-52195,express,delayed
+LKR-14186,express,returned
+SDF-44750,standard,delivered
+RNK-09952,freight,returned
+YWW-52330,standard,returned
+IWQ-01758,ground,returned
+WMX-53940,priority,delivered
+ZYV-65424,airmail,delayed
+ARF-13786,freight,out for delivery
+RNI-70591,standard,shipped
+RLN-58184,parcel,delivered
+RCP-17106,truckload,delivered
+VYB-79487,parcel,returned
+KJM-95093,overnight,delayed
+MFZ-15865,priority,returned
+XTK-49280,express,delivered
+IUG-84543,overnight,shipped
+SOW-06472,parcel,shipped
+ORC-14738,airmail,returned
+NGT-46053,airmail,returned
+XCX-56598,standard,delivered
+SGC-23944,express,delivered
+NTC-82271,courier,shipped
+GXJ-48709,express,out for delivery
+ZRG-63495,truckload,returned
+VPA-46238,freight,out for delivery
+YAV-84542,parcel,shipped
+LHO-05328,parcel,returned
+MKZ-36831,overnight,out for delivery
+WQZ-27159,truckload,delayed
+HGN-36671,priority,shipped
+UYM-25095,overnight,returned
+JTZ-25899,express,delayed
+CCL-00740,overnight,delayed
+FCZ-63799,parcel,delivered
+FAW-51424,overnight,delivered
+ODE-50455,standard,shipped
+SSY-40316,standard,returned
+KXO-34659,priority,shipped
+XOW-72664,parcel,out for delivery
+FKM-85259,overnight,delayed
+YQR-56534,express,delivered
+LAT-08036,truckload,delayed
+ZRM-63504,courier,shipped
+AFM-48725,airmail,out for delivery
+XBI-01337,truckload,out for delivery
+QAT-07657,parcel,out for delivery
+QWQ-83982,standard,delivered
+QYC-10112,ground,shipped
+YMO-28743,express,delayed
+BHD-80322,courier,shipped
+XEH-13611,standard,out for delivery
+ZSZ-67057,airmail,returned
+MFL-86943,freight,returned
+SWL-33136,standard,delayed
+GUI-93614,priority,delivered
+NKC-85551,truckload,shipped
+OWW-24046,parcel,shipped
+GAG-90322,freight,out for delivery
+VRD-08242,express,delayed
+REO-63491,standard,delivered
+LDN-83295,ground,delayed
+SSQ-62799,overnight,returned
+KIR-33671,express,out for delivery
+BUV-98358,courier,out for delivery
+LIK-87021,courier,delayed
+IFS-92167,ground,delayed
+YIM-09350,express,out for delivery
+RFX-29943,express,delivered
+HYJ-55966,express,returned
+ROA-96332,ground,out for delivery
+UVN-73621,parcel,out for delivery
+ZKG-23440,standard,returned
+FBC-57810,truckload,out for delivery
+BOC-00085,parcel,delivered
+QJG-65032,standard,returned
+IZS-22890,courier,returned
+HNL-80787,truckload,shipped
+TXN-02067,priority,shipped
+FVC-08427,ground,returned
+KXR-00462,parcel,delayed
+MGC-06913,priority,out for delivery
+KVT-91832,standard,out for delivery
+KBK-53741,standard,out for delivery
+TUO-44400,priority,out for delivery
+WLZ-69674,priority,shipped
+KSB-84452,courier,delivered
+SHU-74025,airmail,returned
+OJX-06185,parcel,out for delivery
+DKJ-73860,truckload,delivered
+QZW-01517,express,delayed
+XQT-02648,freight,delayed
+PXD-73061,truckload,delivered
+VJG-32567,truckload,shipped
+FTU-63323,standard,delivered
+RBU-85152,express,returned
+XVF-43095,overnight,returned
+NGP-01097,airmail,returned
+QPM-56476,parcel,delayed
+ZMX-81399,truckload,delayed
+LSV-01576,parcel,delayed
+ZLV-65190,courier,returned
+IDV-64946,overnight,shipped
+IQL-16620,standard,delayed
+DML-93628,ground,delivered
+HAS-64357,parcel,returned
+QPO-65411,courier,delivered
+YTF-04965,standard,delayed
+RDW-52199,ground,returned
+AXH-21476,freight,delivered
+SKJ-61914,parcel,out for delivery
+ZVG-59252,standard,out for delivery
+XGF-78253,standard,delivered
+RZK-11013,courier,delivered
+JLP-78616,overnight,delayed
+SXZ-86906,truckload,returned
+XBQ-28470,standard,returned
+VSF-36397,airmail,delayed
+YFU-19025,ground,delayed
+SJX-57144,priority,shipped
+CID-18442,standard,delivered
+UDP-97335,airmail,shipped
+QOU-55133,truckload,delivered
+RMJ-64576,express,returned
+THM-00750,express,shipped
+CTE-51943,express,delayed
+GHU-85025,freight,returned
+URE-43339,ground,shipped
+TOU-22688,truckload,shipped
+CKL-61352,courier,delivered
+QZF-65463,parcel,returned
+WQW-52009,overnight,shipped
+EUA-00391,priority,delivered
+QJD-79529,truckload,delayed
+BML-91917,ground,delayed
+ZNA-59860,standard,out for delivery
+XLK-23602,ground,returned
+WXU-92623,express,out for delivery
+VRR-55675,freight,returned
+GNH-00215,overnight,delayed
+IIZ-28489,courier,out for delivery
+PAI-74178,parcel,delivered
+GJB-23307,ground,returned
+DRV-03457,airmail,delayed
+CBI-55296,freight,out for delivery
+BQE-90336,standard,delayed
+VTJ-89871,ground,out for delivery
+EVW-03400,standard,shipped
+BTN-77510,ground,delayed
+FPV-21383,courier,delayed
+DBN-04821,overnight,out for delivery
+RMR-71399,parcel,delivered
+RWB-58072,truckload,returned
+SHM-93145,truckload,delayed
+THT-73413,ground,delayed
+ZFC-22466,truckload,returned
+TFA-82905,express,delivered
+TKV-49782,express,shipped
+MSQ-68745,priority,out for delivery
+RXD-79955,express,out for delivery
+HSP-66132,airmail,returned
+IRR-81268,priority,out for delivery
+VTX-04975,priority,out for delivery
+GMO-32903,priority,delivered
+LGF-47626,courier,delayed
+ZQZ-36830,ground,returned
+CSE-86350,parcel,delivered
+PIZ-49895,priority,delivered
+JMZ-49279,priority,returned
+XYV-82171,truckload,shipped
+QZP-77777,freight,delayed
+MBA-72481,ground,out for delivery
+QKF-92849,standard,shipped
+NEC-43945,airmail,delayed
+FXX-91880,courier,delayed
+PIE-74764,courier,delivered
+VCE-73700,ground,delivered
+GLF-37691,truckload,delayed
+YWC-19526,priority,delayed
+WKV-66631,express,returned
+GKF-46248,freight,returned
+SEU-86177,courier,delayed
+HVA-47085,priority,returned
+NSS-06108,ground,returned
+IFJ-85317,truckload,delayed
+IRP-96502,truckload,returned
+FUD-98001,priority,delivered
+GCK-16488,ground,delayed
+MRP-79654,courier,returned
+DMT-25651,express,returned
+LCT-86449,courier,delayed
+BRW-14033,express,delivered
+ALJ-55175,ground,delayed
+PKV-69417,truckload,delayed
+FQB-68445,parcel,shipped
+VXA-99220,overnight,delayed
+NKR-84978,airmail,delivered
+GGN-36996,freight,shipped
+YEW-68812,ground,out for delivery
+QVH-10483,courier,returned
+ACK-41900,priority,delayed
+XFQ-21161,freight,delayed
+EHK-08169,overnight,out for delivery
+CSP-24826,truckload,returned
+SET-45973,courier,delayed
+ADD-61038,freight,delivered
+HVP-47038,priority,shipped
+OQN-32617,overnight,shipped
+YUU-89098,overnight,delayed
+PXO-21151,parcel,out for delivery
+XNW-76986,overnight,returned
+VDF-59082,express,shipped
+BGC-35875,truckload,out for delivery
+WCG-50530,overnight,returned
+DPO-06454,parcel,delivered
+OCK-15121,airmail,delivered
+WWT-44312,priority,delivered
+ODB-15676,courier,out for delivery
+KJA-27034,airmail,delivered
+AQR-84149,freight,shipped
+BNH-10962,airmail,delivered
+PTQ-64398,overnight,delayed
+IPS-69541,truckload,shipped
+XGY-83748,standard,out for delivery
+CQZ-76294,freight,delivered
+PEO-16001,ground,shipped
+EMV-75759,express,returned
+OBM-73502,express,delayed
+WBF-16879,freight,returned
+HAR-22578,freight,out for delivery
+RGR-11469,truckload,out for delivery
+LVG-79918,overnight,delivered
+PUF-89682,standard,returned
+EJL-91111,courier,out for delivery
+GDY-30790,priority,out for delivery
+TUS-11926,express,delivered
+QIX-15056,airmail,out for delivery
+SVU-93791,overnight,delivered
+RZW-26722,standard,returned
+QUY-88158,airmail,delayed
+ZWH-69069,truckload,delivered
+YTD-33179,priority,returned
+MZX-10370,parcel,shipped
+AFW-69793,courier,delivered
+JRB-02431,courier,returned
+MLT-95923,airmail,delayed
+FXH-36524,standard,returned
+GHF-09628,truckload,shipped
+RVZ-20037,airmail,out for delivery
+YOZ-51374,courier,returned
+OLG-83303,priority,shipped
+DPT-44886,freight,shipped
+KCA-09675,express,returned
+XVQ-22350,courier,out for delivery
+IEB-59564,truckload,returned
+TKW-80061,airmail,delayed
+HFX-27843,parcel,delayed
+JXQ-14185,ground,delayed
+VAR-99444,priority,shipped
+KNM-45949,courier,returned
+SNJ-93984,express,returned
+HZM-38537,ground,shipped
+JLM-58268,priority,delivered
+VFD-81350,parcel,out for delivery
+VIT-62611,courier,shipped
+MQU-23539,courier,delayed
+FTB-74358,priority,delivered
+TIZ-24782,airmail,delivered
+UFI-56226,parcel,shipped
+PBJ-42226,priority,returned
+NZQ-67481,courier,delayed
+MQO-98534,priority,delivered
+ZEO-94858,express,out for delivery
+ZUT-46446,freight,returned
+KQL-73902,truckload,returned
+JUT-18927,ground,out for delivery
+PBD-78223,truckload,returned
+CCA-97414,truckload,delivered
+CEN-48020,freight,returned
+TAW-66746,standard,delivered
+CBS-73058,ground,out for delivery
+CLR-09109,standard,delayed
+LAD-05633,courier,delayed
+CGK-09378,overnight,delayed
+ZWT-18507,priority,returned
+PPZ-63191,overnight,shipped
+KWP-34784,courier,delayed
+BGV-24853,parcel,delayed
+IJQ-15681,express,delayed
+ZDE-67156,courier,out for delivery
+ZZY-80768,airmail,out for delivery
+TEZ-94281,parcel,returned
+TML-90641,ground,out for delivery
+YRZ-45952,airmail,out for delivery
+SPI-53273,freight,returned
+QTU-06974,freight,returned
+DOQ-61788,truckload,delivered
+AOZ-11102,overnight,delivered
+LAE-59686,freight,out for delivery
+LJM-59667,overnight,delayed
+KEQ-41571,airmail,returned
+OYG-26182,truckload,out for delivery
+AJJ-15954,ground,delayed
+TJQ-17662,parcel,delivered
+CIX-91983,parcel,out for delivery
+UGT-79827,truckload,delivered
+CXA-47437,ground,shipped
+IKW-27026,standard,returned
+JII-43884,courier,delivered
+HGE-16486,express,delivered
+JRO-09263,parcel,shipped
+GEB-72421,courier,delayed
+MMJ-69667,overnight,delivered
+HRP-34167,overnight,returned
+EMR-54088,priority,delayed
+HUV-05024,airmail,delayed
+IYC-13702,airmail,returned
+VZC-17407,priority,returned
+UKW-44205,freight,delivered
+KFG-88294,airmail,out for delivery
+DXL-43618,parcel,returned
+EVV-59635,parcel,returned
+GJA-70102,airmail,delivered
+WHK-65061,priority,delivered
+PTX-13323,airmail,delivered
+FCT-14531,express,delayed
+HIU-26726,truckload,shipped
+SAQ-66658,priority,shipped
+NQU-01987,overnight,delayed
+NRO-05110,parcel,out for delivery
+LOZ-17749,courier,returned
+ARI-57457,truckload,returned
+GTD-36268,parcel,delivered
+OYJ-02741,freight,returned
+RUO-63367,standard,delayed
+SCR-27327,overnight,returned
+CAH-53474,courier,out for delivery
+IQU-63157,overnight,returned
+QRP-27328,courier,shipped
+HEA-58442,freight,returned
+LCR-37268,parcel,returned
+DUA-21239,express,delivered
+YGF-79397,courier,returned
+POE-41197,overnight,returned
+RDY-02139,courier,returned
+KGL-05675,parcel,delivered
+FCW-06581,express,delivered
+JVC-95394,express,returned
+KSK-15379,ground,returned
+IWF-82715,truckload,out for delivery
+MAK-09212,standard,returned
+SZH-86572,courier,delivered
+LUK-18981,priority,shipped
+SRE-70639,parcel,delivered
+ZZY-14469,truckload,returned
+YLT-23425,priority,delivered
+YHM-13224,express,shipped
+VHW-72557,priority,out for delivery
+XSC-80700,priority,returned
+NOJ-37232,standard,out for delivery
+YLS-69822,express,out for delivery
+MWT-07707,standard,delayed
+KNI-79689,ground,out for delivery
+BLY-30045,airmail,out for delivery
+VXG-59367,standard,delayed
+BCO-59329,priority,shipped
+DYT-31206,courier,out for delivery
+RTJ-04713,courier,delayed
+BYG-41550,courier,out for delivery
+WJT-14125,overnight,out for delivery
+KZW-92140,express,out for delivery
+SVS-43484,priority,delivered
+WXK-76748,overnight,returned
+PTK-08550,freight,delivered
+PTX-38961,overnight,shipped
+VTB-42026,airmail,out for delivery
+VOF-40143,ground,out for delivery
+EYQ-23823,courier,delayed
+QRU-94573,standard,returned
+FBF-05432,airmail,shipped
+RMP-54780,ground,returned
+ZPQ-78910,freight,returned
+ENU-63550,freight,out for delivery
+IZZ-78554,express,returned
+DNB-60266,airmail,delayed
+YKS-47183,freight,shipped
+BHZ-23518,express,out for delivery
+MBW-59724,freight,out for delivery
+UUR-46166,overnight,shipped
+ABZ-35748,priority,returned
+QIQ-49871,priority,returned
+QPM-15099,parcel,returned
+LHA-23055,express,delivered
+MXG-84542,parcel,returned
+KFB-55625,parcel,shipped
+HJV-00142,freight,delayed
+TEH-58652,priority,delivered
+WTL-88134,parcel,delivered
+YYW-28076,express,out for delivery
+GMD-26335,parcel,delivered
+QDP-84214,express,shipped
+TLO-13546,parcel,delivered
+IRS-13493,priority,out for delivery
+ZHI-58973,priority,shipped
+MTH-96141,airmail,shipped
+NTZ-42790,priority,returned
+PTE-45627,airmail,delivered
+YGN-64592,priority,returned
+JKE-52922,parcel,delayed
+GCZ-32454,priority,shipped
+EAY-34601,freight,returned
+HWW-24459,overnight,delayed
+DVK-11724,priority,delayed
+RKW-27660,overnight,out for delivery
+SHJ-00925,priority,returned
+ZZH-77082,ground,delayed
+UAZ-36054,ground,out for delivery
+BCP-90420,overnight,shipped
+UIG-75978,parcel,delayed
+LPI-19356,airmail,returned
+KQZ-24675,overnight,returned
+GNI-76639,overnight,returned
+QJQ-50940,freight,out for delivery
+VUF-41526,truckload,delayed
+XVD-47281,truckload,delayed
+IKL-51929,priority,delivered
+CYM-44377,overnight,delayed
+LTM-52652,parcel,returned
+NEH-97159,standard,delivered
+DIS-29870,parcel,delivered
+KVB-91700,freight,shipped
+VGS-64747,truckload,out for delivery
+IHF-62257,express,out for delivery
+HXC-87079,ground,shipped
+MMA-10445,freight,delayed
+RYE-30653,courier,shipped
+VBF-66169,priority,out for delivery
+BXA-22860,truckload,shipped
+NJO-69296,express,delivered
+MLK-68383,overnight,shipped
+AOJ-73434,parcel,delayed
+NTW-08882,ground,delayed
+POA-38149,ground,out for delivery
+UBD-07568,priority,shipped
+RUP-04758,ground,returned
+WMY-63842,overnight,delayed
+FIA-60158,parcel,returned
+JSK-62208,airmail,delayed
+JES-02285,airmail,out for delivery
+VNR-13040,parcel,shipped
+TNX-59660,priority,delayed
+COA-65179,parcel,delivered
+MQL-02582,truckload,delivered
+XXK-61880,truckload,delivered
+ORY-45180,airmail,out for delivery
+DOJ-14511,overnight,out for delivery
+ZYN-60769,ground,out for delivery
+COF-75265,truckload,delivered
+ICS-07582,freight,delayed
+AXQ-42281,standard,out for delivery
+EQR-89794,airmail,delayed
+YIG-95564,truckload,delayed
+HAK-86449,overnight,delayed
+KUU-19784,overnight,delivered
+SCX-81237,priority,out for delivery
+XEY-89889,ground,out for delivery
+IKE-64924,truckload,out for delivery
+TJU-52466,standard,delivered
+HUE-68155,ground,returned
+FZP-81251,airmail,shipped
+ZJY-02828,parcel,returned
+NCS-94857,ground,returned
+JLU-49349,truckload,delivered
+VAI-84449,freight,out for delivery
+QQJ-48657,priority,shipped
+QVH-92349,standard,out for delivery
+BIS-07742,priority,delayed
+XXO-92655,express,out for delivery
+RDZ-54636,freight,returned
+XIO-28726,courier,delayed
+UFW-37583,courier,delayed
+QPX-72312,overnight,out for delivery
+UGW-89615,standard,delivered
+ZOL-28270,parcel,returned
+DUL-87166,overnight,delivered
+DLG-56415,truckload,delayed
+LAG-16695,standard,shipped
+AGX-69017,courier,delayed
+EWB-32684,ground,delayed
+XMT-71040,standard,out for delivery
+IJN-27854,parcel,shipped
+MLS-90290,truckload,out for delivery
+ICC-99521,parcel,out for delivery
+ZMQ-52290,overnight,returned
+EAU-98403,priority,shipped
+HNP-76876,truckload,delayed
+MSX-56988,courier,delivered
+HGY-58755,overnight,shipped
+CCC-65669,courier,out for delivery
+MGU-19135,ground,delayed
+YXH-23985,airmail,delayed
+LOQ-27839,express,out for delivery
+PXE-28439,courier,shipped
+KLB-70395,airmail,returned
+WFT-51973,standard,returned
+WTV-24522,express,delayed
+LJM-32158,parcel,shipped
+UPU-24968,express,shipped
+KRK-98174,parcel,returned
+QQU-83626,standard,returned
+ODS-21485,express,returned
+IAS-82699,airmail,out for delivery
+PLW-49583,airmail,delivered
+WZP-53704,ground,returned
+KTB-11837,truckload,shipped
+JMQ-20487,standard,out for delivery
+HXW-67761,freight,returned
+UUD-00518,freight,delayed
+GIG-38418,courier,delivered
+ULU-83468,priority,delayed
+MPT-86934,overnight,shipped
+MWH-12959,standard,out for delivery
+OWM-68688,ground,out for delivery
+GAZ-03231,priority,delivered
+NUH-67861,courier,delivered
+CZW-80277,ground,out for delivery
+ZGI-84369,express,out for delivery
+APC-01768,truckload,delayed
+ZIJ-65662,standard,delivered
+IWC-92479,airmail,out for delivery
+PYM-68349,parcel,delivered
+YQU-81456,freight,delivered
+DBP-24429,overnight,out for delivery
+VSM-53471,standard,out for delivery
+FOO-44106,standard,delivered
+XTK-90532,express,out for delivery
+JUM-91291,express,returned
+DDE-74819,freight,shipped
+BSH-38777,ground,out for delivery
+LYK-21539,parcel,returned
+FMY-46392,standard,out for delivery
+UDK-78779,express,delayed
+SBV-33758,ground,shipped
+NZV-94456,parcel,returned
+QHK-74746,freight,delivered
+KDM-30579,truckload,out for delivery
+FLX-44262,parcel,shipped
+OEH-22635,parcel,out for delivery
+JCQ-09224,courier,shipped
+QNA-93735,priority,out for delivery
+ZWJ-10125,express,delayed
+LTD-38334,freight,out for delivery
+VEU-52201,express,returned
+QTN-24773,freight,out for delivery
+RRC-98678,standard,out for delivery
+VUI-20863,priority,delivered
+FMK-45964,parcel,delayed
+JMV-63650,overnight,shipped
+FYW-82378,ground,delivered
+QMB-42913,truckload,delayed
+VML-90123,parcel,delivered
+QGZ-86770,standard,shipped
+QNK-21884,airmail,delayed
+RCE-74356,courier,returned
+QUK-15821,priority,delayed
+XLR-65815,courier,delivered
+AFW-66138,overnight,delayed
+IQS-21743,express,shipped
+SYX-74952,standard,delayed
+PNA-60587,overnight,returned
+KQK-24032,freight,delivered
+PFB-50825,priority,returned
+KNV-44610,priority,returned
+IXR-04321,standard,delayed
+UXJ-14471,express,returned
+UIJ-93892,ground,delivered
+TPX-63014,airmail,shipped
+VSI-91745,parcel,out for delivery
+TGR-48548,truckload,out for delivery
+FJN-80678,freight,delivered
+NDT-13901,priority,delivered
+LXW-01086,ground,delayed
+CST-99897,express,delivered
+QZA-08469,standard,delivered
+BEJ-75137,standard,out for delivery
+AHO-09209,overnight,delayed
+QKN-03516,truckload,out for delivery
+BGN-68986,parcel,delivered
+BIE-51939,express,delivered
+VWR-42732,freight,delivered
+MOR-40739,freight,delayed
+EJP-62441,freight,out for delivery
+NLW-98713,parcel,shipped
+IHQ-86490,courier,delivered
+CIH-52506,overnight,shipped
+LED-69134,ground,out for delivery
+MIP-26327,priority,out for delivery
+KDI-76812,ground,shipped
+UFI-48558,overnight,delivered
+JVA-90505,standard,out for delivery
+YXL-14030,freight,out for delivery
+VCZ-90464,courier,out for delivery
+CIT-45280,parcel,shipped
+HTD-12367,standard,returned
+EXR-99791,truckload,delayed
+SNM-90126,express,delayed
+FPS-10159,courier,out for delivery
+IWS-33890,courier,out for delivery
+KEC-57238,ground,returned
+NDC-71905,ground,returned
+SHG-68132,truckload,out for delivery
+AIR-77248,parcel,out for delivery
+EOV-29622,overnight,out for delivery
+RVQ-69259,priority,shipped
+UGM-39967,freight,out for delivery
+CJB-72824,airmail,out for delivery
+JQX-01785,priority,out for delivery
+HMM-87657,parcel,delayed
+JDZ-46807,express,out for delivery
+TZZ-56960,airmail,returned
+LQW-93851,ground,shipped
+FLN-91785,ground,delayed
+SSQ-95080,standard,delayed
+QLM-68637,parcel,returned
+KTS-18464,priority,delayed
+FUF-54113,express,returned
+TZD-59879,priority,shipped
+ZCE-14171,express,delayed
+GKG-61060,courier,delivered
+NSQ-58515,courier,delayed
+BWO-64577,express,delivered
+YNC-00796,ground,out for delivery
+DCD-29828,ground,out for delivery
+CYT-48537,overnight,delayed
+JRR-80185,overnight,delayed
+VPI-04430,standard,delayed
+TRS-30767,standard,shipped
+JWN-82668,overnight,delayed
+TXO-90762,priority,out for delivery
+EQH-41157,truckload,out for delivery
+ZKU-53935,freight,delivered
+UHS-19087,overnight,delivered
+XDV-26179,airmail,out for delivery
+DDK-78895,overnight,delivered
+NWB-87449,parcel,out for delivery
+PPQ-61775,freight,shipped
+HTO-63167,priority,shipped
+UGL-64107,parcel,delayed
+KZN-82278,courier,shipped
+GCV-82748,truckload,delayed
+VRD-83323,priority,returned
+ZPC-98889,courier,delivered
+YVL-56905,parcel,delivered
+JXQ-82558,standard,delayed
+QVD-94116,freight,returned
+FZR-57246,priority,out for delivery
+FND-75160,express,delivered
+UZY-04994,standard,delivered
+QXK-22891,freight,out for delivery
+AKM-37896,priority,delayed
+BCR-00831,airmail,shipped
+ZLW-45405,freight,out for delivery
+AKY-54705,parcel,out for delivery
+ANP-07586,airmail,delayed
+UZT-05381,courier,returned
+QBZ-02779,airmail,delayed
+UQK-28043,airmail,delivered
+DOF-13139,priority,delayed
+NEM-81652,overnight,delivered
+QOU-48886,truckload,out for delivery
+IHU-74705,priority,out for delivery
+SVU-94600,freight,shipped
+ZFY-12077,freight,delivered
+AJF-50197,freight,shipped
+UKT-19648,courier,out for delivery
+OOU-79498,airmail,delivered
+DDF-99711,parcel,delayed
+RWJ-49085,freight,delivered
+EEF-42944,airmail,delayed
+JMH-88330,express,out for delivery
+EGX-96267,courier,out for delivery
+HCI-82099,freight,delivered
+GOO-46071,priority,delivered
+JMM-98523,overnight,delayed
+MBO-11389,ground,delayed
+YJB-45844,airmail,shipped
+QYD-59778,overnight,delayed
+XOF-92243,standard,delivered
+CLJ-14938,truckload,out for delivery
+LWE-18087,standard,delayed
+MCY-44994,airmail,delivered
+OTL-23680,standard,out for delivery
+XBY-00724,parcel,delivered
+TMU-90195,airmail,shipped
+XMP-64561,airmail,delayed
+HMN-77531,truckload,delivered
+FSF-24402,truckload,shipped
+PXO-00479,standard,delivered
+PPF-50418,ground,delayed
+FXX-31379,freight,delivered
+MZW-48414,truckload,returned
+GGA-97972,courier,delivered
+LSY-40707,airmail,delayed
+NOK-69162,freight,delivered
+UEI-48215,standard,delayed
+HEA-28649,courier,shipped
+NBL-63912,express,delivered
+XOO-91709,overnight,delayed
+LCY-21128,standard,returned
+ITF-74124,priority,delayed
+IMV-36141,ground,delayed
+HAA-52810,priority,returned
+EQB-05280,priority,shipped
+IHO-25195,freight,delayed
+ZVR-05991,truckload,delayed
+NBG-71108,airmail,delivered
+JFI-74685,priority,delayed
+EYW-62171,airmail,delayed
+NMU-01030,priority,delivered
+AYP-00297,express,delivered
+ZVF-72846,freight,out for delivery
+VCE-35587,standard,delivered
