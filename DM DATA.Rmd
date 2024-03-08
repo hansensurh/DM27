@@ -65,10 +65,6 @@ TRANSACTION$transaction_date <- as.Date(TRANSACTION$transaction_date, origin = "
 ```
 
 ```{r}
-# Deal with review date
-```
-
-```{r}
 # Category sheet cleaning
 CATEGORY <- CATEGORY %>% select("category_id", "category_name", "filter_by") %>% na.omit()
 
@@ -83,7 +79,7 @@ mapping_category_id <- data.frame(
 CATEGORY$category_id <- mapping_category_id$new_category_id
 
 # Adding parent category
-parentid <- c(101,102,103,101,103,101,101,101,103,103,104,105)
+parentid <- c(101,102,103,103,103,101,101,101,103,103,104,105)
 parentcat <- c("Home & Lifestyle","Sports & Outdoor Activities","Fashion & Beauty","Fashion & Beauty","Fashion & Beauty","Home & Lifestyle","Home & Lifestyle","Home & Lifestyle","Fashion & Beauty","Fashion & Beauty","Electronics & Technology","Others")
 
 CATEGORY$parent_id <- parentid
@@ -127,6 +123,9 @@ CUSTOMER_address <- CUSTOMER %>% select(customer_id,country:city)
 ## Add primary key `customer address id` for CUSTOMER_address
 CUSTOMER_address$caddress_id <- paste0("A",CUSTOMER_address$customer_id)
 CUSTOMER_address <- CUSTOMER_address %>% select(caddress_id, customer_id:city)
+
+CUSTOMER$caddress_id <- CUSTOMER_address$caddress_id
+CUSTOMER_address <- CUSTOMER_address %>% select(caddress_id, country:city)
 ```
 
 
@@ -161,7 +160,7 @@ postcode_func <- function(n=1) {
 # Update the table
 missing_indices <- which(is.na(CUSTOMER_address$postcode))
 CUSTOMER_address$postcode[missing_indices] <- postcode_func(length(missing_indices))
-CUSTOMER <- CUSTOMER %>% select(customer_id:membership)
+CUSTOMER <- CUSTOMER %>% select(customer_id:membership, caddress_id)
 ```
 
 ```{r}
@@ -173,7 +172,9 @@ SHIPMENT_address <- SHIPMENT %>% select(shipment_id,country:postcode)
 
 SHIPMENT_address$saddress_id <- paste0("A-",SHIPMENT_address$shipment_id)
 
-SHIPMENT_address <- SHIPMENT_address %>% select(saddress_id, shipment_id:postcode)
+SHIPMENT_address <- SHIPMENT_address %>% select(country:saddress_id)
+
+SHIPMENT$saddress_id <- SHIPMENT_address$saddress_id
 # Filled missing value in postcode
 missing_indices2 <- which(is.na(SHIPMENT_address$postcode))
 
@@ -181,7 +182,7 @@ SHIPMENT_address$postcode[missing_indices2] <- postcode_func(length(missing_indi
 
 SHIPMENT_address <- SHIPMENT_address %>% na.omit()
 
-SHIPMENT <- SHIPMENT %>% select(shipment_id:shipment_status)
+SHIPMENT <- SHIPMENT %>% select(shipment_id:shipment_status, saddress_id)
 
 ## SUPPLIER
 # Create new table for address
@@ -189,17 +190,56 @@ SUPPLIER_address <- SUPPLIER %>% select(supplier_id,country:postcode)
 
 SUPPLIER_address$supaddress_id <- paste0("A-",SUPPLIER_address$supplier_id)
 
-SUPPLIER_address <- SUPPLIER_address %>% select(supaddress_id, supplier_id:postcode)
+SUPPLIER_address <- SUPPLIER_address %>% select(supaddress_id, country:postcode)
+
+SUPPLIER$supaddress_id <- SUPPLIER_address$supaddress_id
 # Filled missing value in postcode
 missing_indices3 <- which(is.na(SUPPLIER_address$postcode))
 
 SUPPLIER_address$postcode[missing_indices3] <- postcode_func(length(missing_indices3))
 
-SUPPLIER <- SUPPLIER %>% select(supplier_id:supplier_phone)
+SUPPLIER <- SUPPLIER %>% select(supplier_id:supplier_phone,supaddress_id)
 
 
 ```
 
+```{r}
+# Deal with review
+## Add order id, the consist product id, and order date
+REVIEW$order_id <- ORDER$order_id
+REVIEW$product_id <- NULL
+REVIEW$customer_id <- NULL
+REVIEW_ORDER <- merge(REVIEW, ORDER, by = "order_id")
+REVIEW_TRANSACTION <- merge(REVIEW_ORDER, TRANSACTION, by = "order_id")
+
+## Defining review date function
+check_review_date <- function(transaction_date) {
+  # Assign the date within the same day or up to 2 days after the order date.
+  delay <- sample(0:7, 1) 
+  transaction_date + delay # review date
+}
+REVIEW_TRANSACTION$review_date <- sapply(REVIEW_TRANSACTION$transaction_date, check_review_date)
+
+## Update review
+REVIEW <- REVIEW_TRANSACTION[, c("review_id","review_date","reviews","product_id","ratings", "order_id")]
+REVIEW$review_date <- as.Date(REVIEW$review_date, origin = "1970-01-01")
+
+```
+
+```{r}
+#Drop total price in order
+ORDER$total_price <- NULL
+
+# Change the brand name in product
+PRODUCT <- PRODUCT %>%
+  mutate(brand_name = str_replace(brand_name, "^Ench(.*)", "Enchant"))
+```
+
+```{r}
+# Separate category table
+CATEGORY_parent <- CATEGORY %>% select(parent_id,parent_category) %>% unique()
+CATEGORY$parent_category <- NULL 
+```
 
 
 ```{r}

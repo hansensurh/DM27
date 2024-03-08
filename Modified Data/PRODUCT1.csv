@@ -1,5 +1,5 @@
 category_id,product_id,product_name,brand_name,color,unit_price,size
-1003-1,3A82FJ6AX42,Nourishing Body Lotion,Enchant¨¦,Default,129.75,L
+1003-1,3A82FJ6AX42,Nourishing Body Lotion,Enchant,Default,129.75,L
 1003-1,8KA0AH7TX82,Hydrating Body Lotion,Seraphina,Default,186.21,L
 1003-1,7KN6VV9CC93,Refreshing Body Lotion,Vevo,Default,53.76,M
 1003-1,4VG8GT2RW98,Rejuvenating Facial Serum,Lumina,Default,185.47,L
@@ -12,7 +12,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-1,1WM1JK8UM13,Moisturizing Facial Serum,BellaNova,Default,133.34,S
 1003-1,5Y57Q10JK69,Trendy Hair Clips,Lumina,Default,118.34,Free
 1003-1,2M34A72VX76,Fashionable Hair Clips,OpalAura,Default,214.17,Free
-1003-1,6GX5N08EG75,Colorful Hair Cluster,Enchant¨¦,Default,31.63,Free
+1003-1,6GX5N08EG75,Colorful Hair Cluster,Enchant,Default,31.63,Free
 1003-1,9TT6V86CX90,Decorative Hair Cluster,Lumina,Default,54.04,Free
 1003-1,7AA8AU5JW27,Adorable Hair Conditioner,OpalAura,Default,55.64,L
 1003-1,4JQ7UD8WH52,Silky Hair Conditioner,Seraphina,Default,64.9,L
@@ -22,7 +22,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-1,3HA9HX7DX66,Restorative Hair Conditioner,Lumina,Default,168.2,M
 1003-1,6QN4GQ6KE56,Hydrating Hair Conditioner,Amara,Default,46.35,S
 1003-1,9M53FT3UQ16,Revitalizing Hydrating Mask,OpalAura,Default,143.2,S
-1003-1,7R17Y59UN27,Soothing Hydrating Mask,Enchant¨¦,Default,125.25,Free
+1003-1,7R17Y59UN27,Soothing Hydrating Mask,Enchant,Default,125.25,Free
 1003-1,8XY2MD0ND57,Replenishing Hydrating Mask,BellaNova,Default,72.4,Free
 1003-1,3NV4JV4FN23,Detoxifying Hydrating Mask,Vevo,Default,217.93,Free
 1003-1,4GW3CF2HU62,Luxurious Makeup Bag,Seraphina,Default,161.38,L
@@ -30,7 +30,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-1,3QM8DH6RP12,Portable Makeup Brush Set,Amara,Default,155.55,Free
 1003-1,3MN8HA6RG92,Travel-Friendly Makeup Brush Set,Lumina,Default,86.33,Free
 1003-1,3RF5N51PY30,Professional Makeup Brush Set,Vevo,Default,156.79,Free
-1003-1,8MR2XE3DE08,Premium Makeup Brush Set,Enchant¨¦,Default,172.06,Free
+1003-1,8MR2XE3DE08,Premium Makeup Brush Set,Enchant,Default,172.06,Free
 1003-1,4CD9JT2FQ34,Hydrating Makeup Primer,BellaNova,Default,199.93,Free
 1003-1,9AQ7AM9TQ26,Long-Lasting Makeup Primer,OpalAura,Default,112.9,Free
 1003-1,2JE4H34WT54,Pore-Minimizing Makeup Primer,Seraphina,Default,114.46,Free
@@ -39,7 +39,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-1,4PR1W64RM57,Soothing Makeup Remover,Lumina,Default,16.16,Free
 1003-1,6RA9TJ1GH72,Moisturizing Makeup Sponge,Seraphina,Default,136.11,Free
 1003-1,8YX3V11WQ29,Soft Makeup Sponge,Vevo,Default,121.99,Free
-1003-1,1DW6N60KX24,Blendable Makeup Sponge,Enchant¨¦,Default,97.43,Free
+1003-1,1DW6N60KX24,Blendable Makeup Sponge,Enchant,Default,97.43,Free
 1003-1,7G38QH7WJ19,Refreshing Shampoo,BellaNova,Default,19.01,L
 1003-1,1YY5Q64KM49,Volumizing Shampoo,Lumina,Default,93.21,L
 1003-1,8UH6GN1HK24,Strengthening Shampoo,OpalAura,Default,5.57,M
@@ -48,13 +48,13 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-1,3NE1RT0HK79,Lightweight Sunscreen Lotion,Vevo,Default,2.63,M
 1003-1,9EW2W90DW49,Broad-Spectrum Sunscreen Lotion,Seraphina,Default,133.85,M
 1003-1,3GK2F78TA33,Water-Resistant Sunscreen Lotion,OpalAura,Default,201.63,XL
-1003-1,9E05YV9HP95,Fast-Absorbing Sunscreen Lotion,Enchant¨¦,Default,64.77,L
+1003-1,9E05YV9HP95,Fast-Absorbing Sunscreen Lotion,Enchant,Default,64.77,L
 1003-1,9A66H64FA64,Gentle Hair Clips,RadiantGlow,Default,21.79,Free
 1003-1,5DV7HW6YJ77,Stylish Hair Clips,Amara,Default,155.86,Free
 1003-2,5V72QU1VT04,Rejuvenating Facial Serum,RadiantGlow,Default,116.83,XL
 1003-2,6U92YW7WT02,Illuminating Facial Serum,Amara,Default,214.74,XL
 1003-2,5M43E84KE58,Refreshing Body Lotion,BellaNova,Default,162.59,L
-1003-2,6QN2ME5GY93,Silky Hair Conditioner,Enchant¨¦,Default,118.37,L
+1003-2,6QN2ME5GY93,Silky Hair Conditioner,Enchant,Default,118.37,L
 1003-2,8YD1C57FP74,Invigorating Hair Conditioner,Vevo,Default,10.78,M
 1003-2,7Q83EM8NH08,Nourishing Hair Conditioner,Seraphina,Default,191.66,M
 1003-2,9Q38HC4YY51,Refreshing Hair Conditioner,OpalAura,Default,71.36,M
@@ -67,10 +67,10 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-2,9W52M81YM44,Protective Facial Serum,BellaNova,Default,18.53,L
 1003-2,6C91Y31QY35,Non-Greasy Sunscreen Lotion,Lumina,Default,115.69,L
 1003-3,4QY5R72DW39,Soothing Bath Salts,RadiantGlow,Default,217.14,Free
-1003-3,7V63DN7DW04,Invigorating Bath Salts,Enchant¨¦,Default,212.19,Free
+1003-3,7V63DN7DW04,Invigorating Bath Salts,Enchant,Default,212.19,Free
 1003-3,5A20D67VT39,Soft Body Sponge,Amara,Default,65.37,Free
 1003-3,5U52CC8GH71,Exfoliating Body Sponge,BellaNova,Default,124.38,Free
-1003-3,6T18UE2MG02,Nourishing Cuticle Oil,Enchant¨¦,Default,185.68,M
+1003-3,6T18UE2MG02,Nourishing Cuticle Oil,Enchant,Default,185.68,M
 1003-3,6R52FT7YV67,Moisturizing Cuticle Oil,RadiantGlow,Default,4.16,M
 1003-3,7VK9JC2VX26,Gentle Body Sponge,Vevo,Default,45.56,Free
 1003-3,2DU7GR0DX38,Brightening Eye Cream,Lumina,Default,186.92,S
@@ -82,7 +82,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-3,8T91R76RF07,Waterproof Eyeliner,BellaNova,Default,91.31,Free
 1003-3,7P28TW5UU29,Smudge-Proof Eyeliner,Vevo,Default,98.64,Free
 1003-3,7WR0V16TK88,Precision Eyeliner,RadiantGlow,Default,170.3,Free
-1003-3,8UX4R50XW13,Hypoallergenic Eyeliner,Enchant¨¦,Default,37.94,Free
+1003-3,8UX4R50XW13,Hypoallergenic Eyeliner,Enchant,Default,37.94,Free
 1003-3,9VK3PF6EC62,Refreshing Face Mist,OpalAura,Default,51.4,M
 1003-3,1UG9RX8HY49,Hydrating Face Mist,Amara,Default,15.27,M
 1003-3,2CK0E38RK68,Illuminating Face Mist,Vevo,Default,136.23,L
@@ -92,7 +92,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-3,8WC2D42XG58,Soothing Eye Mask,Amara,Default,145.18,Free
 1003-3,2W95F11UN72,Nourishing Eyebrow Gel,Seraphina,Default,124.02,Free
 1003-3,2T71VX5XA58,Hydrating Hair Mask,Amara,Default,208.65,Free
-1003-3,9ER6Q43MT36,Restorative Hair Mask,Enchant¨¦,Default,109.56,Free
+1003-3,9ER6Q43MT36,Restorative Hair Mask,Enchant,Default,109.56,Free
 1003-3,2V49D19KW86,Nourishing Hand Cream,Lumina,Default,3.13,M
 1003-3,1VR9RD2WF74,Hydrating Hand Cream,OpalAura,Default,210.34,M
 1003-3,4A09WC9YA68,Soothing Hand Cream,BellaNova,Default,176.94,L
@@ -100,7 +100,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1003-3,7KK4QD6VJ27,Nourishing Lip Balm,RadiantGlow,Default,118.66,Free
 1003-3,9K01WN2TX11,Hydrating Lip Balm,Amara,Default,163.88,Free
 1003-3,5NR9NC6JU43,Precision Nail Clippers,Seraphina,Default,142.85,Free
-1003-3,2N71F96TV82,Professional Nail Clippers,Enchant¨¦,Default,15.53,Free
+1003-3,2N71F96TV82,Professional Nail Clippers,Enchant,Default,15.53,Free
 1003-3,5G81JY9KG59,High-Quality Nail Clippers,Vevo,Default,19.29,Free
 1003-3,4HY3UV0DE84,Long-Lasting Nail Polish,Lumina,Default,11.66,Free
 1003-3,3MU3UX0CD24,Quick-Drying Nail Polish,OpalAura,Default,175.71,Free
@@ -116,7 +116,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,3YD6TE9HQ38,Whispers of Wisdom,Twilight Publications,Default,12.58,Default
 1001-1,5WA6QY1DD00,Whispers of the Wind,Whispering Willow Publishing,Default,32.61,Default
 1001-1,4QU5NY0KF75,Whispering Waters,Serenity Books,Default,39.41,Default
-1001-1,2D81JA7WG42,Whispering Voices,Enchanted Editions,Default,51.78,Default
+1001-1,2D81JA7WG42,Whispering Voices,Enchant,Default,51.78,Default
 1001-1,4VT0G87GW95,Whispering Winds,Mystic Press,Default,28.91,Default
 1001-1,7WM0DW1XK44,Whispering Whispers,Twilight Publications,Default,13.83,Default
 1001-1,6CT0GT3GM72,Whispering Meadows,Whispering Willow Publishing,Default,16.16,Default
@@ -131,12 +131,12 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,8K97AE2VE45,The Enchanted Garden,Serenity Books,Default,37.26,Default
 1001-1,6UN3CD7YJ50,The Enchanted Forest,Moonlit Press,Default,28.62,Default
 1001-1,8FY9Q29QR12,Whispering Tides,Stardust Publishing,Default,31.96,Default
-1001-1,1VP3X75GX09,Whispering Secrets,Enchanted Editions,Default,44.49,Default
+1001-1,1VP3X75GX09,Whispering Secrets,Enchant,Default,44.49,Default
 1001-1,9GE1XX4DP54,Starlight Symphony,Mystic Press,Default,28.38,Default
 1001-1,8C14J72CQ11,Starlight Sonata,Mystic Press,Default,44.43,Default
 1001-1,2RV8PE2YY41,Starlight Shadows,Aurora Books,Default,14.8,Default
 1001-1,9MF5TK4JD05,Starlight Serenade,Everglow Publications,Default,0.43,Default
-1001-1,8J42UQ1UW92,Starlight Adventures,Enchanted Editions,Default,3.01,Default
+1001-1,8J42UQ1UW92,Starlight Adventures,Enchant,Default,3.01,Default
 1001-1,8NK1AD8FJ35,Songs of the Soul,Twilight Publications,Default,30.83,Default
 1001-1,1VY5X56HD78,Songs of the Sky,Mystic Press,Default,43.43,Default
 1001-1,8M95T99FE41,Songs of Sorrow,Moonlit Press,Default,38.07,Default
@@ -154,7 +154,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,5XN8A33AQ51,Moonlit Musings,Serenity Books,Default,25.19,Default
 1001-1,2EQ5WP3MN59,Moonlit Moments,Everglow Publications,Default,47.25,Default
 1001-1,3XA6E01PG70,Moonlit Memories,Whispering Willow Publishing,Default,34.93,Default
-1001-1,2N70DH5QP80,Moonlit Melodies,Enchanted Editions,Default,21.72,Default
+1001-1,2N70DH5QP80,Moonlit Melodies,Enchant,Default,21.72,Default
 1001-1,9J72C51NG07,Moonlit Magic,Everglow Publications,Default,5.94,Default
 1001-1,2Q58KN3WF43,Moonlit Escapes,Serenity Books,Default,5.81,Default
 1001-1,9W78TC5EQ21,Moonlit Adventures,Moonlit Press,Default,25.43,Default
@@ -162,7 +162,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,7DR2E19WJ69,Midnight Memories,Stardust Publishing,Default,39.05,Default
 1001-1,2X31C17VX03,Midnight Magic,Twilight Publications,Default,36.38,Default
 1001-1,9J80C95GC78,Journey to the Unknown,Moonlit Press,Default,30.15,Default
-1001-1,3T84VF4QD71,Journey to the Stars,Enchanted Editions,Default,30.44,Default
+1001-1,3T84VF4QD71,Journey to the Stars,Enchant,Default,30.44,Default
 1001-1,5JU5TJ3CT75,Journey to the Edge,Everglow Publications,Default,35.18,Default
 1001-1,9XR3KP7YH85,Journey to Freedom,Everglow Publications,Default,23.04,Default
 1001-1,4QK4QK4PX53,Journey to Forever,Moonlit Press,Default,1.23,Default
@@ -193,13 +193,13 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,6U87Q47EJ87,Dreams of Daylight,Twilight Publications,Default,34.65,Default
 1001-1,5Q24NY2ER45,Dreaming of Tomorrow,Moonlit Press,Default,25.77,Default
 1001-1,5JU8NH9YW95,Dancing with Shadows,Serenity Books,Default,2.98,Default
-1001-1,5GW4Q24HM12,Dancing with Imagination,Enchanted Editions,Default,30.8,Default
+1001-1,5GW4Q24HM12,Dancing with Imagination,Enchant,Default,30.8,Default
 1001-1,9N80T26EC18,Dancing with Fire,Mystic Press,Default,10.68,Default
 1001-1,2V04M58KD72,Dancing with Fate,Everglow Publications,Default,38.46,Default
 1001-1,5D75GP1QA97,Dancing with Dreams,Twilight Publications,Default,0.4,Default
 1001-1,1HR7MY3DP49,Dancing with Dragons,Serenity Books,Default,33.35,Default
 1001-1,2N80F38PP37,Dancing on Air,Whispering Willow Publishing,Default,34.09,Default
-1001-1,6UV2N98FH46,Dancing in the Moonlight,Enchanted Editions,Default,52.65,Default
+1001-1,6UV2N98FH46,Dancing in the Moonlight,Enchant,Default,52.65,Default
 1001-1,7C35HA1MW46,Beyond the Horizon,Everglow Publications,Default,55.46,Default
 1001-1,1VP5N69CD37,A Thousand Moons,Celestial Books,Default,29.69,Default
 1001-1,5NY9RN5MP43,Whispers of Wonder,Serenity Books,Default,35.58,Default
@@ -214,7 +214,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,9WW1VF3FE02,Whispers of Hope,Mystic Press,Default,14.06,Default
 1001-1,5C94G00NV64,Whispers of Harmony,Whispering Willow Publishing,Default,21.81,Default
 1001-1,8NT5E98NX22,Whispers of Discovery,Moonlit Press,Default,47.58,Default
-1001-1,5PY8YH2VC89,Whispers of Courage,Enchanted Editions,Default,49.36,Default
+1001-1,5PY8YH2VC89,Whispers of Courage,Enchant,Default,49.36,Default
 1001-1,6AX3VG7UD97,Whispers of Adventure,Moonlit Press,Default,54.77,Default
 1001-1,4HU9VD5AQ78,Whispers in the Wind,Mystic Press,Default,31.91,Default
 1001-1,5K37U95WP77,Whispering Waters,Stardust Publishing,Default,40.92,Default
@@ -233,7 +233,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,5RD6F26UD90,Realm of Reflections,Whispering Willow Publishing,Default,35.23,Default
 1001-1,1U04AT6MA88,Moonlit Memories,Aurora Books,Default,41.4,Default
 1001-1,8XR1X90AJ17,Midnight Symphony,Moonlit Press,Default,20.79,Default
-1001-1,1YJ4Y88CC37,Midnight Mirage,Enchanted Editions,Default,3.52,Default
+1001-1,1YJ4Y88CC37,Midnight Mirage,Enchant,Default,3.52,Default
 1001-1,9XP9JR9XM70,Legends of Lore,Celestial Books,Default,40.13,Default
 1001-1,1WH9JU6CN73,Enchanted Visions,Serenity Books,Default,25.43,Default
 1001-1,3AP8CH0HU70,Enchanted Tales,Serenity Books,Default,6.42,Default
@@ -248,9 +248,9 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,7M38VY0DM42,Echoes of Hope,Aurora Books,Default,52.41,Default
 1001-1,6YF7QC5VE05,Echoes of Exploration,Serenity Books,Default,2.45,Default
 1001-1,5MA9NC4VR07,Echoes of Excitement,Everglow Publications,Default,22.2,Default
-1001-1,5E02M85JK19,Echoes of Evolution,Enchanted Editions,Default,45.9,Default
-1001-1,6R70V90WC70,Echoes of Eternity,Enchanted Editions,Default,44.41,Default
-1001-1,1AX7NA3QF08,Echoes of Enlightenment,Enchanted Editions,Default,7.64,Default
+1001-1,5E02M85JK19,Echoes of Evolution,Enchant,Default,45.9,Default
+1001-1,6R70V90WC70,Echoes of Eternity,Enchant,Default,44.41,Default
+1001-1,1AX7NA3QF08,Echoes of Enlightenment,Enchant,Default,7.64,Default
 1001-1,9E14JD7JE47,Echoes of Enchantment,Moonlit Press,Default,55.55,Default
 1001-1,2TJ2A38WG37,Echoes of Empowerment,Celestial Books,Default,20.55,Default
 1001-1,1X64QT8GP72,Echoes of Destiny,Stardust Publishing,Default,35.42,Default
@@ -262,7 +262,7 @@ category_id,product_id,product_name,brand_name,color,unit_price,size
 1001-1,7DV8KM4QE54,Dreams of Resilience,Everglow Publications,Default,44.77,Default
 1001-1,5NW5FT0NA97,Dreams of Redemption,Aurora Books,Default,40.67,Default
 1001-1,3XH7MA7DK25,Dreams of Prosperity,Stardust Publishing,Default,25.18,Default
-1001-1,2Y60NQ8TQ62,Dreams of Possibility,Enchanted Editions,Default,54.09,Default
+1001-1,2Y60NQ8TQ62,Dreams of Possibility,Enchant,Default,54.09,Default
 1001-1,2P97RR2MU79,Dreams of Paradise,Moonlit Press,Default,46.91,Default
 1001-1,1PE8E49YX05,Serenade of the Sea,Whispering Willow Publishing,Default,19.49,Default
 1001-1,5AU7V68CY09,Serenade of Splendor,Aurora Books,Default,20.1,Default

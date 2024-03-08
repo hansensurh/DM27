@@ -32,41 +32,52 @@ SHIPMENT_address <- read_csv("SHIPMENT_address1.csv")
 project <- dbConnect(RSQLite::SQLite(),"project.db") 
 ```
 
+```{r}
+REVIEW$review_date <- as.character(REVIEW$review_date)
+TRANSACTION$transaction_date <- as.character(TRANSACTION$transaction_date)
+ORDER$order_date <- as.character(ORDER$order_date)
+
+```
+
 ```{sql connection=project}  
-CREATE TABLE 'customers' (  
-    'customer_id' INT PRIMARY KEY,  
+CREATE TABLE 'customer' (  
+    'customer_id' VARCHAR(200) PRIMARY KEY,  
     'username' VARCHAR(200) NOT NULL UNIQUE, 
+    'caddress_id' VARCHAR(200) NOT NULL,
     'first_name' VARCHAR(200) NOT NULL,  
     'last_name' VARCHAR(200) NOT NULL, 
     'password' VARCHAR(200) NOT NULL,  
     'email' VARCHAR(200) NOT NULL UNIQUE,  
     'mobile' VARCHAR(20) NOT NULL UNIQUE,  
-    'membership' INT  
+    'membership' INT,  
+    FOREIGN KEY ('caddress_id') REFERENCES customer_address('caddress_id')
 )
 ```
 
 
 ```{r}  
-dbWriteTable(conn = project, name = "customers", value = CUSTOMER, append = TRUE, row.names = FALSE)
+dbWriteTable(conn = project, name = "customer", value = CUSTOMER, append = TRUE, row.names = FALSE)
 ```
 
 ```{sql connection=project}  
-CREATE TABLE 'suppliers'(  
-    'supplier_id' INT PRIMARY KEY,  
+CREATE TABLE 'supplier'(  
+    'supplier_id' VARCHAR(200) PRIMARY KEY,  
     'supplier_name' VARCHAR(200) NOT NULL,  
-    'supplier_phone' VARCHAR(15) NOT NULL UNIQUE
+    'supaddress_id' VARCHAR(200) NOT NULL,
+    'supplier_phone' VARCHAR(15) NOT NULL UNIQUE,
+    FOREIGN KEY ('supaddress_id') REFERENCES supplier_address('supaddress_id') 
  )  
 ```
 
 ```{r}
-dbWriteTable(conn = project, name = "suppliers", value = SUPPLIER, append = TRUE, row.names = FALSE)
+dbWriteTable(conn = project, name = "supplier", value = SUPPLIER, append = TRUE, row.names = FALSE)
 ```
 
 ```{sql connection=project}  
 CREATE TABLE 'supply'(  
-    'supply_id' INT PRIMARY KEY,  
-    'supplier_id' INT, 
-    'product_id' INT, 
+    'supply_id' VARCHAR(200) PRIMARY KEY,  
+    'supplier_id' VARCHAR(200), 
+    'product_id' VARCHAR(200), 
     FOREIGN KEY ('supplier_id') REFERENCES supplier('supplier_id'), 
     FOREIGN KEY ('product_id') REFERENCES product('product_id') 
 )  
@@ -78,16 +89,14 @@ dbWriteTable(conn = project, name = "supply", value = SUPPLY, append = TRUE, row
 
 ```{sql connection=project}  
 CREATE TABLE 'product' (  
-    'product_id' INT PRIMARY KEY,  
+    'product_id' VARCHAR(200) PRIMARY KEY,  
     'product_name' VARCHAR(200) NOT NULL,  
     'unit_price' DECIMAL(10,2) NOT NULL,  
     'brand_name' VARCHAR(200),  
     'color' VARCHAR(200),  
     'size' VARCHAR(200), 
     'category_id' INT, 
-    'shipment_id' INT, 
-    FOREIGN KEY ('category_id') REFERENCES category('category_id'), 
-    FOREIGN KEY ('shipment_id') REFERENCES shipment('shipment_id') 
+    FOREIGN KEY ('category_id') REFERENCES category('category_id')
 )  
 ```  
 
@@ -97,26 +106,35 @@ dbWriteTable(conn = project, name = "product", value = PRODUCT, append = TRUE, r
 
 ```{sql connection=project}  
 CREATE TABLE 'category' (  
-    'category_id' INT PRIMARY KEY,  
+    'category_id' VARCHAR(200) PRIMARY KEY,  
     'category_name' VARCHAR(200) NOT NULL,  
     'filter_by' VARCHAR(200) NOT NULL,
-    'parent_id' INT,  
-    'parent_category' VARCHAR(200) NOT NULL
+    'parent_id' VARCHAR(200),  
+    FOREIGN KEY ('parent_id') REFERENCES category_parent('parent_id')
+)  
+```  
+
+```{sql connection=project}  
+CREATE TABLE 'category_parent' (  
+    'parent_id' INT PRIMARY KEY,  
+    'parent_category' VARCHAR(200) NOT NULL 
 )  
 ```  
 
 ```{r}
 dbWriteTable(conn = project, name = "category", value = CATEGORY, append = TRUE, row.names = FALSE)
+dbWriteTable(conn = project, name = "category_parent", value = CATEGORY_parent, append = TRUE, row.names = FALSE)
+
 ```
+
 
 ```{sql connection=project}  
 CREATE TABLE 'order' (  
-    'order_id' INT PRIMARY KEY,  
+    'order_id' VARCHAR(200) PRIMARY KEY,  
     'order_date' DATE NOT NULL,  
-    'customer_id' INT,  
-    'product_id' INT, 
-    'quantity' VARCHAR(200) NOT NULL, 
-    'total_price' DECIMAL(10,2) NOT NULL,  
+    'customer_id' VARCHAR(200),  
+    'product_id' VARCHAR(200), 
+    'quantity' INT NOT NULL, 
     FOREIGN KEY ('customer_id') REFERENCES customer('customer_id'),  
     FOREIGN KEY ('product_id') REFERENCES product('product_id')
 )  
@@ -129,11 +147,11 @@ dbWriteTable(conn = project, name = "order", value = ORDER, append = TRUE, row.n
 ```{sql connection=project}  
 DROP TABLE IF EXISTS 'transaction';
 CREATE TABLE 'transaction' (  
-    'transaction_id' INT PRIMARY KEY,  
+    'transaction_id' VARCHAR(200) PRIMARY KEY,  
     'transaction_date' DATE NOT NULL,   
     'transaction_status' TEXT NOT NULL,   
     'transaction_method' TEXT NOT NULL, 
-    'order_id' INT,
+    'order_id' VARCHAR(200),
     FOREIGN KEY ('order_id') REFERENCES 'order'('order_id') 
 ) 
 ```  
@@ -144,13 +162,14 @@ dbWriteTable(conn = project, name = "transaction", value = TRANSACTION, append =
 
 ```{sql connection=project}  
 CREATE TABLE 'review' (  
-    'review_id' INT PRIMARY KEY,  
+    'review_id' VARCHAR(200) PRIMARY KEY,  
     'ratings' INT NOT NULL,  
     'reviews' TEXT NOT NULL,  
-    'product_id' INT,  
-    'customer_id' INT,  
+    'product_id' VARCHAR(200),  
+    'review_date' DATE,
+    'order_id' VARCHAR(200), 
     FOREIGN KEY ('product_id') REFERENCES products('product_id'),  
-    FOREIGN KEY ('customer_id') REFERENCES customers('customer_id') 
+    FOREIGN KEY ('order_id') REFERENCES "order"('order_id') 
 )  
 ``` 
 
@@ -158,12 +177,19 @@ CREATE TABLE 'review' (
 dbWriteTable(conn = project, name = "review", value = REVIEW, append = TRUE, row.names = FALSE)
 ```
 
+```{sql connection=project}
+SELECT *
+FROM review
+```
+
 ```{sql connection=project}  
 DROP TABLE IF EXISTS 'shipment';
 CREATE TABLE 'shipment' (  
-    'shipment_id' INT PRIMARY KEY,  
+    'shipment_id' VARCHAR(200) PRIMARY KEY,  
     'shipping_status' VARCHAR(200) NOT NULL,  
-    'shipment_method' VARCHAR(200) NOT NULL
+    'shipment_method' VARCHAR(200) NOT NULL,
+    'saddress_id' VARCHAR(200) NOT NULL,
+    FOREIGN KEY ('saddress_id') REFERENCES shipment_address('saddress_id')  
 )  
 ``` 
 
@@ -173,38 +199,32 @@ dbWriteTable(conn = project, name = "shipment", value = SHIPMENT, append = TRUE,
 
 ```{sql connection=project}  
 CREATE TABLE 'shipment_address' (  
-    'saddress_id' INT PRIMARY KEY,  
-    'shipment_id' INT NOT NULL,
+    'saddress_id' VARCHAR(200) PRIMARY KEY,  
     'country' VARCHAR (200) NOT NULL, 
     'city' VARCHAR (200) NOT NULL, 
     'street' VARCHAR (200) NOT NULL, 
-    'postcode' VARCHAR (200) NOT NULL, 
-    FOREIGN KEY ('shipment_id') REFERENCES shipment('shipment_id')  
+    'postcode' VARCHAR (200) NOT NULL 
 )  
 ``` 
 
 ```{sql connection=project}  
 DROP TABLE IF EXISTS 'supplier_address';
 CREATE TABLE 'supplier_address' (  
-    'supaddress_id' INT PRIMARY KEY,  
-    'supplier_id' INT NOT NULL,
+    'supaddress_id' VARCHAR(200) PRIMARY KEY,  
     'country' VARCHAR (200) NOT NULL, 
     'city' VARCHAR (200) NOT NULL, 
     'street' VARCHAR (200) NOT NULL, 
-    'postcode' VARCHAR (200) NOT NULL, 
-    FOREIGN KEY ('supplier_id') REFERENCES supplier('supplier_id')  
+    'postcode' VARCHAR (200) NOT NULL 
 )  
 ``` 
 
 ```{sql connection=project}  
 CREATE TABLE 'customer_address' (  
-    'caddress_id' INT PRIMARY KEY,  
-    'customer_id' INT NOT NULL,
+    'caddress_id' VARCHAR(200) PRIMARY KEY,  
     'country' VARCHAR (200) NOT NULL, 
     'city' VARCHAR (200) NOT NULL, 
     'street' VARCHAR (200) NOT NULL, 
-    'postcode' VARCHAR (200) NOT NULL, 
-    FOREIGN KEY ('customer_id') REFERENCES customer('customer_id')  
+    'postcode' VARCHAR (200) NOT NULL
 )  
 ``` 
 
@@ -216,7 +236,7 @@ dbWriteTable(conn = project, name = "customer_address", value = CUSTOMER_address
 
 ```{sql connection=project}
 SELECT *
-FROM "shipment"
+FROM "transaction"
 ```
 
 ```{r} 
