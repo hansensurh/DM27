@@ -1,0 +1,167 @@
+shipment_id,shipment_method,shipment_status,saddress_id,order_id
+UPX-82874,priority,delivered,A-UPX-82874,037b0c7e-2ef2-430f-adf7-45da6ca0293f
+ZNY-61995,standard,out for delivery,A-ZNY-61995,3a0c3604-e93f-48f5-afc2-905509742075
+SJM-44248,courier,out for delivery,A-SJM-44248,d189bf2f-066a-4908-a7a7-a2627c71a475
+RGE-11387,parcel,shipped,A-RGE-11387,0e2be5eb-a420-49e4-9fb3-13584e822918
+WIQ-37638,overnight,delivered,A-WIQ-37638,b3e3e1f5-f2ce-4156-9113-ea2978bb6ce6
+ERP-50812,express,shipped,A-ERP-50812,0cb125b7-839c-4a34-ba8b-84043cf200ce
+DTA-38295,courier,out for delivery,A-DTA-38295,a737f024-514c-42e0-8802-8d4f7d12d217
+FUE-24960,ground,delivered,A-FUE-24960,31e36f56-ddb9-46b9-9063-b75a2f3921e3
+BJZ-87355,priority,delivered,A-BJZ-87355,c5f43655-1256-4d84-a4e3-3b74ee87ab57
+VBG-11058,parcel,shipped,A-VBG-11058,1dccb836-f17a-472f-8a20-c0418cc9d995
+GID-45026,freight,out for delivery,A-GID-45026,04fb44c4-9197-4e8a-a72a-0161da4e0b49
+NNQ-99937,ground,shipped,A-NNQ-99937,754bfff9-261d-4029-8343-ccef21fa40db
+RFD-71098,airmail,shipped,A-RFD-71098,7b1a1f9a-4f86-43bd-b98d-d915272cdace
+BLM-91894,express,returned,A-BLM-91894,69e4c92f-421a-4176-b1d1-dacce88e46c8
+ARF-13786,freight,out for delivery,A-ARF-13786,0716171c-fe6f-4045-8eaa-593eada725d7
+KJM-95093,overnight,delayed,A-KJM-95093,44365432-301b-46c6-b588-e788c2368bdd
+SOW-06472,parcel,shipped,A-SOW-06472,f104bf61-f61f-4bd8-8976-6f473b9fbbfc
+WQZ-27159,truckload,delayed,A-WQZ-27159,0fd247a5-cc17-4e6e-9ce4-f6f33c3ea15b
+CCL-00740,overnight,delayed,A-CCL-00740,f95fe9d7-71bf-49cf-8644-a9a995c0421f
+XOW-72664,parcel,out for delivery,A-XOW-72664,9acf9bf9-9a80-40c6-97ec-8a22dd450c4a
+LAT-08036,truckload,delayed,A-LAT-08036,7c3e08de-f9e5-4691-abad-1af10a515a89
+ZRM-63504,courier,shipped,A-ZRM-63504,fa1af6e4-3cd2-434b-bf0b-57d54571db2d
+XEH-13611,standard,out for delivery,A-XEH-13611,154196fb-f9fa-4d6a-b9e1-09ebbfc2cfc6
+NKC-85551,truckload,shipped,A-NKC-85551,e93c466b-9159-4d75-b6a1-e6f33d4ffebd
+OWW-24046,parcel,shipped,A-OWW-24046,244463b8-c29c-4184-95cd-c671dfaa865b
+GAG-90322,freight,out for delivery,A-GAG-90322,6b515a5a-75c9-4e92-a255-6ab5175b047f
+LDN-83295,ground,delayed,A-LDN-83295,a8b48fbe-7262-4f87-9d51-630635723c81
+RFX-29943,express,delivered,A-RFX-29943,7b93be0b-618b-47da-9085-e95e5ed066ec
+HYJ-55966,express,returned,A-HYJ-55966,092f1da5-82df-4b3b-803a-ef9417f13453
+UVN-73621,parcel,out for delivery,A-UVN-73621,e6504485-4c38-47b7-a21a-b4419d5aef76
+KSB-84452,courier,delivered,A-KSB-84452,9a97f521-f1e6-45c7-9dc1-2700cbcd996c
+OJX-06185,parcel,out for delivery,A-OJX-06185,1ca3c6ab-553d-47c9-bd1a-a4983f54f207
+PXD-73061,truckload,delivered,A-PXD-73061,e0c9b8e0-ad6f-413e-b880-a53456b3f8ba
+RBU-85152,express,returned,A-RBU-85152,c6d42617-7722-413d-a4df-38167339ba3b
+NGP-01097,airmail,returned,A-NGP-01097,d5fc3231-9df2-4d96-b127-824e82c7b680
+ZMX-81399,truckload,delayed,A-ZMX-81399,ea77a4a9-f974-4fb6-821c-63d06e42d0a8
+LSV-01576,parcel,delayed,A-LSV-01576,fa9eb63a-a9dd-4c15-add7-924956e00f64
+IDV-64946,overnight,shipped,A-IDV-64946,5a9cf955-c339-46db-9a97-fd10573afd26
+IQL-16620,standard,delayed,A-IQL-16620,f42731d7-f0a1-4330-90a8-2146f215202a
+HAS-64357,parcel,returned,A-HAS-64357,d9f01bc0-cc27-4dcd-8f5e-f5bd111778a6
+QPO-65411,courier,delivered,A-QPO-65411,6c3ac051-9d6a-43e2-89d8-f98df4258976
+YTF-04965,standard,delayed,A-YTF-04965,55b78c96-8e9c-4ddf-9593-00ae8ef753e2
+QOU-55133,truckload,delivered,A-QOU-55133,72ca6b30-55d0-4909-b3ec-7a224b60d22b
+WQW-52009,overnight,shipped,A-WQW-52009,99a1c3c1-9d14-48db-a624-b52ee0855c04
+EUA-00391,priority,delivered,A-EUA-00391,665c0b45-46b4-43bf-a782-adda0f0d9b32
+WXU-92623,express,out for delivery,A-WXU-92623,844c7373-cafe-40eb-9045-be0a38a5f487
+RWB-58072,truckload,returned,A-RWB-58072,aed05b1e-1c1a-491f-879b-98d26d364e97
+XYV-82171,truckload,shipped,A-XYV-82171,12939a20-358c-44ec-becb-ad7f910fb863
+WKV-66631,express,returned,A-WKV-66631,805d58fd-fa84-47e2-a9f9-a65a7a8e95df
+NSS-06108,ground,returned,A-NSS-06108,fc5ebd84-bdf8-4b0b-a676-bfddfff72274
+ALJ-55175,ground,delayed,A-ALJ-55175,90fb6f9a-c730-4db1-b4e4-fda003be2444
+GGN-36996,freight,shipped,A-GGN-36996,c3c7dbe5-9a7f-442d-a0d1-b2f659b60ea7
+YUU-89098,overnight,delayed,A-YUU-89098,d271ebf6-6626-4d76-899c-dbad889ac402
+VDF-59082,express,shipped,A-VDF-59082,e4b090a0-79fe-4889-b20a-ac9e033d7222
+DPO-06454,parcel,delivered,A-DPO-06454,8dcf23cc-1ca3-4f68-9dfe-a0750a073bf6
+OBM-73502,express,delayed,A-OBM-73502,7cfb751e-0eaf-46d0-96e5-1460697417ff
+RGR-11469,truckload,out for delivery,A-RGR-11469,30b9247d-ad22-4952-8df3-4b2da5678bef
+EJL-91111,courier,out for delivery,A-EJL-91111,5ac30415-f4ad-44f8-a070-c55e9a717d03
+RZW-26722,standard,returned,A-RZW-26722,aea7ed72-0ac1-4eb7-9f53-2a3b3004e403
+ZWH-69069,truckload,delivered,A-ZWH-69069,67d2aaf4-fbcf-4308-b87e-5fc362750364
+IEB-59564,truckload,returned,A-IEB-59564,5b7869aa-5c5d-49e0-87ec-0f3fb8e5a1a1
+HFX-27843,parcel,delayed,A-HFX-27843,7151b477-834c-448b-b73b-f5899f6a3422
+JXQ-14185,ground,delayed,A-JXQ-14185,94df45ad-1d2a-4ce5-ab72-63f34e77b689
+VFD-81350,parcel,out for delivery,A-VFD-81350,7995aea4-1e1e-478a-ba97-7e3fe1e375e8
+FTB-74358,priority,delivered,A-FTB-74358,0c4bef1e-11f0-44cb-93bb-6d236438dc9c
+UFI-56226,parcel,shipped,A-UFI-56226,1ede96d3-48ad-479a-845f-d2ad68fa02e4
+JUT-18927,ground,out for delivery,A-JUT-18927,cfa3799c-820f-40d7-ba72-dc97b193f887
+TAW-66746,standard,delivered,A-TAW-66746,a30a0c91-23b7-480f-90bc-7a9ac9666715
+KWP-34784,courier,delayed,A-KWP-34784,7d6f13eb-63e0-439e-9b99-8362a81ad115
+ZDE-67156,courier,out for delivery,A-ZDE-67156,402ecbfb-22df-4da4-98f7-1239c5b7a7ae
+YRZ-45952,airmail,out for delivery,A-YRZ-45952,6a7d2792-7723-4657-b17f-bdd63f59ae4b
+QTU-06974,freight,returned,A-QTU-06974,c0b61d3a-319b-4ba6-85e2-b161a002f224
+LAE-59686,freight,out for delivery,A-LAE-59686,33d99b95-4133-46ce-b69a-14634e6ef75a
+KEQ-41571,airmail,returned,A-KEQ-41571,bb8d0446-9921-4c55-86ca-f5a92611dc71
+CIX-91983,parcel,out for delivery,A-CIX-91983,335dd0a0-cd7c-4f0a-946a-d18c94416260
+KFG-88294,airmail,out for delivery,A-KFG-88294,99fe81e9-c604-4020-bf72-169556746a3c
+DXL-43618,parcel,returned,A-DXL-43618,e4aeb305-bc08-44ed-9321-e7809788f924
+FCT-14531,express,delayed,A-FCT-14531,2e5e87e2-f195-43d8-b2ab-018fdf6d2b44
+NQU-01987,overnight,delayed,A-NQU-01987,83ebec35-e9ba-41c6-90a1-287d6c3c13e3
+NRO-05110,parcel,out for delivery,A-NRO-05110,84ddcb8c-d831-40f0-8ab3-257a0789d33b
+RUO-63367,standard,delayed,A-RUO-63367,d0ebcd20-7d53-45cb-ad1d-2f1c137dba57
+HEA-58442,freight,returned,A-HEA-58442,db71abc1-4eb6-487b-b242-d53b2fe8063d
+ZZY-14469,truckload,returned,A-ZZY-14469,06397d42-8f44-47ae-9414-c1ec827def1f
+NOJ-37232,standard,out for delivery,A-NOJ-37232,0dde4c19-fb4f-4f4f-b3c3-42c5151d6180
+YLS-69822,express,out for delivery,A-YLS-69822,e6617c72-e5da-4f39-9b73-4ba4086969c2
+DYT-31206,courier,out for delivery,A-DYT-31206,d5b57fec-e51e-4934-90f5-4ad699fa45b6
+FBF-05432,airmail,shipped,A-FBF-05432,f2fbb003-56bd-486d-ad41-4b39f6d8e58f
+RMP-54780,ground,returned,A-RMP-54780,d1902bce-771f-4c29-86fb-f43560a26b08
+QPM-15099,parcel,returned,A-QPM-15099,97dfe091-236a-4754-8f58-d5c5bf99d29e
+HJV-00142,freight,delayed,A-HJV-00142,21f718ea-f79c-429b-8838-6464fd389ff1
+WTL-88134,parcel,delivered,A-WTL-88134,ec4d8be6-94ee-429d-ae24-cd7730e512a0
+GMD-26335,parcel,delivered,A-GMD-26335,f1a1044d-9f84-4d29-b9a7-50f3a5f383db
+ZHI-58973,priority,shipped,A-ZHI-58973,372ddeb9-8566-4b50-ab2a-c29e1dd7b63d
+JKE-52922,parcel,delayed,A-JKE-52922,f14e60a9-4c32-4cf5-a95c-07566454c39d
+GCZ-32454,priority,shipped,A-GCZ-32454,958031c1-dec2-44a3-87d0-5e510ed6901f
+UIG-75978,parcel,delayed,A-UIG-75978,db3ad521-cb0e-4a32-b918-8b6219bbfa98
+VUF-41526,truckload,delayed,A-VUF-41526,e7e358b0-e359-424f-bef2-583c59a38489
+XVD-47281,truckload,delayed,A-XVD-47281,7f4b9174-0981-4ec8-a923-73524b29e744
+LTM-52652,parcel,returned,A-LTM-52652,774a7731-7145-4e52-aed9-b949b588199f
+FIA-60158,parcel,returned,A-FIA-60158,fa0a133d-cd13-46fb-b11a-4fe92471276c
+JES-02285,airmail,out for delivery,A-JES-02285,7936fcbf-e133-4175-aa86-18e4acb76acc
+TNX-59660,priority,delayed,A-TNX-59660,28b61c34-775f-43f5-a545-8bfa111cc916
+ZYN-60769,ground,out for delivery,A-ZYN-60769,1b0980e7-f662-4bb1-a46c-de25dc7123cc
+ICS-07582,freight,delayed,A-ICS-07582,0c683674-dd4b-4f93-b20a-1e420639a96c
+KUU-19784,overnight,delivered,A-KUU-19784,ac6cb891-b853-4d2b-a55d-9a061a7aeb1f
+SCX-81237,priority,out for delivery,A-SCX-81237,b10c3ce4-8831-4a0c-9a6b-e98696fd625f
+TJU-52466,standard,delivered,A-TJU-52466,125c0272-9612-4116-a01d-b0bfafd48fd3
+HUE-68155,ground,returned,A-HUE-68155,69124581-6c62-44e0-ac45-cf2306178fcc
+FZP-81251,airmail,shipped,A-FZP-81251,e34cc296-0ce3-4029-8952-a85c53194e62
+NCS-94857,ground,returned,A-NCS-94857,05ce6c75-4a20-45d9-9497-83392c0b5458
+VAI-84449,freight,out for delivery,A-VAI-84449,dac6d82c-3051-468e-85fd-25e44ad8d7f0
+BIS-07742,priority,delayed,A-BIS-07742,68f567c3-705a-4fa6-8f68-c27eab4875c5
+DLG-56415,truckload,delayed,A-DLG-56415,fdd2469b-349d-4b8f-b41d-d9f09539af89
+LAG-16695,standard,shipped,A-LAG-16695,69a80957-75ae-4ac2-a124-364bed3ea536
+AGX-69017,courier,delayed,A-AGX-69017,6f1db5d2-a1d6-446d-a6a7-fc5675108534
+HNP-76876,truckload,delayed,A-HNP-76876,b83fd048-80da-426e-89c7-cc5d77735b5d
+IAS-82699,airmail,out for delivery,A-IAS-82699,79018152-8014-45a4-abcc-1dc7efdcc072
+PLW-49583,airmail,delivered,A-PLW-49583,feeaba5e-c160-48d8-8a6f-8b1164dcb734
+KTB-11837,truckload,shipped,A-KTB-11837,bc5aec34-ec78-486b-9c2a-23641083fe1c
+UUD-00518,freight,delayed,A-UUD-00518,a301ecdf-309d-4a00-ad3b-121003d25d3d
+ZGI-84369,express,out for delivery,A-ZGI-84369,1258ba01-491c-41c9-ad6f-8985bcfb80e6
+PYM-68349,parcel,delivered,A-PYM-68349,004c93e0-dfc1-4190-bba7-2a018079b354
+XTK-90532,express,out for delivery,A-XTK-90532,cf5535d4-7bef-4322-adaf-15e7f9dc1d2b
+SBV-33758,ground,shipped,A-SBV-33758,03718afe-c1bb-4b2b-a4cc-837087a6bf6d
+QHK-74746,freight,delivered,A-QHK-74746,d2301678-f319-4430-abe8-7e3d4c7909c2
+QNA-93735,priority,out for delivery,A-QNA-93735,c24b1b04-8f5a-4d05-b418-5d5ad26f7e1b
+ZWJ-10125,express,delayed,A-ZWJ-10125,606e23b3-f509-483f-ad81-804128b68d8b
+QTN-24773,freight,out for delivery,A-QTN-24773,f37cdde8-db66-4d9a-a2f0-f396cce49252
+FMK-45964,parcel,delayed,A-FMK-45964,39760aaf-b28c-46bf-9401-3dc099c80742
+QNK-21884,airmail,delayed,A-QNK-21884,22560953-2c68-4934-89a3-db81fd2fbb1d
+QUK-15821,priority,delayed,A-QUK-15821,004023f8-89c0-462d-8d0b-ebdaae4ac544
+IQS-21743,express,shipped,A-IQS-21743,224e2ae9-004a-4b23-9456-e6e00a186231
+PNA-60587,overnight,returned,A-PNA-60587,a28e762a-e0a6-497f-b3b9-9c7cb8d8b342
+VSI-91745,parcel,out for delivery,A-VSI-91745,1e444cbc-dbbb-49e8-af3b-4fe2ddc42678
+TGR-48548,truckload,out for delivery,A-TGR-48548,704d3657-406b-4ad3-85d3-1b61fe990b1c
+NDT-13901,priority,delivered,A-NDT-13901,6b1ddbc3-2067-4ee1-ae33-4841815504c5
+AHO-09209,overnight,delayed,A-AHO-09209,e12d5e67-9a6b-421d-86b7-5392d682853e
+QKN-03516,truckload,out for delivery,A-QKN-03516,5f7411b3-e5b1-4efd-b614-ca33a923d9f2
+BGN-68986,parcel,delivered,A-BGN-68986,648abef5-7fc1-4d9d-abde-547734ac251d
+CIH-52506,overnight,shipped,A-CIH-52506,fe1900f8-cb25-46b6-9fdd-1e8c6a33fcd9
+UFI-48558,overnight,delivered,A-UFI-48558,ae42722e-c55d-4820-b5bf-d9bef7035dab
+JVA-90505,standard,out for delivery,A-JVA-90505,623f0f94-b3b4-4dbf-bfde-41a66994bdca
+CIT-45280,parcel,shipped,A-CIT-45280,c5ab5693-e596-4bee-9965-d6cc99ce72f4
+EXR-99791,truckload,delayed,A-EXR-99791,1f148f02-e1f8-4b5e-a07f-40e22ace03e8
+FPS-10159,courier,out for delivery,A-FPS-10159,8e6e6a27-271e-4ee4-a289-4453d5e66ba4
+JQX-01785,priority,out for delivery,A-JQX-01785,9544c7e8-8236-49bd-a7b2-d10aabba9eb3
+HMM-87657,parcel,delayed,A-HMM-87657,c41f9f28-e016-4083-826c-ed5cc378988e
+TZZ-56960,airmail,returned,A-TZZ-56960,497d39e0-bfc6-4e9a-a9c3-7c613f1c3ab4
+QLM-68637,parcel,returned,A-QLM-68637,d4428375-d329-4f8b-b29a-c05f38695b05
+FUF-54113,express,returned,A-FUF-54113,36e52789-c0fd-4be1-b08e-19d5e1bc88bb
+ZCE-14171,express,delayed,A-ZCE-14171,67b7e9df-f4cf-4e11-8b5d-ce1d6f6f3eb8
+NWB-87449,parcel,out for delivery,A-NWB-87449,55c421c0-a275-4365-b9eb-a2aed5fff181
+PPQ-61775,freight,shipped,A-PPQ-61775,123109de-7007-48b0-ad71-714d10f328f5
+UGL-64107,parcel,delayed,A-UGL-64107,a9f5b7b9-5bf7-4cb2-8426-690a613dd336
+KZN-82278,courier,shipped,A-KZN-82278,22eb0bdf-b770-4d4f-806a-54f681eee14f
+FZR-57246,priority,out for delivery,A-FZR-57246,cd0544a9-0374-472f-9c12-82946222e470
+UZT-05381,courier,returned,A-UZT-05381,e9575426-84fb-4dbe-83a3-edc889cc799f
+UQK-28043,airmail,delivered,A-UQK-28043,0f7fc924-07ac-4815-ba4b-84cf767687b3
+DDF-99711,parcel,delayed,A-DDF-99711,4398f5a0-6b04-470d-9718-ad8dda5be704
+EGX-96267,courier,out for delivery,A-EGX-96267,b3298ac0-4c48-4c2d-b5dd-c022233fb5d7
+MBO-11389,ground,delayed,A-MBO-11389,f7c3aa63-3240-4099-bdee-e7d6ab577c04
+FXX-31379,freight,delivered,A-FXX-31379,2048f876-5b81-411d-a3c6-6c9d2b6e62a2
+UEI-48215,standard,delayed,A-UEI-48215,45c9a8dd-8f45-4caa-81d0-dab032649517
+EQB-05280,priority,shipped,A-EQB-05280,d6d1c0ab-ff58-4568-98ac-10bf5b3a2d97
+ZVR-05991,truckload,delayed,A-ZVR-05991,c7edde2c-1172-4aff-bcbc-ec59c09e210f
+EYW-62171,airmail,delayed,A-EYW-62171,3a136a48-34c3-4d34-99d5-087b3f8a3f12

@@ -1,0 +1,183 @@
+product_id,category_id,product_name,brand_name,color,unit_price,size
+8NE5X18FU50,1003-1,Revitalizing Facial Serum,BellaNova,Default,68.68,L
+9DE8F03CM88,1003-1,Anti-Aging Facial Serum,Vevo,Default,182.09,S
+5Y57Q10JK69,1003-1,Trendy Hair Clips,Lumina,Default,118.34,Free
+6KP8W20GD67,1003-1,Nourishing Hair Conditioner,Vevo,Default,88.14,M
+2JE4H34WT54,1003-1,Pore-Minimizing Makeup Primer,Seraphina,Default,114.46,Free
+7G38QH7WJ19,1003-1,Refreshing Shampoo,BellaNova,Default,19.01,L
+9A66H64FA64,1003-1,Gentle Hair Clips,RadiantGlow,Default,21.79,Free
+6U92YW7WT02,1003-2,Illuminating Facial Serum,Amara,Default,214.74,XL
+1JC7FK2FH11,1003-2,Revitalizing Hydrating Mask,Lumina,Default,130.62,L
+6U77T35DM05,1003-2,Replenishing Hydrating Mask,Amara,Default,131.43,Free
+6C91Y31QY35,1003-2,Non-Greasy Sunscreen Lotion,Lumina,Default,115.69,L
+5A20D67VT39,1003-3,Soft Body Sponge,Amara,Default,65.37,Free
+3MU3UX0CD24,1003-3,Quick-Drying Nail Polish,OpalAura,Default,175.71,Free
+3M83MY9QY56,1003-3,Chip-Resistant Nail Polish,BellaNova,Default,156.15,Free
+1Y86YY9GV56,1003-3,Reusable Shower Cap,Seraphina,Default,22.44,Free
+6NC4AV4RC77,1001-1,Whispers of the Heart,Mystic Press,Default,47.38,Default
+4QU5NY0KF75,1001-1,Whispering Waters,Serenity Books,Default,39.41,Default
+8NE7U26UQ11,1001-1,Whispering Legends,Celestial Books,Default,50.18,Default
+6AQ0QD0VQ97,1001-1,The Silent Symphony,Celestial Books,Default,24.15,Default
+8QF7N66QQ32,1001-1,The Enchanted Lake,Celestial Books,Default,49.09,Default
+8C14J72CQ11,1001-1,Starlight Sonata,Mystic Press,Default,44.43,Default
+8NK1AD8FJ35,1001-1,Songs of the Soul,Twilight Publications,Default,30.83,Default
+8G35TA9RY08,1001-1,Songs of Solitude,Whispering Willow Publishing,Default,28.26,Default
+2G08AR3RT08,1001-1,Tales of Twilight,Moonlit Press,Default,15.2,Default
+4ND6W41QW92,1001-1,Starlight Visions,Serenity Books,Default,34.91,Default
+4JC6XJ5PV68,1001-1,Serenade of Solitude,Twilight Publications,Default,7.7,Default
+8WX9T98EC83,1001-1,Serenade of Shadows,Celestial Books,Default,52.11,Default
+6HP6PN8HR49,1001-1,Secrets of the Night,Aurora Books,Default,16.37,Default
+1NW1NY0PP73,1001-1,Moonlit Whispers,Whispering Willow Publishing,Default,50.61,Default
+9J72C51NG07,1001-1,Moonlit Magic,Everglow Publications,Default,5.94,Default
+3T84VF4QD71,1001-1,Journey to the Stars,Enchant,Default,30.44,Default
+5JU5TJ3CT75,1001-1,Journey to the Edge,Everglow Publications,Default,35.18,Default
+1CJ9UV8VF00,1001-1,Enchanted Journeys,Mystic Press,Default,30.43,Default
+4HE8JK5AD84,1001-1,Dreams of Revelation,Everglow Publications,Default,38.01,Default
+6U87Q47EJ87,1001-1,Dreams of Daylight,Twilight Publications,Default,34.65,Default
+5Q24NY2ER45,1001-1,Dreaming of Tomorrow,Moonlit Press,Default,25.77,Default
+5D75GP1QA97,1001-1,Dancing with Dreams,Twilight Publications,Default,0.4,Default
+5NY9RN5MP43,1001-1,Whispers of Wonder,Serenity Books,Default,35.58,Default
+1WH9JU6CN73,1001-1,Enchanted Visions,Serenity Books,Default,25.43,Default
+3AP8CH0HU70,1001-1,Enchanted Tales,Serenity Books,Default,6.42,Default
+1AX7NA3QF08,1001-1,Echoes of Enlightenment,Enchant,Default,7.64,Default
+1EP3U22MP59,1001-1,Echoes of Adventure,Celestial Books,Default,44.4,Default
+8E73MD6KU24,1001-1,Dreams of Serendipity,Stardust Publishing,Default,35.84,Default
+5NW5FT0NA97,1001-1,Dreams of Redemption,Aurora Books,Default,40.67,Default
+1PE8E49YX05,1001-1,Serenade of the Sea,Whispering Willow Publishing,Default,19.49,Default
+1GK7TP1GE63,1001-1,Dreams of Destiny,Twilight Publications,Default,20.4,Default
+1VT7UC7TQ29,1001-1,Dreams of Delight,Twilight Publications,Default,2.5,Default
+8FM9GV5VV73,1002-1,Non-Slip Yoga Mat,Sunshine,Blue,505.87,L
+1WX2GQ3PV37,1002-1,Comfortable Yoga Mat,Sunshine,Pink,647.48,S
+6JK4PD2RN57,1002-1,Lightweight Tennis Racket,Star,Red,43.74,Free
+2MW8UT1KR97,1002-1,Tennis Ball Set,Star,Black,548.62,Free
+1E64EM2GH88,1002-1,Durable Tennis Ball,ProFit,Default,464.43,Free
+9FA8FD2RQ68,1002-1,Anti-Fog Swimming Goggles,TurboTread,Black,46.94,Free
+3XF7EK2MT27,1002-1,Portable Rowing Machine,Star,Gray,642.66,L
+5CU0YK2UU75,1002-1,Bluetooth Heart Rate Monitor,Sunshine,Green,258.34,Free
+4H53TK9DW63,1002-1,Chest Strap Heart Rate Monitor,StrikeForce,Black,41.19,Free
+3HC1UK5UQ23,1002-1,Lightweight Climbing Rope,MountainTop,Blue,142.02,S
+2TN6HQ7MQ38,1002-1,Flexible Climbing Harness,MountainTop,Brown,594.1,L
+7D19XV1TU69,1002-1,Street Basketball,PowerGlide,Default,31.83,Free
+4Q36JR6RW17,1002-1,Premium Balance Board,ProBalance,Green,553.98,S
+2EK7DM1HX90,1002-1,Neoprene Dumbbells,AeroFlex,Black,632.63,L
+2CE0C12CN61,1002-1,Rubber-Coated Dumbbells,Sunshine,Blue,227.53,S
+4WA0YY7HX63,1006-1,Dog Puzzle Toy,PawsomeGoods,Pink,41.2,Free
+2GX7HN1HG81,1006-1,Doggy Life Jacket,PetPals,Orange,43.59,Free
+8E74CG9XX00,1006-1,Scratch Resistant Cat Scratcher,PetPals,Brown,24.9,Free
+3N91GT6GH64,1006-1,Cat Tunnel,PawsomeGoods,Black,71.67,Free
+9YT2TY0MJ74,1006-1,Cat Scratching Pad,PawsomeGoods,Brown,19.53,Free
+9D20FR8HG96,1006-1,Bird Swing Perch,PawsomeGoods,Black,102.75,Free
+8FY4T40XE77,1006-1,Bird Perch,PawsomeGoods,Brown,67.53,Free
+9GC1HC8TF44,1006-1,Disposable Litter Box,HappyPets,Gray,11.87,Free
+9JN8TA8RT22,1006-1,Fish Tank Decoration,HappyPets,Pink,13.34,Free
+8VX3U15WG21,1006-1,Rabbit Hutch,HappyPets,Black,11.68,Free
+2JJ3X65CP47,1007-1,Lace Bralette,Urban Chic,Pink,50.54,S
+3TP6EC4EW69,1007-1,Denim Jacket,Vogue Couture,Blue,79.69,M
+8A98K50UJ06,1007-1,Ankle Boots,Trendsetter Threads,Black,44.33,S
+1H07DF7PP71,1007-1,Striped T-shirt,Vogue Couture,Brown,12.73,L
+5D72V31EC25,1007-1,Leather Jacket,Sophisticated Sisters,Blue,24.12,M
+1EW2R65AA04,1007-1,Knee-High Boots,Sophisticated Sisters,Black,52.65,M
+2W38N89QH13,1007-1,Tank Top,Trendsetter Threads,Blue,155.55,XL
+2V33U42HF67,1007-1,Combat Boots,Vogue Couture,Blue,74.75,M
+7G60FX2MV20,1007-1,Polka Dot Blouse,Elite Ensemble,Blue,102.6,M
+6N40G90TU39,1007-1,Espadrille Wedges,Elite Ensemble,White,157.16,L
+4W28GN6RM58,1007-1,Turtleneck Sweater,Trendsetter Threads,Coral,78.3,M
+8DG2KN2RN08,1007-1,Riding Boots,Sophisticated Sisters,Blue,50.54,M
+2P94D65RP31,1007-1,Shirtdress,Trendsetter Threads,Brown,62.21,S
+8JM4FP4MX45,1007-1,A-line Skirt,Bella Donna,Gray,38.67,S
+6M02Q23RX95,1007-1,Sleeveless Blazer,Vogue Couture,Gray,24.17,M
+9JF1GA2NT90,1007-1,Slip-On Sneakers,Elite Ensemble,Black,29.01,XL
+4VV2QF4QF87,1007-1,Embroidered Blouse,Urban Chic,Gray,13.61,XL
+3R45T77QQ75,1007-1,Pleather Jacket,Trendsetter Threads,Blue,127.03,XL
+6PQ0K75PP44,1007-1,Paperbag Shorts,Bella Donna,Blue,161.89,XS
+3GR7K88MQ97,1007-1,Bell Bottom Jeans,Vogue Couture,Black,30.73,2XL
+6JF7KC0ME02,1007-1,Belted Trench Coat,Urban Chic,Pink,12.73,M
+2RV9CN0YC25,1007-1,Peasant Dress,Vogue Couture,White,10.96,S
+4NV2ND4QK96,1007-1,Mock Neck Top,Bella Donna,Coral,164.56,L
+8T60Q83YJ71,1007-1,Belted Wide-Leg Pants,Urban Chic,Black,11.25,XL
+3N81C41JA02,1007-1,Tassel Earrings,Vogue Couture,Blue,68.61,S
+7T90KG3ED20,1007-1,Ruffle Sleeve Top,Vogue Couture,Black,39.23,S
+9V31PP3AF18,1007-1,Floral Print Romper,Urban Chic,Blue,26.46,M
+6EE8M41QM49,1007-1,Striped Crop Top,Urban Chic,Brown,30.5,M
+9E41W74VR45,1007-1,Denim Skirt,Elite Ensemble,Black,33.73,XL
+2VV7XG4JD91,1007-1,Tie-Dye Maxi Dress,Athena Apparel,Black,28.9,XL
+3AX1X29TP50,1007-2,Crew Neck T-shirt,Vogue Couture,Black,17.82,XS
+8N99CC0TJ53,1007-2,Button-down Shirt,Stalwart Styles,Black,32.94,3XL
+3U65M18MF74,1007-2,Graphic Tee,Urban Chic,Black,29.43,S
+8WD2KN6XG72,1007-2,Blazer Jacket,Stalwart Styles,Gray,55.27,L
+4VA3KE8TK23,1007-2,Leather Belt,Urban Chic,Blue,14.36,2XL
+9C14F39JK70,1007-2,Henley Shirt,Trendsetter Threads,Black,15.07,XS
+1WU2X43WQ02,1007-2,Suit Vest,Vogue Couture,Brown,26.43,XL
+9N04AM5DF62,1007-2,Pullover Hoodie,Stalwart Styles,Coral,26.29,M
+2E76FW6YE98,1007-2,Slim Fit Chinos,Urban Chic,Brown,14.48,S
+8DF2AN1QN30,1007-2,Shawl Collar Cardigan,Gentleman's Attire,Blue,11.71,2XL
+9YG9C07CV47,1007-2,Muscle Tank,Trendsetter Threads,White,117.04,XL
+6RK8QH5GJ00,1007-2,Cargo Jogger Shorts,Gentleman's Attire,Black,15.53,S
+6JN2HM8YH08,1007-2,Ski Gloves,Stalwart Styles,Camel,17.58,2XL
+6R79UP4MQ51,1005-1,Fluffy Floppy Teddy Bear,Giggly Gadgetry,Brown,47.99,Free
+6UE1YE8CY27,1005-1,Jittery Jester Jigsaw Puzzle,Giggly Gadgetry,Yellow,103.27,Free
+3NQ4MH0AD85,1005-1,Boogie Woogie Bug,Dizzy Doo,Yellow,101.15,Free
+8G96T71GV96,1005-1,Giggle Wiggle Worm,Dizzy Doo,Green,9.69,Free
+8TN4MR0MG12,1005-1,Snazzy Snail Pull Toy,Dizzy Doo,Green,76.85,Free
+1CK6D40AJ62,1005-1,Wacky Wiggle Worm,Dizzy Doo,Green,25.53,Free
+2PX5HE8RV32,1005-1,Zippy Zoom Zoomer,Dizzy Doo,Blue,69.92,Free
+2UJ2AM7MQ80,1005-1,Slinky Springy Snake,Dizzy Doo,Green,19.15,Free
+6D73C39JV27,1005-1,Jolly Jumping Jester,Dizzy Doo,Red,17.18,Free
+7VU4WR6CR12,1005-1,Pitter Patter Puppy Plush,Dizzy Doo,Brown,13.21,Free
+7Y65DK1DT83,1005-1,Dollhouse Dream,Whirly Twirly Toys,Pink,64.94,Free
+8F21FW6HR22,1008-1,Fitness Tracker,TechElite,Black,374.62,Default
+5CX6FJ6QV35,1008-1,Action Camera,TechElite,Gray,3463.39,Default
+6M32W77QE04,1008-1,Wireless Security Camera,TechElite,Black,2867.64,Default
+5DM0JQ4WC42,1008-1,Smart Mirror,TechElite,Gray,4033.46,Default
+6J05DK5NE29,1008-1,Portable CD Player,TechElite,Black,2221.48,Default
+6QJ3F13UM57,1008-1,Smart Ring,TechElite,Black,4582.8,Default
+4CW5UP7QD44,1008-1,Gaming Headset,NovaTech,Black,1907.41,Default
+1EF1H46JK87,1008-1,Handheld Gaming Console,NovaTech,Black,104.3,Default
+8XE6XV0DA95,1008-1,Streaming Device,FutureTech,Black,184.98,Default
+7DR8XM6HT35,1008-1,Smart Picture Frame,FutureTech,Black,6.86,Default
+6YD5PR4MN09,1008-1,Smart Backpack,FutureTech,Black,120.62,Default
+6MG9MC2NG59,1008-1,Electric Scooter,GigaGadgets,Black,130.34,Default
+8MF3HR6NM68,1008-1,Smart Scale,FutureTech,White,180.87,Default
+5RJ0EP2PT86,1008-1,Smart Oven,FutureTech,Black,277.76,Default
+2YJ3YN2DP45,1008-1,Gaming Desk,NovaTech,Black,207.91,Default
+1D22FP6FQ23,1008-1,Smart Thermostat,FutureTech,White,17.86,Default
+8M06AA7FW06,1008-1,Smart Speaker,FutureTech,Black,230.77,Default
+3PQ4YQ9XV54,1004-1,Sheer Curtain,CozyHaven,White,34.88,L
+4DA2QM4VC71,1004-1,Linen Bed Sheet,LuxeLiving,Gray,183.37,M
+3PX2RJ1RY98,1004-1,Fitted Bed Sheet,LuxeLiving,Navy,125.79,S
+1KT1CG4EU68,1004-1,Embossed Quilt Cover,LuxeLiving,Beige,49.5,M
+9Y46P59HU11,1004-1,Printed Curtain,CozyHaven,White,171.18,L
+9KY0Y40XF72,1004-1,Linen Quilt Cover,ArtisanHome,Natural,313.12,M
+8C58TU5PE76,1004-1,Checked Quilt Cover,RusticCharm,Black,135.47,S
+9U13KC2FP38,1004-1,Abstract Cushion Cover,CozyHaven,Multicolor,241.28,M
+3DV0EA6HX07,1004-1,Industrial Table Lamp,ArtisanHome,Gray,100.5,M
+3UQ6JC1FJ55,1004-1,Ceramic Table Lamp,RusticCharm,Gray,287.82,L
+2K90F96PU95,1004-1,Marble Table Lamp,RusticCharm,Gray,273.68,M
+8YX4VY7CV78,1004-1,Metal Table Lamp,EvergreenDecor,Silver,72,XL
+2HM8QV5KF10,1004-1,Rustic Candle Holder,ModernNest,Brown,237.85,XL
+1W01T69JE65,1004-1,Wooden Candle Holder,LuxeLiving,Silver,9.89,M
+3GV7G81TW32,1004-1,Ceramic Candle Holder,ModernNest,White,180.02,M
+8FX4N95KR37,1004-1,Succulent Plant Set,ArtisanHome,Assorted,246.38,Free
+4CF9AF4XA40,1004-1,Boho Wall Tapestry,RusticCharm,Beige,23.96,L
+8K16YR8YR84,1004-1,Minimalist Wall Tapestry,EvergreenDecor,Gray,364.42,L
+7D27VR1JU52,1004-1,Contemporary Wall Tapestry,EvergreenDecor,Teal,90.63,XL
+6YN6MU7XN42,1004-1,Vintage Wall Hook,RusticCharm,Brass,9.87,M
+5H50PH9ER98,1004-1,Modern Wall Hook,RusticCharm,Silver,18.57,XL
+6DP7HG3CQ11,1004-1,Minimalist Wall Decal,RusticCharm,White,380.1,Free
+7E76VV3JA79,1004-1,Glass Vase Set,RusticCharm,Green,307.15,Free
+9T24WQ4AW08,1004-1,Vintage Tray Set,CozyHaven,Gray,316.35,Free
+5DR1M38YW11,1009-1,Stainless Steel Water Bottle,GreenHome,Silver,170.69,L
+1JC5W24PJ52,1009-1,Non-Stick Cookware Set,Earthy Essentials,Gray,28.95,Free
+7W49Q79AH15,1009-1,Aromatherapy Candles,Earthy Essentials,Ivory,313.79,Free
+5J15H38WH46,1009-1,Cloth Napkin Set,EcoLiving,Beige,70.24,Free
+1FV3NC3ND01,1009-1,Reusable Silicone Food Storage Bags,Nature's Way,Clear,146.42,M
+3KK7C45QD90,1009-1,Reusable Silicone Baking Cups,Earthy Essentials,Multicolor,147.38,M
+3RP5J00EF93,1009-1,Wooden Salad Bowl Set,Sustainable Solutions,Brown,243.62,Free
+3N11EW5UN36,1009-1,Silicone Stretch Wrap Set,Earthy Essentials,Clear,209.19,Free
+1KY4KP6FT10,1009-1,Glass Storage Jar Set,EcoLiving,Clear,121.32,Free
+2G41RK5AM89,1009-1,Glass Spray Bottle Set,Earthy Essentials,Clear,7.78,Free
+8G91U37YX34,1009-1,Eco-Friendly Reusable Cups,GreenHome,White,130.32,Free
+8KF3W63XT06,1009-1,Stainless Steel Drinking Bottle,Sustainable Solutions,Silver,287.91,Free
+9E26TM8WE61,1009-1,Glass Meal Prep Bowl Set,Nature's Way,Clear,120.45,Free
+3N65UG9YV09,1009-1,Stainless Steel Measuring Spoon Set,Earthy Essentials,Silver,278.17,Free
+3KV3WC0CU51,1009-1,Bamboo Drawer Organizer Tray,PureBamboo,Natural,245.33,M
