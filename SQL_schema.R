@@ -203,6 +203,26 @@ SET review_date = DATE('1970-01-01', review_date || ' day');
 # Get a list of tables from the database that we already created
 dbListTables(project)
 
+<<<<<<< HEAD
+=======
+# Update the order_date in the orders table
+dbExecute(project, "
+UPDATE orders
+SET order_date = DATE('1970-01-01', order_date || ' day');
+")
+
+# Update the review_date in the review table
+dbExecute(project, "
+UPDATE review
+SET review_date = DATE('1970-01-01', review_date || ' day');
+")
+
+# Get a list of tables from the database that we already created
+dbListTables(project)
+
+
+
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 # Check email format
 email_check <- dbGetQuery(project, "
     SELECT * 

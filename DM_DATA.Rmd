@@ -27,7 +27,10 @@ CATEGORY <- read_csv("CATEGORY.csv")
 
 ## Order
 ```{r}
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 # Ensure the data in the date format
 ORDER$order_date <- as.Date(ORDER$order_date, format="%m/%d/%Y")
 # Deal with ORDER product id
@@ -36,12 +39,18 @@ ORDER$product_id <- sample(PRODUCT$product_id, nrow(ORDER), replace = TRUE)
 
 ## Transaction
 ```{r}
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 # Deal with transaction date and order date
 # Combine two sheets
 ORDER_TRANSACTION <- merge(ORDER, TRANSACTION, by = "order_id")
 
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 # Defining Date function
 check_order_date <- function(order_date) {
   # Assign the date within the same day or up to 2 days after the order date.
@@ -105,7 +114,10 @@ PRODUCT <- PRODUCT %>%
 
 ## Customer address
 ```{r}
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 # Create new table for address
 CUSTOMER_address <- CUSTOMER %>% select(customer_id,country:city)
 
@@ -121,7 +133,10 @@ postcode_func <- function(n=1) {
   letters <- toupper(LETTERS[1:26])
   numbers <- 0:9
   
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
   # Function of generate the first and second parts
   generate_first <- function() {
     # The first part(1-2 letters, 1-2 numbers)
@@ -129,7 +144,11 @@ set.seed(123)
     part2 <- paste0(sample(numbers, sample(1:2, 1), replace = TRUE), collapse = "")
     return(paste0(part1, part2))
   }
+<<<<<<< HEAD
   set.seed(123)
+=======
+  
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
   generate_second <- function() {
     # The second part(1 number, 2 letters)
     part3 <- paste0(sample(numbers, 1), collapse = "")
@@ -150,7 +169,10 @@ CUSTOMER_address$postcode[missing_indices] <- postcode_func(length(missing_indic
 
 ## Customer
 ```{r}
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 # Email format
 ## Defining Email Format checking function
 check_email_format <- function(emails) {
@@ -169,7 +191,10 @@ CUSTOMER$caddress_id <- CUSTOMER_address$caddress_id
 CUSTOMER <- CUSTOMER %>% select(customer_id:membership, caddress_id)
 
 # generate gender and age
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 CUSTOMER$gender <- sample(c("Male","Female"),nrow(CUSTOMER),replace = TRUE)
 CUSTOMER$age <- round(pmin(pmax(rnorm(nrow(CUSTOMER), mean = 40, sd = 15), 15), 65))
 
@@ -203,7 +228,11 @@ missing_indices2 <- which(is.na(SHIPMENT_address$postcode))
 SHIPMENT_address$postcode[missing_indices2] <- postcode_func(length(missing_indices2))
 
 SHIPMENT <- SHIPMENT %>% select(shipment_id:shipment_status, saddress_id)
+<<<<<<< HEAD
 set.seed(123)
+=======
+
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 SHIPMENT$order_id <- sample(ORDER$order_id, nrow(SHIPMENT), replace = FALSE)
 ```
 
@@ -225,14 +254,20 @@ SUPPLIER_address$postcode[missing_indices3] <- postcode_func(length(missing_indi
 
 SUPPLIER <- SUPPLIER %>% select(supplier_id:supplier_phone,supaddress_id)
 
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 SUPPLY$product_id <- sample(PRODUCT$product_id, nrow(SUPPLY), replace = TRUE)
 
 ```
 
 ## Review
 ```{r}
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 # Deal with review
 ## Add order id, the consist product id, and order date
 REVIEW$order_id <- ORDER$order_id
@@ -242,7 +277,10 @@ REVIEW_ORDER <- merge(REVIEW, ORDER, by = "order_id")
 REVIEW_TRANSACTION <- merge(REVIEW_ORDER, TRANSACTION, by = "order_id")
 
 ## Defining review date function
+<<<<<<< HEAD
 set.seed(123)
+=======
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 check_review_date <- function(transaction_date) {
   # Assign the date within the same day or up to 2 days after the order date.
   delay <- sample(0:7, 1) 
@@ -268,7 +306,13 @@ ORDER <- merged_O_T %>% select("order_id", "product_id", "quantity", "customer_i
 
 ## Sampling from Data
 ```{r}
+<<<<<<< HEAD
 customer_sub <- CUSTOMER[1:200, ]
+=======
+set.seed(123)
+customer_400 <- CUSTOMER %>% sample_n(400)
+customer_sub <- customer_400[1:200, ]
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 customer_address_sub <- CUSTOMER_address %>% filter(caddress_id %in% customer_sub$caddress_id)
 order_sub <- ORDER %>% filter(customer_id %in% customer_sub$customer_id)
 review_sub <- REVIEW %>% filter(order_id %in% order_sub$order_id)
@@ -285,7 +329,11 @@ supply_sub <- SUPPLY %>% filter(product_id %in% product_sub$product_id)
 
 # Data for validation
 ```{r}
+<<<<<<< HEAD
 customer_val <- CUSTOMER[201:400,]
+=======
+customer_val <- customer_400[201:400,]
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 customer_address_val <- CUSTOMER_address %>% filter(caddress_id %in% customer_val$caddress_id)
 order_val <- ORDER %>% filter(customer_id %in% customer_val$customer_id)
 review_val <- REVIEW %>% filter(order_id %in% order_val$order_id)
@@ -310,7 +358,11 @@ write_csv(order_sub, "ORDERS1.csv")
 write_csv(review_sub, "REVIEW1.csv")
 write_csv(shipment_sub, "SHIPMENT1.csv")
 write_csv(supply_sub, "SUPPLY1.csv")
+<<<<<<< HEAD
 write_csv(supplier_sub, "SUPPLIER1.csv")
+=======
+write_csv(supplier_sub, "SUPLLIER1.csv")
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
 write_csv(product_sub, "PRODUCT1.csv")
 write_csv(supplier_address_sub, "SUPPLIER_address1.csv")
 write_csv(customer_address_sub, "CUSTOMER_address1.csv")
@@ -336,4 +388,8 @@ write_csv(customer_address_val, "CUSTOMER_address2.csv")
 write_csv(shipment_address_val, "SHIPMENT_address2.csv")
 
 
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> f2a3ba7059a12de285e7516a8f5800c4f04bb08a
