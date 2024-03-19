@@ -120,7 +120,11 @@ CUSTOMER_address <- CUSTOMER_address %>% select(caddress_id, country:city)
 postcode_func <- function(n=1) {
   letters <- toupper(LETTERS[1:26])
   numbers <- 0:9
+<<<<<<< HEAD:DM DATA.Rmd
   
+=======
+
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 set.seed(123)
   # Function of generate the first and second parts
   generate_first <- function() {
@@ -129,6 +133,10 @@ set.seed(123)
     part2 <- paste0(sample(numbers, sample(1:2, 1), replace = TRUE), collapse = "")
     return(paste0(part1, part2))
   }
+<<<<<<< HEAD:DM DATA.Rmd
+=======
+
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
   set.seed(123)
   generate_second <- function() {
     # The second part(1 number, 2 letters)
@@ -161,10 +169,17 @@ valid_emails <- check_email_format(CUSTOMER$email)
 
 ## Print the amount of invalid email address
 print(sum(!valid_emails))
+<<<<<<< HEAD:DM DATA.Rmd
 
 # customer address id
 CUSTOMER$caddress_id <- CUSTOMER_address$caddress_id
 
+=======
+
+# customer address id
+CUSTOMER$caddress_id <- CUSTOMER_address$caddress_id
+
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 # arrange customer table
 CUSTOMER <- CUSTOMER %>% select(customer_id:membership, caddress_id)
 
@@ -207,6 +222,10 @@ set.seed(123)
 SHIPMENT$order_id <- sample(ORDER$order_id, nrow(SHIPMENT), replace = FALSE)
 ```
 
+set.seed(123)
+SHIPMENT$order_id <- sample(ORDER$order_id, nrow(SHIPMENT), replace = FALSE)
+```
+
 ## SUPPLIER
 ```{r}
 # Create new table for address
@@ -227,7 +246,10 @@ SUPPLIER <- SUPPLIER %>% select(supplier_id:supplier_phone,supaddress_id)
 
 set.seed(123)
 SUPPLY$product_id <- sample(PRODUCT$product_id, nrow(SUPPLY), replace = TRUE)
+<<<<<<< HEAD:DM DATA.Rmd
 
+=======
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 ```
 
 ## Review
@@ -253,14 +275,16 @@ REVIEW_TRANSACTION$review_date <- sapply(REVIEW_TRANSACTION$transaction_date, ch
 ## Update review
 REVIEW <- REVIEW_TRANSACTION[, c("review_id","review_date","reviews","product_id","ratings", "order_id")]
 REVIEW$review_date <- as.Date(REVIEW$review_date, origin = "1970-01-01")
-
 ```
 
 ## Removed Transaction
 ```{r}
 merged_O_T <- merge(ORDER, TRANSACTION, by = "order_id")
 ORDER <- merged_O_T %>% select("order_id", "product_id", "quantity", "customer_id", "order_date", "transaction_status", "transaction_method")
+<<<<<<< HEAD:DM DATA.Rmd
 
+=======
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 ```
 
 
@@ -268,7 +292,14 @@ ORDER <- merged_O_T %>% select("order_id", "product_id", "quantity", "customer_i
 
 ## Sampling from Data
 ```{r}
+<<<<<<< HEAD:DM DATA.Rmd
 customer_sub <- CUSTOMER[1:700, ]
+=======
+customer_sub <- CUSTOMER[1:200, ]
+set.seed(123)
+customer_400 <- CUSTOMER %>% sample_n(400)
+customer_sub <- customer_400[1:200, ]
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 customer_address_sub <- CUSTOMER_address %>% filter(caddress_id %in% customer_sub$caddress_id)
 order_sub <- ORDER %>% filter(customer_id %in% customer_sub$customer_id)
 review_sub <- REVIEW %>% filter(order_id %in% order_sub$order_id)
@@ -280,12 +311,20 @@ category_parent_sub <- CATEGORY_parent
 supplier_sub <- SUPPLIER
 supplier_address_sub <- SUPPLIER_address
 supply_sub <- SUPPLY %>% filter(product_id %in% product_sub$product_id)
+<<<<<<< HEAD:DM DATA.Rmd
 
+=======
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 ```
 
 # Data for validation
 ```{r}
+<<<<<<< HEAD:DM DATA.Rmd
 customer_val <- CUSTOMER[701:1000,]
+=======
+customer_val <- CUSTOMER[201:400,]
+customer_val <- customer_400[201:400,]
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 customer_address_val <- CUSTOMER_address %>% filter(caddress_id %in% customer_val$caddress_id)
 order_val <- ORDER %>% filter(customer_id %in% customer_val$customer_id)
 review_val <- REVIEW %>% filter(order_id %in% order_val$order_id)
@@ -297,7 +336,10 @@ category_parent_val <- CATEGORY_parent
 supplier_val <- SUPPLIER
 supplier_address_val <- SUPPLIER_address
 supply_val <- SUPPLY %>% filter(product_id %in% product_val$product_id)
+<<<<<<< HEAD:DM DATA.Rmd
 
+=======
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 ```
 
 ```{r}
@@ -311,12 +353,19 @@ write_csv(review_sub, "REVIEW1.csv")
 write_csv(shipment_sub, "SHIPMENT1.csv")
 write_csv(supply_sub, "SUPPLY1.csv")
 write_csv(supplier_sub, "SUPPLIER1.csv")
+<<<<<<< HEAD:DM DATA.Rmd
+=======
+write_csv(supplier_sub, "SUPLLIER1.csv")
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 write_csv(product_sub, "PRODUCT1.csv")
 write_csv(supplier_address_sub, "SUPPLIER_address1.csv")
 write_csv(customer_address_sub, "CUSTOMER_address1.csv")
 write_csv(shipment_address_sub, "SHIPMENT_address1.csv")
+<<<<<<< HEAD:DM DATA.Rmd
 
 
+=======
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
 ```
 
 # Data for validation
@@ -334,6 +383,10 @@ write_csv(product_val, "PRODUCT2.csv")
 write_csv(supplier_address_val, "SUPPLIER_address2.csv")
 write_csv(customer_address_val, "CUSTOMER_address2.csv")
 write_csv(shipment_address_val, "SHIPMENT_address2.csv")
+<<<<<<< HEAD:DM DATA.Rmd
 
 
 ```
+=======
+```
+>>>>>>> 07701479b38d22326241bdfe1456235d6491048e:DM_DATA.Rmd
