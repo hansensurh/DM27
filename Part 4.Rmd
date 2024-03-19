@@ -1,0 +1,732 @@
+---
+title: "Part 4"
+author: "paschal"
+date: "2024-03-12"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# import libraries
+```{r setup, include=FALSE}
+library(tidyverse)
+library(tidyr)
+library(ggplot2)
+library(readr)
+library(RSQLite)
+library(DBI)
+library(lubridate)
+library(gridExtra)
+```
+
+# connect to database
+```{r}
+project <- dbConnect(RSQLite::SQLite(),"project.db") 
+```
+
+# view database contents
+```{r}
+dbtables <- dbListTables(project)
+print(dbtables)
+
+dbListFields(project, "supplier") # change to view each table 
+```
+
+# 1. IMPORT DATASET
+```{r}
+sales_df <- dbGetQuery(project, 
+                        "SELECT 
+                          o.order_id,
+                          o.order_date,
+                          o.customer_id,
+                          c.age,
+                          c.gender,
+                          c.membership,
+                          o.product_id,
+                          o.quantity,
+                          s.shipment_id,
+                          s.shipment_method,
+                          s.shipment_status,
+                          p.product_name,
+                          p.unit_price,
+                          p.brand_name,
+                          p.color,
+                          p.size,
+                          cat.category_id,
+                          cat.category_name,
+                          r.ratings
+                      FROM 
+                          orders o
+                      JOIN 
+                          shipment s ON o.order_id = s.order_id
+                      JOIN 
+                          product p ON o.product_id = p.product_id
+                      JOIN 
+                          category cat ON p.category_id = cat.category_id
+                      JOIN 
+                          customer c ON o.customer_id = c.customer_id
+                      LEFT JOIN 
+                          review r ON p.product_id = r.product_id
+                      ORDER BY 
+                          o.order_date;"
+                      )
+```
+
+--------------------------------------------------------------------------------
+
+# 2. DATA CLEANING AND PREPARATION
+
+```{r}
+# view data frame 
+summary(sales_df)
+str(sales_df)
+
+# convert dates
+sales_df <- sales_df %>%
+  mutate(order_date = as.Date(order_date))
+
+sales_df <- sales_df %>%
+  mutate(Month = month(order_date, label = TRUE, abbr = TRUE))
+
+# create total price field
+sales_df <- sales_df%>%
+  mutate(total_price = (unit_price * quantity))
+
+# convert character fields to factors
+sales_df <- sales_df %>%
+  mutate(across(where(is.character), factor))
+
+# create YearMonth field
+sales_df <- sales_df %>%
+  mutate(YearMonth = format(as.Date(order_date), "%Y-%m"))
+
+# check fields
+str(sales_df)
+```
+
+# segment customers by age
+```{r}
+sales_df <- sales_df %>%
+  mutate(Generation = case_when(
+    age >= 15 & age <= 25 ~ "Gen Z",
+    age >= 26 & age <= 40 ~ "Millennials",
+    age >= 41 & age <= 55 ~ "Gen X",
+    age >= 56 & age <= 65 ~ "Baby Boomers",
+    TRUE ~ "Other"
+  ))
+
+# convert to factor variable
+sales_df <- sales_df %>%
+  mutate(Generation = as.factor(Generation))
+
+str(sales_df$Generation)
+```
+
+# filter orders from last 6 months
+```{r}
+last_six_months <- max(sales_df$order_date) %m-% months(6)
+
+# Filter the dataframe for the last 6 months
+recent_sales <- sales_df %>%
+  filter(order_date > last_six_months)
+```
+
+--------------------------------------------------------------------------------
+
+# 3. TIME SERIES AND TREND ANALYSIS
+
+# 3.1 sales trend analysis
+```{r}
+sales_trend <- recent_sales %>%
+  group_by(order_date) %>%
+  summarise(total_sales = sum(total_price))
+
+ggplot(sales_trend, aes(x = order_date, y = (total_sales/1000))) +
+  geom_line(color = "purple") +
+  labs(title = "Sales Trend in Last 6 months(in thousands)", x = "Order Date", y = "Total Sales")
+
+```
+
+# 3.2 order volume trend analysis
+```{r}
+order_volume <- recent_sales %>%
+  group_by(order_date) %>%
+  summarise(total_orders = sum(quantity))
+
+ggplot(order_volume, aes(x = order_date, y = total_orders)) +
+  geom_line(color = "green") +
+  labs(title = "Order Trend in Last 6 Months", x = "Order Date", y = "Number of Orders")
+
+```
+
+# 3.3 monthly order volume analysis 
+```{r}
+monthly_order_volume <- recent_sales %>%
+  group_by(YearMonth) %>%
+  summarise(monthly_orders = quantity)
+
+ggplot(monthly_order_volume, aes(x = YearMonth, y = monthly_orders)) +
+  geom_col(fill = "darkgreen") + 
+  labs(title = "Monthly Sales for the Last 6 Months", x = "Month", y = "Total Sales") +
+  theme_minimal()
+```
+In the last 6 months, February had the highest volume of orders, and August the lowest.
+
+# 3.4 monthly sales analysis 
+```{r}
+avg_monthly_sales <- recent_sales %>%
+  group_by(YearMonth) %>%
+  summarise(sales = mean(total_price))
+
+ggplot(avg_monthly_sales, aes(x = YearMonth, y = sales)) +
+  geom_col(fill = "darkblue") +
+  labs(title = "Seasonal Sales Patterns", x = "Month", y = "Average Sales") +
+  theme_minimal()
+
+```
+The highest sales were recorded for the months of February and October. December and September on the other hand had considerably low sales.
+
+# 3.5 popular categories
+```{r}
+top_categories <- recent_sales %>%
+  group_by(category_name) %>%
+  summarise(total_sales = sum(total_price),
+            total_orders = n_distinct(order_id),
+            .groups = 'drop') %>%
+  arrange(desc(total_sales))
+
+# visualize by sales 
+ggplot(top_categories, aes(x = reorder(category_name, total_sales), y = (total_sales/1000), fill = category_name)) +
+  geom_col() +
+  coord_flip() + 
+  labs(title = "Total Sales by Category", x = "Category", y = "Total Sales (in thousands)") +
+  theme_minimal() +
+  theme(legend.position = "none", axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+# visualize by number of orders
+ggplot(top_categories, aes(x = reorder(category_name, total_orders), y = total_orders, fill = category_name)) +
+  geom_col() +
+  coord_flip() + 
+  labs(title = "Number of Orders by Category in the Last 6 Months", x = "Category", y = "Order Count") +
+  theme_minimal() +
+  theme(legend.position = "none", axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+```
+Electronics generated the highest revenue in the last 6 months, while Books and Clothing had the strongest orders. Pet supplies performed poorly in both sales and orders.
+
+# 3.6 product demand trend
+```{r}
+product_demand <- recent_sales %>%
+  group_by(YearMonth, product_name) %>%
+  summarise(total_sales = sum(total_price),
+            total_orders = sum(quantity)) %>%
+  arrange((YearMonth))
+
+# check top performers last month by sales
+latest_month <- max(product_demand$YearMonth)
+top_sales <- filter(product_demand, YearMonth == latest_month) %>%
+  top_n(5, total_sales) %>%
+  arrange(desc(total_sales))
+
+ggplot(top_sales, aes(x = reorder(product_name, total_sales), y = total_sales)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = paste("Top 5 Products by Sales in", latest_month), 
+       x = "Product Name", 
+       y = "Total Sales") +
+  coord_flip() +  
+  theme_minimal() +  
+  theme(legend.position = "none") 
+
+# check low performers by sales 
+low_sales <- filter(product_demand, YearMonth == latest_month) %>%
+  slice_min(order_by = total_sales, n = 5) %>%
+  arrange(desc(total_sales))
+
+ggplot(low_sales, aes(x = reorder(product_name, total_sales), y = total_sales)) +
+  geom_bar(stat = "identity", fill = "red") +
+  labs(title = paste("Lowest 5 Products by Sales in", latest_month), x = "Product Name", y = "Total Sales") +
+  coord_flip() +
+    theme_minimal() +  
+  theme(legend.position = "none") 
+
+# top performers by order
+top_orders <- filter(product_demand, YearMonth == latest_month) %>%
+  top_n(5, total_orders) %>%
+   arrange(desc(total_orders))
+
+ggplot(top_orders, aes(x = reorder(product_name, total_orders), y = total_orders)) +
+  geom_bar(stat = "identity", fill = "lightgreen") +
+  labs(title = paste("Top 5 Products by Orders in", latest_month), x = "Product Name", y = "Total Sales") +
+  coord_flip() +
+   theme_minimal() +  
+  theme(legend.position = "none") 
+
+# worst products by order
+low_orders <- filter(product_demand, YearMonth == latest_month) %>%
+  slice_min(order_by = total_orders, n = 5) %>%
+  arrange(desc(total_orders))
+
+ggplot(low_orders, aes(x = reorder(product_name, total_orders), y = (total_orders/1000)) +
+  geom_bar(stat = "identity", fill = "orange") +
+  labs(title = paste("Top 5 Products by Orders in", latest_month), x = "Product Name", y = "Total Sales(in thousands)") +
+  coord_flip() +
+   theme_minimal() +  
+  theme(legend.position = "none") 
+
+```
+In the last month, Smart Ring generated more than GBP 30000 in sales, while Cargo Joggers had the highest orders. 
+By contrast, Midnight Serenade had the lowest sales, and Detoxifying Hydrating Mask was the least popular product among customers.
+
+# 3.7 brand performance analysis
+```{r}
+brand_performance <- recent_sales %>%
+  group_by(YearMonth, brand_name) %>%
+  summarise(total_sales = sum(total_price), .groups = 'drop')
+
+top_brands <- brand_performance %>%
+  group_by(brand_name) %>%
+  summarise(total_brand_sales = (sum(total_sales)/1000), .groups = 'drop') %>%
+  top_n(5, total_brand_sales) %>%
+  arrange(desc(total_brand_sales))
+
+# Visualizing the top brands and their sales
+ggplot(top_brands, aes(x = reorder(brand_name, -total_brand_sales), y = total_brand_sales, fill = brand_name)) +
+  geom_col() +
+  labs(title = "Top 5 Brands by Total Sales", x = "Brand", y = "Total Sales (in thousands)") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set3") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
+```
+TechElite was by far the most popular brand among customers, with sales exceeding GBP 150,000. Other popular brands were FlexWind, and EvergreenDecor. 
+
+# 3.8 sentiment analysis by product ratings 
+```{r}
+top_rated_products <- recent_sales %>%
+  group_by(product_name, category_name) %>%
+  summarise(average_rating = mean(ratings, na.rm = TRUE), .groups = 'drop') %>%
+  arrange(desc(average_rating)) %>%
+  slice_max(order_by = average_rating, n = 10)
+
+# visualize top 10 products with highest ratings
+ggplot(top_rated_products, aes(x = reorder(product_name, average_rating), y = average_rating, fill = category_name)) +
+  geom_col() +
+  coord_flip() + 
+  labs(title = "Highest Rated Products in the Last 6 Months", x = "Product Name", y = "Average Rating") +
+  scale_fill_brewer(palette = "Set3", name = "Category") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.title = element_text(size = 12), legend.text = element_text(size = 10)) 
+
+```
+
+--------------------------------------------------------------------------------
+
+# 4. SHIPPING EFFICIENCY ANALYSIS
+
+# 4.1 shipping efficiency
+```{r}
+shipping_efficiency <- recent_sales %>%
+  group_by(shipment_status) %>%
+  summarise(shipment = n(), .groups = 'drop') %>%
+  mutate(total_shipment = sum(shipment),
+         proportion = shipment / total_shipment * 100)
+
+ggplot(shipping_efficiency, aes(x = reorder(shipment_status, -proportion), y = proportion, fill = shipment_status)) +
+  geom_col() +
+  scale_fill_brewer(palette = "Set3") +  
+  labs(title = "Proportion of Orders by Shipment Status",
+       x = "Shipment Status",
+       y = "Proportion (%)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
+```
+
+# 4.2 shipping method efficiency analysis (show top 5)
+```{r}
+shipmethod_efficiency <- recent_sales %>%
+  group_by(shipment_method) %>%
+  summarise(delivery_success = ifelse(shipment_status == "delivered", TRUE, FALSE),
+            delivered = sum(delivery_success),
+            total_shipments = n(),
+            efficiency = delivered / total_shipments * 100) %>%
+  arrange(-efficiency)
+
+ggplot(shipmethod_efficiency, aes(x = reorder(shipment_method, efficiency), y = efficiency)) + geom_col(fill = "steelblue") +
+  coord_flip() +  
+  labs(title = "Efficiency of Shipping Methods",
+       x = "Shipping Method",
+       y = "Efficiency (%)") +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::percent_format())
+```
+About 35% of the entire orders shipped in the last 6 months were either delayed or returned, a worrying statistic for the company. Further analysis showed that the priority, ground and standard shipping methods were highly inefficient, and thus contributed negatively to the company's shipping efficiency.
+
+--------------------------------------------------------------------------------
+
+# 5. CUSTOMER SEGMENTATION ANALYSIS
+
+# 5.1 segmentation by age: proportion for entire database
+```{r}
+prop_by_gen <- sales_df %>%
+  group_by(Generation) %>%
+  summarise(total = n(), .groups = 'drop') %>%
+  mutate(total_dataset = sum(total), 
+         proportion = total / total_dataset) %>%
+  select(-total_dataset) %>%
+  arrange(desc(total))
+
+prop_by_gen$label <- scales::percent(prop_by_gen$proportion)
+ggplot(prop_by_gen, aes(x = "", y = proportion, fill = Generation)) +
+  geom_bar(width = 1, stat = "identity", color = "white") +
+  coord_polar("y", start = 0) +
+  labs(title = "Customer Base by Generation", x = "", y = "") +
+  theme_void() +
+  theme(legend.title = element_blank(), legend.position = "right") +
+  geom_text(aes(label = label), position = position_stack(vjust = 0.5)) +
+  scale_fill_brewer(palette = "Pastel1")
+```
+Millennials make up the majority of the entire customer base at 35.7%, closely followed by Gen X at 26.8%. The rest of the customer base is made up by Gen Z, 19.7%, and Baby Boomers, 17.8%.
+
+# 5.2 customer segmentation by age. sales by generation last 6 months
+```{r}
+sales_by_generation <- recent_sales %>%
+  group_by(Generation) %>%
+  summarise(total_sales = sum(total_price),
+            total_orders = n(), .groups = 'drop') %>%
+  arrange(desc(total_sales))
+
+ggplot(sales_by_generation, aes(x = Generation, y = (total_sales/1000), fill = Generation)) +
+  geom_col() +
+  labs(title = "Total Sales by Generational Group(in thousands)", x = "Generational Group", y = "Total Sales (in thousands)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+Millennials generated the most revenue in sales within the last 6 months, further cementing their place as the company's most important customer base. They are closely followed by yhe Gen X. By contrast, Baby Boomers generated the lowest sales for the company. 
+
+# 5.3 product popularity by generation
+```{r}
+popular_products_by_generation <- recent_sales %>%
+  group_by(Generation, product_name) %>%
+  summarise(total_orders = n()) %>%
+  slice_max(order_by = total_orders, n = 1, with_ties = FALSE) %>%
+  arrange(Generation, desc(total_orders))
+
+ggplot(popular_products_by_generation, aes(x = Generation, y = total_orders, fill = product_name)) +
+  geom_col(show.legend = TRUE) + 
+  labs(title = "Most Popular Product by Generation",
+       x = "Generation",
+       y = "Total Orders") +
+  scale_fill_viridis_d(begin = 0.5, end = 1, direction = 1, name = "Product Name") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), 
+        legend.title = element_text(size = 10), 
+        legend.text = element_text(size = 8)) +
+  guides(fill = guide_legend(title = "Top Products", title.position = "top", label.position = "right"))
+
+```
+Handheld Gaming Console was the most popular product among Millennials and Gen X, while the other generations had very different shopping preferences.
+
+# 5.4 brand popularity by generation
+```{r}
+popular_brands_by_generation <- recent_sales %>%
+  group_by(Generation, brand_name) %>%
+  summarise(total_orders = n()) %>%
+  slice_max(order_by = total_orders, n = 1, with_ties = FALSE) %>%
+  arrange(Generation, desc(total_orders))
+
+ggplot(popular_brands_by_generation, aes(x = Generation, y = total_orders, fill = brand_name)) +
+  geom_col(show.legend = TRUE) + 
+  labs(title = "Most Popular Brand by Generation",
+       x = "Generation",
+       y = "Total Orders") +
+  scale_fill_viridis_d(begin = 0.5, end = 1, direction = 1, name = "Brand Name") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), 
+        legend.title = element_text(size = 10), 
+        legend.text = element_text(size = 8)) +
+  guides(fill = guide_legend(title = "Top Brands", title.position = "top", label.position = "right"))
+```
+The different generatioins showed varying brand preferences. Vogue Couture was more popular among the Millennials, Everglow Publications among Gen Z, and Whispering Willow Publishing among Gen X. Enchant was the most popular brand among Baby Boomers.
+ 
+# customer segmentation by gender
+
+# 5.5 total proprtions by gender
+```{r}
+prop_by_gender <- sales_df %>%
+  group_by(gender) %>%
+  summarise(total = n(), .groups = 'drop') %>%
+  mutate(total_dataset = sum(total), 
+         proportion = total / total_dataset) %>%
+  select(-total_dataset) %>%
+  arrange(desc(total))
+
+prop_by_gender$label <- scales::percent(prop_by_gender$proportion)
+ggplot(prop_by_gender, aes(x = "", y = proportion, fill = gender)) +
+  geom_bar(width = 1, stat = "identity", color = "white") +
+  coord_polar("y", start = 0) +
+  labs(title = "Customer Base by Gender", x = "", y = "") +
+  theme_void() +
+  theme(legend.title = element_blank(), legend.position = "right") +
+  geom_text(aes(label = label), position = position_stack(vjust = 0.5)) +
+  scale_fill_brewer(palette = "Pastel1")
+```
+The customer base analyzed consists of 53.1% female and 46.95% male.
+
+# 5.6 customer segmentation by gender. sales by gender last 6 months
+```{r}
+all_sales <- sum(recent_sales$total_price)
+
+sales_by_gender <- recent_sales %>%
+  group_by(gender) %>%
+  summarise(
+    total_sales = sum(total_price),
+    total_orders = n(),
+    sales_proportion = total_sales / all_sales * 100,
+    .groups = 'drop'
+  ) %>%
+  arrange(desc(total_sales))
+
+ggplot(sales_by_gender, aes(x = gender, y = (total_sales/1000), fill = gender)) +
+  geom_col() +
+  labs(title = "Total Sales by Gender", x = "Gender Group", y = "Total Sales (in thousands)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+With roughly 500,000 in sales, women were the biggest spenders, providing about 61% of the total sales revenue for the company. On the other hand, men generated about 39% of the total sales revenue.  
+
+# 5.7 product popularity by gender
+```{r}
+top_products_by_gender <- recent_sales %>%
+  group_by(gender, product_name) %>%
+  summarise(total_sales = sum(total_price), .groups = 'drop') %>%
+  arrange(gender, desc(total_sales)) %>%
+  group_by(gender) %>%
+  slice_max(order_by = total_sales, n = 3) %>%
+  ungroup()
+
+plot_male_product <- top_products_by_gender %>%
+  filter(gender == "Male") %>%
+  ggplot(aes(x = reorder(product_name, total_sales), y = (total_sales/1000))) +
+    geom_col(fill = "skyblue") +
+    labs(title = "Top 3 Products by Total Sales for Male",
+         x = "Total Sales(in thousands)",
+         y = "Product Name") +
+    theme_minimal() +
+    theme(legend.position = "none")
+
+plot_female_product <- top_products_by_gender %>%
+  filter(gender == "Female") %>%
+  ggplot(aes(x = reorder(product_name, total_sales), y = (total_sales/1000))) +
+    geom_col(fill = "pink") +
+    labs(title = "Top 3 Products by Total Sales for Female",
+         x = "Total Sales(in thousands)",
+         y = "Product Name") +
+    theme_minimal() +
+    theme(legend.position = "none")
+
+grid.arrange(plot_male_product, plot_female_product, ncol = 1)
+
+```
+Premium Balance Board had the strongest sales among men, while Smart Thermostat was the mtop performing product among women.
+
+# 5.8 brand popularity by gender (top 3)
+```{r}
+top_brand_by_gender <- recent_sales %>%
+  group_by(gender, brand_name) %>%
+  summarise(total_sales = sum(total_price), .groups = 'drop') %>%
+  arrange(gender, desc(total_sales)) %>%
+  group_by(gender) %>%
+  slice_max(order_by = total_sales, n = 3) %>%
+  ungroup()
+
+plot_male_brand <- top_brand_by_gender %>%
+  filter(gender == "Male") %>%
+  ggplot(aes(x = reorder(brand_name, total_sales), y = (total_sales/1000))) +
+    geom_col(fill = "lightblue") +
+    labs(title = "Top 3 Brands by Total Sales for Male",
+         x = "Total Sales(in thousands)",
+         y = "Brand Name") +
+    theme_minimal() +
+    theme(legend.position = "none")
+
+plot_female_brand <- top_brand_by_gender %>%
+  filter(gender == "Female") %>%
+  ggplot(aes(x = reorder(brand_name, total_sales), y = (total_sales/1000))) +
+    geom_col(fill = "pink") +
+    labs(title = "Top 3 Brands by Total Sales for Female",
+         x = "Total Sales(in thousands)",
+         y = "Brand Name") +
+    theme_minimal() +
+    theme(legend.position = "none")
+
+grid.arrange(plot_male_brand, plot_female_brand, ncol = 1)
+
+```
+The different gender groups exhibited different brand preferences. TechElite for women, and ProBalance for men.
+
+# 5.9 customer segmentation by membership
+```{r}
+membership_sales <- recent_sales %>%
+  group_by(membership) %>%
+  summarise(total_sales = sum(total_price))
+
+ggplot(membership_sales, aes(x = membership, y = (total_sales/1000), fill = membership)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Sales by Membership Status", x = "Membership Status", y = "Total Sales (in thousands)", fill = "Membership") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Pastel1")
+
+```
+Our analysis also showed that in the last 6 months, registered members had significantly higher sales compared to non-registered customers. 
+
+--------------------------------------------------------------------------------
+
+# 6. INVENTORY AND TURNOVER ANALYSIS
+
+# 6.1 import dataframe for inventory and supply analysis
+```{r}
+inventory_df <- dbGetQuery(project, 
+                           "SELECT
+                            sp.supplier_id,
+                            sp.supplier_name,
+                            sp.supplier_phone,
+                            sp.supaddress_id,
+                            su.product_id,
+                            p.product_name
+                            FROM
+                            supply su
+                            JOIN
+                            supplier sp ON su.supplier_id = sp.supplier_id
+                            JOIN
+                            product p ON su.product_id = p.product_id"
+                           )
+```
+
+# 6.2 prepare inventory data for analysis
+```{r}
+# convert character fields to factors
+inventory_df <- inventory_df %>%
+  mutate(across(where(is.character), factor))
+
+str(inventory_df)
+
+```
+
+# 6.3 top suppliers
+```{r}
+top_suppliers <- inventory_df %>%
+  group_by(supplier_id, supplier_name) %>%
+  summarise(products_supplied = n_distinct(product_id),
+            total_supplies = n(), .groups = 'drop') %>%
+  arrange(desc(total_supplies)) %>%
+  top_n(5, total_supplies)
+
+ggplot(top_suppliers, aes(x = reorder(supplier_name, total_supplies), y = total_supplies)) +
+  geom_col(aes(fill = total_supplies)) +
+  coord_flip() +
+  labs(title = "Top Suppliers",
+       x = "Supplier Name",
+       y = "Number of Supplies") +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  scale_fill_gradient(low = "lightblue", high = "skyblue")
+```
+
+# 6.4 inventory turnover analysis
+```{r}
+high_turnover_products <- inventory_df %>%
+  group_by(product_id, product_name) %>%
+  summarise(total_supplies = n(), .groups = 'drop') %>%
+  arrange(desc(total_supplies)) %>%
+  slice_max(order_by = total_supplies, n = 5)
+
+ggplot(high_turnover_products, aes(x = reorder(product_name, total_supplies), y = total_supplies)) +
+  geom_col(fill = "gold") +  
+  coord_flip() +  
+  labs(title = "Top 5 Products with Highest Supplies",
+       x = "Product Name",
+       y = "Total Supplies") +
+  theme_minimal() +
+  theme(legend.position = "none") 
+```
+
+# disconnect from database
+```{r}
+dbDisconnect(project)
+```
+
+--------------------------------------------------------------------------------
+
+# 7. REPORT FOR QUARTO
+
+--------
+
+Executive Summary
+
+This report presents a detailed analysis of sales data, customer behavior and inventory management analysis from our e-commerce database over the last six months. Through meticulous examination, we have identified critical insights into sales trends, shipping efficiency, customer segmentation, and inventory turnover. These findings are intended to guide strategic marketing decisions , enhance customer satisfaction, and optimize inventory management for non-technical stakeholders.
+
+
+Data Importing and Preparation
+
+The initial steps involved connecting to the database, importing data related to orders, supplies, customers, and inventory. We carefully cleaned the data, converting dates to the appropriate format, categorizing character fields into factors, and computing essential new metrics such as total price and month of sale. This meticulous preparation laid the groundwork for insightful analysis.
+
+
+Time Series and Trend Analysis
+
+Sales and order volumes were analyzed to understand their temporal distribution. Our findings show varying pattern in total sales over time, with specific peaks suggesting increased consumer activity possibly tied to seasonal demands. Additionally, the order volume trend reveals fluctuating patterns. This can be due to varying product demands at different times of the year or changes in customer preferences. 
+
+< insert codes for visualization > $ sales and order trends 
+
+A more granular view at the monthly level highlighted fluctuations in sales and orders, indicating seasonality in consumer purchasing behavior, with	February having the highest number of orders, while September has the highest sales. This seasonality could inform future stock planning and marketing strategies to capitalize on predictable increases in consumer demand.
+
+< insert codes for visualization > $ sales and order volumes
+
+
+Product and Category Analysis
+
+Further analysis revealed key trends in product popularity, category success, and brand performance, alongside identifying underperforming products and categories. In the last month, Solar Power Bank was the most popular product, generating roughly 10000 in sales. By contrast, High-Quality Nail clippers had the lowest sales, and was the least popular product among customers. TechElite was by far the most popular brand among customers, with sales exceeding 500,000. Other popular brands were NovaTech, ArtisanHome and AeroFlex. In general, electronics products generated the highest revenue in the last 6 months, while Books and Clothing had the strongest orders. Pet supplies performed poorly in both sales and orders. 
+
+These insights are vital for informed decision-making in areas such as marketing strategies, discount planning, product scaling, and customer engagement enhancement. The analysis not only helps in optimizing the current offerings but also in predicting future consumer preferences, enabling a proactive approach to market changes.
+
+< insert codes for visualization > $ popular categories, brand performance and product demand
+
+
+Shipping Efficiency Analysis
+
+Our shipping efficiency analysis revealed significant insights into the performance of various shipping methods. By categorizing shipments based on their status (e.g., delivered, delayed), we quantified the efficiency of each shipping method. Based on our findings, about 35% of the entire orders shipped in the last 6 months were either delayed or returned, a worrying statistic for the company. Further analysis showed that the truckload, standard and priority shipping methods were highly inefficient, and thus contributed negatively to the company's shipping efficiency. This analysis is crucial for improving customer satisfaction through reliable delivery services and optimizing logistical operations.
+
+< insert codes for visualization > $ shipping methods and shipping efficiency
+
+
+Customer Segmentation Analysis
+
+Customer segmentation was conducted based on generational groups and gender, providing a nuanced understanding of our customer base. Our analyses show that Gen X make up the majority of the entire customer base at 31.3%, closely followed by Millennials at 29.4%. The rest of the customer base is made up by Baby Boomers, 22.9%, and Gen Z, 16.4%. Sales data showed distinct purchasing patterns among different generations, with Baby Boomers and Gen X demonstrating higher sales volumes. By contrast, while millenials make up a huge part of the customer base, they have the lowest value as they generated the least revenue for the company in the last 6 months.
+
+This segmentation extends to product and brand preferences, varying significantly across generational lines and between genders, highlighting the importance of targeted marketing strategies.
+
+< insert codes for visualization > $ customer segmentation analysis by generation
+
+When we segmented by gender, we found that the entire customer base consists of 55% male and 45% female. With roughly 800,000 in sales, men were the biggest spenders, providing about 65% of the total sales revenue for the company. On the other hand, women generated about 35% of the total sales revenue. Smart Watch was the most popular product among men, while Bluetooth Speaker was the most popular product among women. This demonstrated the popularity of Electronics brands among both genders. 
+
+< insert codes for visualization > $ customer segmentation analysis by gender
+
+
+Inventory and Turnover Analysis
+
+The inventory analysis focused on identifying top suppliers and products with the highest turnover. Our approach determined the suppliers who made the most significant number of supplies and the products most frequently restocked. High turnover products are essential indicators of consumer demand and supply chain efficiency, guiding inventory management decisions to avoid overstocking, stockouts and to estimate safety inventory levels.
+
+< insert codes for visualization > $ inventory analysis 
+
+
+Visualizations and Implications
+
+Throughout this report, data visualizations play a crucial role in illustrating our findings, making complex data accessible and actionable. For instance, the sales trend analysis, represented through a line graph, clearly depicts the cyclical nature of consumer purchasing behavior, underscoring the need for adaptive stock management strategies.
+
+Similarly, bar charts illustrating top suppliers and high-turnover products provide clear directives for inventory management, emphasizing the importance of maintaining strong relationships with key suppliers and keeping a close watch on inventory levels for popular products.
+
+
+Conclusion
+
+This comprehensive analysis of sales and inventory data highlights several key areas for strategic improvement. By understanding sales trends, shipping efficiency, customer preferences, and inventory turnover, we can can tailor our operations to meet market demand more effectively, enhance customer satisfaction, and optimize inventory management.
+
+Future actions based on these insights could include adjusting marketing strategies to target specific customer segments more effectively, refining inventory levels based on anticipated demand, and enhancing shipping processes to improve delivery efficiency. Through continued data analysis and adaptive strategies, we can ensure sustained growth and customer satisfaction in a competitive e-commerce environment.
+
+---------

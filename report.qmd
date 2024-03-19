@@ -1,0 +1,991 @@
+---
+sub-title: "Group27_IB9HP0"
+format:
+  pdf: 
+    toc: true
+    toc-depth: 4
+#    mainfont: Arial
+    tof: true
+    colorlinks: true
+    options: 
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+# Global setting for all code chunks
+options(width=80)
+knitr::opts_chunk$set(echo=TRUE)
+```
+
+\newpage
+
+## Part 1: Database Design and Implementation
+
+### Task 1.1 E-R Diagram Design
+
+#### Introduction
+
+Designing a detailed e-commerce database would involve identifying and structuring the key components that drive online shopping. To develop a conceptual design for an e-commerce database, we assume that this database is for a small-size e-commerce store that ships its products worldwide.
+
+#### Entities and Relationships
+
+The initial entity-relationship design consists of 6 entities including CUSTOMER, PRODUCT, SUPPLIER, CATEGORY, SHIPMENT, and REVIEW. The entities relate to each other through different relationships as illustrated with Chen notation Figure 1.
+
+#### Assumptions
+
+To simplify the designing of the database for an ever-changing e-commerce industry, we are obliged to make the following assumptions:
+
+1.  Each customer can only have one billing address, however, when placing an order, they will be asked for a shipment address.
+2.  The company would only allow the customers who made an order to write reviews on the products.
+3.  Each PRODUCT belongs to only one CATEGORY to simplify categorising and searchability of the product.
+4.  There's no refunds or returns in this e-commerce transaction.
+5.  We assume that each order has only one product associated with it and the dates of the order and transaction is the same.
+
+\newpage
+
+#### Initial Entity-Relationship Diagram
+
+![The initial E-R diagram](part1-images/fig1_ERDiagram_initial.png)
+
+The e-commerce data flow begins with a CUSTOMER, who creates an account using an email address secured by a password. The operation of a e-commerce store begins with a SUPPLIER providing a range of PRODUCTS.
+
+![Supply relationship](part1-images/fig2_supply_relationship.png){width="50%"}
+
+Each SUPPLIER can supply multiple products and each PRODUCT can be supplied by multiple suppliers resulting in a many-to-many relationship (Figure 2). Therefore to manage the inventory, the company has multiple suppliers to supply its products and each PRODUCT is categorised into CATEGORY and subcategory. Each CATEGORY can contain multiple products but each PRODUCT is associated with only one CATEGORY resulting in a many-to-one relationship (Figure 3).
+
+![Belongs to relationship](part1-images/fig3_belong-to_relationship.png){width="50%"}
+
+The interaction of e-commerce is then driven by the customer who browses the various products available. When a CUSTOMER selects the product(s) to be purchased, an order relationship is created which directly ties the customer to one or more products, resulting in a many-to-many relationship where a customer can order many products and each product can be ordered by many customers (Figure 4). Upon each order, the customer makes transactions.
+
+![Order relationship](part1-images/fig4_orders.jpg){width="50%"}
+
+The SHIPMENT process is triggered, and this captures the necessary details required to ship the ordered product(s) to the customer (Figure 5).
+
+![Ship relationship](part1-images/fig5_shipment.jpg){width="50%"}
+
+Post delivery of the order, customers may wish to provide reviews on the products purchased. This forms a many-to-many relationship where one customer can review on multiple products and each product can be reviewed by more than one customers (Figure 6).
+
+![Review relationship](part1-images/fig6_reviews.jpg){width="50%"}
+
+#### Revised Entity-Relationship Diagram
+
+![The updated E-R diagram](part1-images/fig7_finalER.png){width="90%"}
+
+In the updated E-R diagram, the CATEGORY now contains a self-referencing relationship, which allows for a category to be a parent category for one or more sub-categories, resulting in a hierarchical organisation of products. This is achieved by adding, *parent_id* which is an ID that references its own primary key, category_id (Figure 7).
+
+### Task 1.2 SQL Database Schema Creation
+
+#### Designing a Logical Schema
+
+Transitioning from the conceptual design of the database to the logical design, the logical schema (Figure 8) pin points the various attributes and keys associated with the entities in a format that can be directly implemented in the database.
+
+![Logical Schema](part1-images/fig8_logical_schema.jpg)
+
+#### Normalisation
+
+The integrity, consistency and the efficiency of the data within the database is crucial. The database schema was normalised to third normal form (3NF) to eliminate data redundancy and facilitate data retrieval and management.
+
+The initial design had address as the composite attributes of the CUSTOMER, SUPPLIER, and SHIPMENT entities which are transitive functionality dependent to the primary keys of the table. To normalise, we separated the address of each entity into the new tables and added the *'address id'* as the primary keys.
+
+#### Functional SQL Database
+
+Translating the logical schema to a functional SQL schema would involve the usage of SQL statement *CREATE TABLE* for each entity.
+
+```{r loadsqlite,warning=FALSE,error=FALSE,message=FALSE,echo=FALSE, attr.source='.numberLines'}
+# Load the library
+library(RSQLite)
+library(DBI)
+library(tidyverse)
+library(formatR)
+```
+
+```{r}
+#setup the connection
+project <- dbConnect(RSQLite::SQLite(),"project.db") 
+
+```
+
+1.  **CUSTOMER**: Stores customer information such as customer details, address and membership status. This entity is key to establish and manage customer relationships. '*customer_id'* uniquely identifies each customer.
+
+```{sql connection=project}
+CREATE TABLE 'customer' (  
+    'customer_id' VARCHAR(200) PRIMARY KEY,  
+    'caddress_id' VARCHAR(200) NOT NULL,
+    'first_name' VARCHAR(200) NOT NULL,  
+    'last_name' VARCHAR(200) NOT NULL, 
+    'password' VARCHAR(200) NOT NULL,  
+    'email' VARCHAR(200) NOT NULL UNIQUE,  
+    'mobile' VARCHAR(20) NOT NULL UNIQUE,  
+    'membership' INT,  
+    'age' INT,
+    'gender' VARCHAR(20),
+    FOREIGN KEY ('caddress_id') REFERENCES customer_address('caddress_id')
+)
+```
+
+2.  **SUPPLIER**: Stores supplier information such as supplier details and address, uniquely identified by *'supplier_id'*. This is essential for inventory management and supplier communication.
+
+```{sql connection=project}
+CREATE TABLE 'supplier'(  
+    'supplier_id' VARCHAR(200) PRIMARY KEY,  
+    'supplier_name' VARCHAR(200) NOT NULL,  
+    'supaddress_id' VARCHAR(200) NOT NULL,
+    'supplier_phone' VARCHAR(15) NOT NULL UNIQUE,
+    FOREIGN KEY ('supaddress_id') REFERENCES supplier_address('supaddress_id') 
+ )  
+```
+
+**Supply**:
+
+```{sql connection=project}
+CREATE TABLE 'supply'(  
+    'supply_id' VARCHAR(200) PRIMARY KEY,  
+    'supplier_id' VARCHAR(200), 
+    'product_id' VARCHAR(200), 
+    FOREIGN KEY ('supplier_id') REFERENCES supplier('supplier_id'), 
+    FOREIGN KEY ('product_id') REFERENCES product('product_id') 
+)  
+```
+
+2.  **PRODUCT**: Stores product information including product specifications such as color, size, product description and brand name which is uniquely identified by *'product_id'*. Contains *'category_id'* as a foreign key which links to CATEGORY to organise inventory and facilitate easy product search.
+
+```{sql connection=project}
+CREATE TABLE 'product' (  
+    'product_id' VARCHAR(200) PRIMARY KEY,  
+    'product_name' VARCHAR(200) NOT NULL,  
+    'unit_price' DECIMAL(10,2) NOT NULL,  
+    'brand_name' VARCHAR(200),  
+    'color' VARCHAR(200),  
+    'size' VARCHAR(200), 
+    'category_id' INT, 
+    FOREIGN KEY ('category_id') REFERENCES category('category_id')
+)  
+```
+
+3.  **CATEGORY**: Organises products as categories and sub-categories referencing to itself with a *'parent_id'*, containing the name of the category and how it is filtered, uniquely identified by *'category_id'*.
+
+```{sql connection=project}
+CREATE TABLE 'category' (  
+    'category_id' VARCHAR(200) PRIMARY KEY,  
+    'category_name' VARCHAR(200) NOT NULL,  
+    'filter_by' VARCHAR(200) NOT NULL,
+    'parent_id' VARCHAR(200),  
+    FOREIGN KEY ('parent_id') REFERENCES category_parent('parent_id')
+)  
+```
+
+**Category_parent:**
+
+```{sql connection=project}
+CREATE TABLE 'category_parent' (  
+    'parent_id' INT PRIMARY KEY,  
+    'parent_category' VARCHAR(200) NOT NULL 
+)  
+```
+
+7.  **ORDERS**: Stores order details such as the transaction information, quantity and order date, uniquely identified using *'order_id'* and directly references to the corresponding product using *'product_id'* and customer using *'customer_id'.*
+
+```{sql connection=project}
+CREATE TABLE 'orders' (  
+    'order_id' VARCHAR(200) PRIMARY KEY,  
+    'order_date' DATE NOT NULL,  
+    'customer_id' VARCHAR(200),  
+    'product_id' VARCHAR(200), 
+    'quantity' INT NOT NULL, 
+    'transaction_status' TEXT NOT NULL,
+    'transaction_method' TEXT NOT NULL,
+    FOREIGN KEY ('customer_id') REFERENCES customer('customer_id'),  
+    FOREIGN KEY ('product_id') REFERENCES product('product_id')
+)  
+```
+
+6.  **REVIEW**: Captures customer feedback as reviews and ratings, uniquely identified using '*review_id'* and is linked to both the product and the order it was a part of, using *'product_id'* and *'order_id'* respectively.
+
+```{sql connection=project}
+CREATE TABLE 'review' (  
+    'review_id' VARCHAR(200) PRIMARY KEY,  
+    'ratings' INT NOT NULL,  
+    'reviews' TEXT NOT NULL,  
+    'product_id' VARCHAR(200),  
+    'review_date' DATE,
+    'order_id' VARCHAR(200), 
+    FOREIGN KEY ('product_id') REFERENCES products('product_id'),  
+    FOREIGN KEY ('order_id') REFERENCES "order"('order_id') 
+)  
+```
+
+5.  **SHIPMENT**: Stores shipping details such as shipment address and status, uniquely identified by *'shipment_id'*. This is essential for logistics and delivering products to customers. Each shipment is referenced to the corresponding order using, *'order_id'.*
+
+```{sql connection=project}
+CREATE TABLE 'shipment' (  
+    'shipment_id' VARCHAR(200) PRIMARY KEY,  
+    'shipment_status' VARCHAR(200) NOT NULL,  
+    'shipment_method' VARCHAR(200) NOT NULL,
+    'saddress_id' VARCHAR(200) NOT NULL,
+    'order_id' VARCHAR(200) NOT NULL,
+    FOREIGN KEY ('saddress_id') REFERENCES shipment_address('saddress_id') 
+    FOREIGN KEY ('order_id') REFERENCES orders('order_id') 
+)  
+```
+
+9.  **Address Tables**: Added separate address tables to normalise CUSTOMER, SUPPLIER, and SHIPMENT entities.
+
+**Shipment address:**
+
+```{sql connection=project}
+CREATE TABLE 'shipment_address' (  
+    'saddress_id' VARCHAR(200) PRIMARY KEY,  
+    'country' VARCHAR (200) NOT NULL, 
+    'city' VARCHAR (200) NOT NULL, 
+    'street' VARCHAR (200) NOT NULL, 
+    'postcode' VARCHAR (200) NOT NULL 
+)  
+```
+
+**Supplier address:**
+
+```{sql connection=project}
+CREATE TABLE 'supplier_address' (  
+    'supaddress_id' VARCHAR(200) PRIMARY KEY,  
+    'country' VARCHAR (200) NOT NULL, 
+    'city' VARCHAR (200) NOT NULL, 
+    'street' VARCHAR (200) NOT NULL, 
+    'postcode' VARCHAR (200) NOT NULL 
+)  
+```
+
+**Customer address:**
+
+```{sql connection=project}
+CREATE TABLE 'customer_address' (  
+    'caddress_id' VARCHAR(200) PRIMARY KEY,  
+    'country' VARCHAR (200) NOT NULL, 
+    'city' VARCHAR (200) NOT NULL, 
+    'street' VARCHAR (200) NOT NULL, 
+    'postcode' VARCHAR (200) NOT NULL
+)  
+```
+
+\newpage
+
+## Part 2: Data Generation and Management
+
+The next phase involves synthetic data generation using R and LLMs like [Mockaroo](https://mockaroo.com/), populate data that reflects the e-commerce activity ensuring consistency and integrity throughout the database.
+
+### Task 2.1 Synthetic Data Generation
+
+#### Raw Data Generation
+
+First, we create schemas for each entity based on the logical schema from the initial version of the ER diagram, using Mockaroo's SCHEMAS (Figure 9).
+
+![All schemas](part2-images/All_categories.png)
+
+We created 9 schemes for the following entities: category, customer, order, product, review, shipment, supplier, supply, and transaction.
+
+![Category schema](part2-images/category.png)
+
+First, create a category ID in the specified pattern as the primary key. Then, fill in the category name with specified names. Finally, assign the values "men" and "women" to filter by (Figure 10).
+
+![Order schema](part2-images/order.png)
+
+For the order ID, we generate a unique primary key. The product ID serves as a foreign key linked to the product table. The quantity must be a number between 1 and 100.The customer ID serves as a foreign key linked to the customer table (Figure 11). The order date is a random date within the range from February 27, 2023, to February 27, 2024.
+
+![Customer schema](part2-images/customer.png)
+
+We used Mockaroo's built-in data formats to generate most of the data in the customer table. For membership, we generated five-digit numbers ranging from 10001 to 99999, with a setting that includes 40% missing values. This means that 40% of the customers do not have our membership (Figure 12).
+
+![Product schema](part2-images/product.png)
+
+Similarly, we used Mockaroo's built-in data formats to generate most of the data in the product table. We set each product's unit price to a number between 0.99 and 9999.99. The category ID serves as a foreign key linked to the category table (Figure 13).
+
+![Review schema](part2-images/review.png)
+
+For the review table, we generated the review ID as the primary key, with product ID and customer ID as foreign keys. Ratings are integer numbers between 1 and 5, and reviews are a piece of randomly generated text (Figure 14).
+
+![Shipment schema](part2-images/shipment.png)
+
+For the shipment table, we used built-in formats to generate address information. Then, we specified a particular pattern to generate the primary key, shipment ID, and generated shipment status and shipment method by specifying text (Figure 15).
+
+![Supplier schema](part2-images/supplier.png)
+
+For the supplier table, we generated the supplier ID as the primary key through a specified expression. Supplier name and supplier phone were also generated using specified formats. Additionally, we used built-in formats to generate address information (Figure 16).
+
+![Supply schema](part2-images/supply.png)
+
+For the supply relationship, we generated the supply ID as the primary key and randomly filled in the product ID and supplier ID from the product and supplier tables, respectively, as foreign keys (Figure 17).
+
+![Transaction schema](part2-images/transaction.png)
+
+For the transaction table (Figure 18), we followed similar steps for data generation, providing text for transaction status and transaction method, and generating order ID as a foreign key linked to the orders table.
+
+Notice that the text part of the data generated by Mockaroo lacked practical meaning and was too random. In order to make the data more realistic, ChatGPT (Figure 19) was used to fill the name, color and size in the product table, the country and city in the address table, and the evaluation content in the review table again, and the distribution was adjusted to make it reflects realistic patterns and distributions better. Moreover, the distribution was adjusted to make it reflects realistic patterns and distributions better.
+
+![The ChatGPT prompt](part2-images/chatGPT_prompt.png)
+
+#### Data Processing
+
+Next, process the raw data using R to make it more realistic and ensure data quality. And, based on the modified ER diagram and logical schema, we adjusted the data formats accordingly.
+
+```{r echo=FALSE}
+library(tidyverse)
+library(readr)
+library(RSQLite)
+library(DBI)
+
+```
+
+```{r message=FALSE, warning=FALSE}
+setwd("/cloud/project/Raw Data")
+TRANSACTION <- read_csv("TRANSACTION.csv")
+SUPPLY <- read_csv("SUPPLY.csv")
+SUPPLIER <- read_csv("SUPPLIER.csv")
+SHIPMENT <- read_csv("SHIPMENT.csv")
+REVIEW <- read_csv("REVIEW.csv")
+PRODUCT <- read_csv("PRODUCT.csv")
+ORDER <- read_csv("ORDER.csv")
+CUSTOMER <- read_csv("CUSTOMER.csv")
+CATEGORY <- read_csv("CATEGORY.csv")
+```
+
+1.  **ORDER**: Convert the data of order date to date format and ensure the format correctness. Ensure the referential integrity of the product ID in the table.
+
+```{r order}
+set.seed(123)
+# Ensure the data in the date format
+ORDER$order_date <- as.Date(ORDER$order_date, format="%m/%d/%Y")
+
+# Deal with ORDER product id
+ORDER$product_id <- sample(PRODUCT$product_id, nrow(ORDER), replace = TRUE)
+```
+
+2.  **TRANSACTION**: Process the logical relationship between the transaction date and the order date, and update the date data of the transaction table.
+
+```{r transaction, tidy=TRUE}
+set.seed(123)
+
+# Deal with transaction date and order date
+# Combine two sheets
+ORDER_TRANSACTION <- merge(ORDER, TRANSACTION, by = "order_id")
+
+set.seed(123)
+
+# Defining Date function
+check_order_date <- function(order_date) {
+  # Assign the date within the same day or up to 2 days after the order date.
+  delay <- sample(0:2, 1) 
+  order_date + delay # transaction date
+}
+ORDER_TRANSACTION$transaction_date <- 
+  sapply(ORDER_TRANSACTION$order_date, 
+         check_order_date)
+
+# Update transaction
+TRANSACTION <- 
+  ORDER_TRANSACTION[, c("transaction_id","transaction_date",
+                        "transaction_status",
+                        "transaction_method","order_id")]
+
+TRANSACTION$transaction_date <- as.Date(TRANSACTION$transaction_date, 
+                                        origin = "1970-01-01")
+```
+
+Since transaction and order have one-to-one relationship, change attributes of transaction entity to attributes of order, and remove transaction date.
+
+```{r combine order and transaction, tidy=TRUE }
+merged_O_T <- merge(ORDER, TRANSACTION, by = "order_id")
+ORDER <- merged_O_T %>% select("order_id", "product_id", 
+                               "quantity", "customer_id", 
+                               "order_date", 
+                               "transaction_status",
+                               "transaction_method")
+```
+
+3.  **CATEGORY**: Updated the class ids in the class table to make it more concise and uniform. Create a parent category table to generate a self-reference relationship.
+
+```{r category, tidy=TRUE}
+# Category sheet cleaning
+CATEGORY <- CATEGORY %>% select("category_id", "category_name", "filter_by") %>% na.omit()
+
+# Rename the category_id
+NEWID <- c("1001-1","1002-1","1003-1","1003-2","1003-3","1004-1",
+           "1005-1","1006-1","1007-1","1007-2","1008-1","1009-1")
+mapping_category_id <- data.frame(
+  old_category_id = CATEGORY$category_id,
+  new_category_id = NEWID
+)
+
+# Update category sheet
+CATEGORY$category_id <- mapping_category_id$new_category_id
+
+# Adding parent categories
+parentid <- c(101,102,103,103,103,101,101,101,103,103,104,105)
+parentcat <- c("Home & Lifestyle","Sports & Outdoor Activities",
+               "Fashion & Beauty","Fashion & Beauty","Fashion & Beauty",
+               "Home & Lifestyle","Home & Lifestyle","Home & Lifestyle",
+               "Fashion & Beauty","Fashion & Beauty","Electronics & Technology","Others")
+
+CATEGORY$parent_id <- parentid
+CATEGORY$parent_category <- parentcat
+
+# Separate category table
+CATEGORY_parent <- CATEGORY %>% select(parent_id,parent_category) %>% unique()
+CATEGORY$parent_category <- NULL 
+```
+
+4.  **PRODUCT** :Update the category id in the product table, remove the product description column, and convert a French brand name to English characters.
+
+```{r product, tidy=TRUE}
+# Update product sheet
+PRODUCT <- merge(PRODUCT, mapping_category_id, by.x = "category_id", 
+                 by.y = "old_category_id")
+PRODUCT$category_id <- PRODUCT$new_category_id
+PRODUCT$new_category_id <- NULL
+
+# Description
+PRODUCT$product_description <- NULL
+
+# Change the brand name in product
+PRODUCT <- PRODUCT %>%
+  mutate(brand_name = str_replace(brand_name, "^Ench(.*)", "Enchant")) %>% 
+  select(product_id, everything())
+
+
+```
+
+5.  **CUSTOMER**: Create a function to check the format of the email address in the customer table.
+
+```{r customer}
+## Defining Email Format checking function
+check_email_format <- function(emails) {
+  pattern <- "^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  grepl(pattern, emails)
+}
+valid_emails <- check_email_format(CUSTOMER$email)
+
+## Print the amount of invalid email address
+print(sum(!valid_emails))
+```
+
+Create a new table of customer address data and ensure data integrity for the zip code column in the table. Update the CUSTOMER table to include information about the customer address.
+
+```{r customer address, tidy=TRUE}
+set.seed(123)
+
+# Create new table for address
+CUSTOMER_address <- CUSTOMER %>% select(customer_id,country:city)
+
+## Add primary key `customer address id` for CUSTOMER_address
+CUSTOMER_address$caddress_id <- paste0("A",CUSTOMER_address$customer_id)
+CUSTOMER_address <- CUSTOMER_address %>% select(caddress_id, customer_id:city)
+CUSTOMER_address <- CUSTOMER_address %>% select(caddress_id, country:city)
+
+# Filled the missing value in postcode
+
+## Defining postal code function
+postcode_func <- function(n=1) {
+  letters <- toupper(LETTERS[1:26])
+  numbers <- 0:9
+
+set.seed(123)
+  # Function of generate the first and second parts
+  generate_first <- function() {
+    # The first part(1-2 letters, 1-2 numbers)
+    part1 <- paste0(sample(letters, sample(1:2, 1), replace = TRUE), 
+                    collapse = "")
+    part2 <- paste0(sample(numbers, sample(1:2, 1), replace = TRUE), 
+                    collapse = "")
+    return(paste0(part1, part2))
+  }
+set.seed(123)
+  generate_second <- function() {
+    # The second part(1 number, 2 letters)
+    part3 <- paste0(sample(numbers, 1), collapse = "")
+    part4 <- paste0(sample(letters, 2, replace = TRUE), collapse = "")
+    return(paste0(part3, part4))
+  }
+  
+  # Combine two parts
+  postal_codes <- replicate(n, paste0(generate_first(), " ", 
+                                      generate_second()))
+  return(postal_codes)
+}
+
+# Update the table
+missing_indices <- which(is.na(CUSTOMER_address$postcode))
+CUSTOMER_address$postcode[missing_indices] <- 
+  postcode_func(length(missing_indices))
+
+# customer address id
+CUSTOMER$caddress_id <- CUSTOMER_address$caddress_id
+
+# arrange customer table
+CUSTOMER <- CUSTOMER %>% select(customer_id:membership, caddress_id)
+```
+
+Add gender and age columns to the CUSTOMER table, convert the membership column to binary data, and delete the username column.
+
+```{r customer gender/age, tidy=TRUE}
+set.seed(123)
+# generate gender and age
+CUSTOMER$gender <- sample(c("Male","Female"),nrow(CUSTOMER),replace = TRUE)
+CUSTOMER$age <- sample(15:65, size = nrow(CUSTOMER), replace = TRUE)
+
+# membership
+CUSTOMER$membership <- ifelse(is.na(CUSTOMER$membership), "No", "Yes")
+
+# Username
+CUSTOMER$username <- NULL
+```
+
+6.  **SHIPMENT**: Do similar processing to the CUSTOMER table for address in the SHIPMENT table.
+
+```{r shipment, tidy=TRUE}
+## SHIPMENT
+# Create new table for address
+SHIPMENT_address <- SHIPMENT %>% select(shipment_id,country:postcode)
+SHIPMENT_address$saddress_id <- paste0("A-",SHIPMENT_address$shipment_id)
+SHIPMENT_address <- SHIPMENT_address %>% select(country:saddress_id) %>% select(saddress_id, everything())
+SHIPMENT$saddress_id <- SHIPMENT_address$saddress_id
+
+# Filled missing value in postcode
+missing_indices2 <- which(is.na(SHIPMENT_address$postcode))
+SHIPMENT_address$postcode[missing_indices2] <- 
+  postcode_func(length(missing_indices2))
+
+SHIPMENT_address <- SHIPMENT_address %>% na.omit()
+SHIPMENT <- SHIPMENT %>% select(shipment_id:shipment_status, saddress_id)
+set.seed(123)
+SHIPMENT$order_id <- sample(ORDER$order_id, nrow(SHIPMENT), replace = FALSE)
+```
+
+7.  **SUPPLIER**: Do similar processing to the CUSTOMER table for address in the SUPPLIER table.
+
+```{r supplier, tidy=TRUE}
+## SUPPLIER
+# Create new table for address
+SUPPLIER_address <- SUPPLIER %>% select(supplier_id,country:postcode)
+SUPPLIER_address$supaddress_id <- paste0("A-",SUPPLIER_address$supplier_id)
+SUPPLIER_address <- SUPPLIER_address %>% select(supaddress_id, country:postcode)
+SUPPLIER$supaddress_id <- 
+  SUPPLIER_address$supaddress_id
+
+# Filled missing value in postcode
+missing_indices3 <- which(is.na(SUPPLIER_address$postcode))
+SUPPLIER_address$postcode[missing_indices3] <- 
+  postcode_func(length(missing_indices3))
+SUPPLIER <- SUPPLIER %>% select(supplier_id:supplier_phone,supaddress_id)
+set.seed(123)
+SUPPLY$product_id <- sample(PRODUCT$product_id, nrow(SUPPLY), replace = TRUE)
+
+```
+
+8.  **REVIEW**: Add order, product, and customer information to the REVIEW table. Creating a function to ensure the review date is later than the corresponding order date.
+
+```{r review, tidy=TRUE}
+set.seed(123)
+
+# Deal with review
+## Add order id, the consist product id, and order date
+REVIEW$order_id <- ORDER$order_id
+REVIEW$product_id <- NULL
+REVIEW$customer_id <- NULL
+REVIEW_ORDER <- merge(REVIEW, ORDER, by = "order_id")
+REVIEW_TRANSACTION <- merge(REVIEW_ORDER, TRANSACTION, by = "order_id")
+
+## Defining review date function
+set.seed(123)
+check_review_date <- function(transaction_date) {
+  # Assign the date within the same day or up to 2 days after the order date.
+  delay <- sample(0:7, 1) 
+  transaction_date + delay # review date
+}
+REVIEW_TRANSACTION$review_date <- 
+  sapply(REVIEW_TRANSACTION$transaction_date, 
+         check_review_date)
+
+## Update review
+REVIEW <- REVIEW_TRANSACTION[, c("review_id","review_date","reviews",
+                                 "product_id","ratings", "order_id")]
+REVIEW$review_date <- as.Date(REVIEW$review_date, origin = "1970-01-01")
+
+```
+
+#### Data Sampling
+
+In order to reduce the data size, 400 observations are randomly selected from the customer table. The first 200 of these are chosen as a subset, and a series of other related data subsets are created based on this selection.
+
+```{r data sampling, tidy=TRUE}
+customer_sub <- CUSTOMER[1:700, ]
+customer_address_sub <- CUSTOMER_address %>% filter(caddress_id %in% customer_sub$caddress_id)
+order_sub <- ORDER %>% filter(customer_id %in% customer_sub$customer_id)
+review_sub <- REVIEW %>% filter(order_id %in% order_sub$order_id)
+shipment_sub <- SHIPMENT %>% filter(order_id %in% order_sub$order_id)
+shipment_address_sub <- SHIPMENT_address %>% filter(saddress_id%in% shipment_sub$saddress_id)
+product_sub <- PRODUCT %>% filter(product_id %in% order_sub$product_id)
+category_sub <- CATEGORY %>% filter(category_id %in% product_sub$category_id)
+category_parent_sub <- CATEGORY_parent
+supplier_sub <- SUPPLIER
+supplier_address_sub <- SUPPLIER_address
+supply_sub <- SUPPLY %>% filter(product_id %in% product_sub$product_id)
+```
+
+The remaining 200 observations from the chosen 400 form another subset, along with a corresponding series of related data subsets. This ensures that the validation dataset remains separate from the data originally stored in the database.
+
+```{r data for validation, echo=FALSE, tidy=TRUE}
+customer_val <- CUSTOMER[701:1000,]
+customer_address_val <- CUSTOMER_address %>% filter(caddress_id %in% customer_val$caddress_id)
+order_val <- ORDER %>% filter(customer_id %in% customer_val$customer_id)
+review_val <- REVIEW %>% filter(order_id %in% order_val$order_id)
+shipment_val <- SHIPMENT %>% filter(order_id %in% order_val$order_id)
+shipment_address_val <- SHIPMENT_address %>% filter(saddress_id%in% shipment_val$saddress_id)
+product_val <- PRODUCT %>% filter(product_id %in% order_val$product_id)
+category_val <- CATEGORY %>% filter(category_id %in% product_val$category_id)
+category_parent_val <- CATEGORY_parent
+supplier_val <- SUPPLIER
+supplier_address_val <- SUPPLIER_address
+supply_val <- SUPPLY %>% filter(product_id %in% product_val$product_id)
+
+```
+
+#### Data Printing
+
+Output the data set for database entry and validation respectively, and add cosuffixesrresponding suffix to them.
+
+```{r print data, warning=FALSE, echo=FALSE}
+# Initial data
+setwd("/cloud/project/Data")
+write_csv(customer_sub, "CUSTOMER1.csv")
+write_csv(category_sub, "CATEGORY1.csv")
+write_csv(category_parent_sub, "CATEGORY_parent1.csv")
+write_csv(order_sub, "ORDERS1.csv")
+write_csv(review_sub, "REVIEW1.csv")
+write_csv(shipment_sub, "SHIPMENT1.csv")
+write_csv(supply_sub, "SUPPLY1.csv")
+write_csv(supplier_sub, "SUPPLIER1.csv")
+write_csv(product_sub, "PRODUCT1.csv")
+write_csv(supplier_address_sub, "SUPPLIER_address1.csv")
+write_csv(customer_address_sub, "CUSTOMER_address1.csv")
+write_csv(shipment_address_sub, "SHIPMENT_address1.csv")
+
+
+# Data for validation
+setwd("/cloud/project/Validation Data")
+write_csv(customer_val, "CUSTOMER2.csv")
+write_csv(category_val, "CATEGORY2.csv")
+write_csv(category_parent_val, "CATEGORY_parent2.csv")
+write_csv(order_val, "ORDERS2.csv")
+write_csv(review_val, "REVIEWS2.csv")
+write_csv(shipment_val, "SHIPMENT2.csv")
+write_csv(supply_val, "SUPPLY2.csv")
+write_csv(supplier_val, "SUPPLIER2.csv")
+write_csv(product_val, "PRODUCT2.csv")
+write_csv(supplier_address_val, "SUPPLIER_address2.csv")
+write_csv(customer_address_val, "CUSTOMER_address2.csv")
+write_csv(shipment_address_val, "SHIPMENT_address2.csv")
+
+
+```
+
+### Task 2.2 Data Import and Quality Assurance
+
+#### Data Import
+
+1.  **Check Files Structure**: Check the structure of each file.
+
+```{r loop,message=FALSE,warning=FALSE,attr.source='.numberLines'}
+all_files <- list.files("/cloud/project/Data/")
+
+for (variable in all_files) {
+  this_filepath <- paste0("/cloud/project/Data/",variable)
+  this_file_contents <- readr::read_csv(this_filepath)
+  
+  number_of_rows <- nrow(this_file_contents)
+  number_of_columns <- ncol(this_file_contents)
+  
+  print(paste0("The file: ",variable,
+              " has: ",
+              format(number_of_rows,big.mark = ","),
+              " rows and ",
+              number_of_columns," columns"))
+}
+```
+
+2.  **Primary Key Check**:Check if the first column of each file is a primary
+
+```{r checkprimary,message=FALSE,warning=FALSE,attr.source='.numberLines'}
+
+for (variable in all_files) {
+  this_filepath <- paste0("/cloud/project/Data/",variable)
+  this_file_contents <- readr::read_csv(this_filepath)
+  number_of_rows <- nrow(this_file_contents)
+  
+  print(paste0("Checking for: ",variable))
+  
+  print(paste0(" is ",nrow(unique(this_file_contents[,1]))==number_of_rows))
+}
+
+```
+
+3.  **Data Import**: Import the data by for loop
+
+```{r Data import,message=FALSE,warning=FALSE,attr.source='.numberLines'}
+# Read the data
+for (variable in all_files) {
+  this_filepath <- paste0("/cloud/project/Data/",variable)
+  this_file_contents <- readr::read_csv(this_filepath)
+  frame_name <- (gsub("\\d+\\.csv$", "", variable))
+  assign(frame_name, readr::read_csv(this_filepath))
+}
+
+```
+
+#### Populate SQL database
+
+```{r message=FALSE}
+
+for (variable in all_files) {
+  this_filepath <- paste0("/cloud/project/Data/",variable)
+  this_file_contents <- readr::read_csv(this_filepath)
+  table_name <- tolower(gsub("\\d+\\.csv$", "", variable))
+  RSQLite::dbWriteTable(project,table_name, this_file_contents, append=TRUE, row.names = FALSE)
+}
+```
+
+#### Data Quality Assurance
+
+1.  **Formats Check**: Verify if the email and mobile formats are valid in the customer table.
+
+Check email format
+
+```{r}
+# Execute SQL query
+email_format <- dbGetQuery(project, "
+  SELECT * 
+  FROM CUSTOMER
+  WHERE email NOT LIKE '%@%.%'
+")
+
+# Determine and output the result
+if (nrow(email_format) == 0) {
+  cat("No invalid email\n")
+} else {
+  print(email_format)
+}
+```
+
+Check mobile format
+
+```{r}
+# Execute SQL query
+mobile_format <- dbGetQuery(project, "
+  SELECT * 
+  FROM CUSTOMER
+  WHERE mobile NOT LIKE '___-___-____';
+")
+
+# Determine and output the result
+if (nrow(mobile_format) == 0) {
+  cat("No invalid mobile\n")
+} else {
+  print(mobile_format)
+}
+
+```
+
+2.  **Duplicate Entries Check**: Check whether the email and mobile columns in the customer table, supplier_name and supplier_phone columns in the supplier table, product_name column in the product table, and parent_category column in the category_parent table contain any duplicate entries.
+
+Check duplicate entries in the customer table
+
+```{r}
+# Execute SQL query
+customer_duplicate <- dbGetQuery(project, "
+  SELECT email, mobile, COUNT(*)
+  FROM customer
+  GROUP BY email, mobile
+  HAVING COUNT(*) > 1;
+")
+
+# Determine and output the result
+if (nrow(customer_duplicate) == 0) {
+  cat("No duplicate entries\n")
+} else {
+  print(customer_duplicate)
+}
+
+```
+
+Check duplicate entries in the supplier table
+
+```{r}
+# Execute SQL query
+supplier_duplicate <- dbGetQuery(project, "
+  SELECT supplier_name, supplier_phone, COUNT(*)
+  FROM supplier
+  GROUP BY supplier_name, supplier_phone
+  HAVING COUNT(*) > 1;
+")
+
+# Determine and output the result
+if (nrow(supplier_duplicate) == 0) {
+  cat("No duplicate entries\n")
+} else {
+  print(supplier_duplicate)
+}
+```
+
+Check duplicate entries in the product table
+
+```{r}
+# Execute SQL query
+product_duplicate <- dbGetQuery(project, "
+  SELECT product_name, COUNT(*)
+  FROM product 
+  GROUP BY product_name 
+  HAVING COUNT(*) > 1;
+")
+
+# Determine and output the result
+if (nrow(product_duplicate) == 0) {
+  cat("No duplicate entries\n")
+} else {
+  print(product_duplicate)
+}
+```
+
+This reflects the real-world scenario where products of the same type can have the same name, but each product is identified with a different product_id. So, there exists no duplicates.
+
+Check duplicate entries in the category_parent table
+
+```{r}
+# Execute SQL query
+category_parent_duplicate <- dbGetQuery(project, "
+  SELECT parent_category, COUNT(*)
+  FROM category_parent 
+  GROUP BY parent_category 
+  HAVING COUNT(*) > 1;
+")
+
+# Determine and output the result
+if (nrow(category_parent_duplicate) == 0) {
+  cat("No duplicate entries\n")
+} else {
+  print(category_parent_duplicate)
+}
+```
+
+3.  **Referential Integrity Check**: Check foreign key referential integrity between tables.
+
+Check referential integrity of supaddress_id in the supplier table
+
+```{r}
+# Execute SQL query
+supplier_ref_integrity <- dbGetQuery(project, "
+  SELECT * 
+  FROM supplier 
+  WHERE supaddress_id NOT IN (SELECT supaddress_id FROM supplier_address);
+")
+
+# Determine and output the result
+if (nrow(supplier_ref_integrity) == 0) {
+  cat("No reference integrity issues\n")
+} else {
+  print(supplier_ref_integrity)
+}
+
+```
+
+Check referential integrity of supplier_id and product_id in the supply table
+
+```{r}
+# Execute SQL query
+supply_ref_integrity <- dbGetQuery(project, "
+  SELECT s.*
+  FROM supply s
+  LEFT JOIN supplier sp ON s.supplier_id = sp.supplier_id
+  LEFT JOIN product p ON s.product_id = p.product_id
+WHERE sp.supplier_id IS NULL OR p.product_id IS NULL
+")
+
+# Determine and output the result
+if (nrow(supply_ref_integrity) == 0) {
+  cat("No reference integrity issues\n")
+} else {
+  print(supply_ref_integrity)
+}
+```
+
+Check referential integrity of category_id in the product table
+
+```{r}
+# Execute SQL query
+product_ref_integrity <- dbGetQuery(project, "
+  SELECT * 
+  FROM product 
+  WHERE category_id NOT IN (SELECT category_id FROM category);
+")
+
+# Determine and output the result
+if (nrow(product_ref_integrity) == 0) {
+  cat("No reference integrity issues\n")
+} else {
+  print(product_ref_integrity)
+}
+
+```
+
+Check referential integrity of caddress_id in the customer table
+
+```{r}
+# Execute SQL query
+customer_ref_integrity <- dbGetQuery(project, "
+  SELECT * 
+  FROM customer 
+  WHERE caddress_id NOT IN (SELECT caddress_id FROM customer_address);
+")
+
+# Determine and output the result
+if (nrow(customer_ref_integrity) == 0) {
+  cat("No reference integrity issues\n")
+} else {
+  print(customer_ref_integrity)
+}
+
+```
+
+Check referential integrity of parent_id in the category table
+
+```{r}
+# Execute SQL query
+category_ref_integrity <- dbGetQuery(project, "
+  SELECT * 
+  FROM category 
+  WHERE parent_id NOT IN (SELECT parent_id FROM category_parent);
+
+")
+
+# Determine and output the result
+if (nrow(category_ref_integrity) == 0) {
+  cat("No reference integrity issues\n")
+} else {
+  print(category_ref_integrity)
+}
+```
+
+
+
+\newpage
+
+## Part 3: Data Pipeline Generation
+
+We now employ GitHub version control to manage the e-commerce system and automate integration using GitHub actions.
+
+### Task 3.1 GitHub Repository and Workflow Setup
+
+We include all relevant components of the project within the repository, such as the database files, scripts, and any other necessary documentation (Figure x). This comprehensive approach ensures that all elements of the project are tracked and undergo version control, facilitating collaboration and maintaining a historical record of changes. This is achieved by integrating our GitHub repository with R, allowing us to commit all progress made within R and subsequently push those updates to the GitHub repository.
+
+![GitHub Repository](part3_images/repo_pic.png){width="50%"}
+
+### Task 3.2 Github Actions for Continuous Integration
+
+(explain how automation was done with pictures)
+
+\newpage
