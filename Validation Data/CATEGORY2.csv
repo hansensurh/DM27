@@ -1,0 +1,13 @@
+category_id,category_name,filter_by,parent_id
+1001-1,Books,Any,101
+1002-1,Sports Equipment,Any,102
+1003-1,Beauty Products,Female,103
+1003-2,Beauty Products,Male,103
+1003-3,Beauty Products,Any,103
+1004-1,Home Decor,Any,101
+1005-1,Toys,Any,101
+1006-1,Pet Supplies,Any,101
+1007-1,Clothing,Female,103
+1007-2,Clothing,Male,103
+1008-1,Electronics,Any,104
+1009-1,Others,Any,105

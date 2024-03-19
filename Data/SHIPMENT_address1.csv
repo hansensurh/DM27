@@ -1,0 +1,568 @@
+saddress_id,country,street,city,postcode
+A-YQO-52820,United Kingdom,Ridgeview,London,KW10
+A-MZY-97101,United Kingdom,Westridge,London,E58 9ES
+A-DVX-48074,United Kingdom,Erie,Bristol,464 01
+A-UPX-82874,China,Pierstorff,Shanghai,J2 3NQ
+A-QJM-66746,United States,Havey,Dallas,471 41
+A-AER-75825,United States,Northport,Houston,G9 6II
+A-DZW-28249,Switzerland,Fordem,St. Gallen,E10 8YF
+A-KHY-06895,United Kingdom,Corscot,Cardiff,10140
+A-TSC-55128,United Kingdom,Di Loreto,Edinburgh,VV0 5RQ
+A-EDH-52214,United Kingdom,6th,London,DM5 2YT
+A-WRV-18235,United Kingdom,Twin Pines,Portsmouth,YN6 2HP
+A-PLN-37821,Iceland,4th,Reykjavik,K36
+A-ZNY-61995,United Kingdom,Bayside,Manchester,11604
+A-PZH-12199,Portugal,Dottie,Amadora,92974 CEDEX
+A-OLO-68598,United Kingdom,Schlimgen,Leeds,OU7 2JR
+A-CII-71756,United Kingdom,Melrose,Reading,1231
+A-SJM-44248,United Kingdom,Bobwhite,Liverpool,LB53 0NV
+A-ZWO-63002,United Kingdom,Goodland,Leeds,H27 0WK
+A-RGE-11387,United Kingdom,Blue Bill Park,London,3776
+A-LIJ-70784,India,Elmside,Mumbai,O9 5NG
+A-MGV-82071,Iceland,Golf,Fjar?abygg?,J5 7UW
+A-BLA-77049,United Kingdom,Warner,London,D28 6VZ
+A-HKC-81549,United Kingdom,Basil,Bristol,G27 3OG
+A-WIQ-37638,United Kingdom,Pleasure,Liverpool,14700-000
+A-ERP-50812,United Kingdom,Darwin,Liverpool,AH38 7VK
+A-DTA-38295,United States,Blaine,New York City,TH3 3LV
+A-XUM-14431,China,Lyons,Shanghai,6306
+A-ZLP-47495,China,Spaight,Shanghai,13599
+A-WST-47759,United Kingdom,Texas,London,J3 8WH
+A-FUE-24960,United Kingdom,2nd,Leicester,10601
+A-TXB-31696,Japan,Hooker,Nagoya,J56 9KA
+A-ERF-40305,United Kingdom,Larry,Manchester,5590
+A-GZA-71961,United Kingdom,3rd,Manchester,567 24
+A-SKK-01686,United Kingdom,Westport,London,73028
+A-YKW-03203,United Kingdom,Magdeline,Southampton,Y9 3XY
+A-HJX-04732,United Kingdom,Portage,Leeds,50090
+A-BJZ-87355,Ireland,Hauk,Galway,IT10 4YT
+A-VBG-11058,United Kingdom,Kensington,Portsmouth,87330
+A-SFE-63606,Spain,Dexter,Seville,4495-103
+A-IPL-88269,United Kingdom,Little Fleur,London,Y01 3JA
+A-YRZ-56124,United Kingdom,Macpherson,London,903 01
+A-OUP-63969,Ireland,Warner,Swords,U7 6YU
+A-LJS-06290,United Kingdom,Scofield,Leeds,R56 8PQ
+A-OIW-64264,United Kingdom,Golf,Leicester,M47 4GT
+A-GID-45026,United Kingdom,Dixon,Leicester,2446
+A-RDQ-51888,Belgium,Meadow Valley,Li¨¨ge,QA01 7QC
+A-NNQ-99937,Ireland,Redwing,Dundalk,42-256
+A-IKI-50846,United States,Beilfuss,Los Angeles,V7Y
+A-ALP-05362,United Kingdom,Spenser,Coventry,40041
+A-RFD-71098,United Kingdom,Clemons,Hull,BE8 9FJ
+A-BLM-91894,Scotland,Ridgeview,Cumbernauld,P62 8GI
+A-YXW-52195,United Kingdom,Schlimgen,Bristol,762538
+A-LKR-14186,Portugal,John Wall,Lisbon,BV86 4KA
+A-SDF-44750,United States,Glacier Hill,New York City,88-160
+A-RNK-09952,United Kingdom,Red Cloud,London,L40 2YR
+A-YWW-52330,United Kingdom,Menomonie,Sheffield,87505
+A-IWQ-01758,United Kingdom,Merry,Reading,38610-000
+A-WMX-53940,Ireland,Tennyson,Waterford,V2 8RQ
+A-ZYV-65424,United States,Fair Oaks,"Washington, D.C.",JH93 5TT
+A-ARF-13786,United Kingdom,5th,Hull,IP69 0RH
+A-RNI-70591,China,Becker,Beijing,J0 1SM
+A-RLN-58184,Sweden,Vahlen,Uppsala,S94 3RA
+A-KJM-95093,United Kingdom,Anhalt,Reading,24109
+A-MFZ-15865,United Kingdom,Bayside,Edinburgh,AP3 7LM
+A-SOW-06472,China,Forster,Beijing,ZI6 5LS
+A-ORC-14738,China,Hanover,Guangzhou,X63 7CN
+A-NGT-46053,United Kingdom,International,Birmingham,743 01
+A-SGC-23944,United Kingdom,4th,Manchester,FD9 7PT
+A-NTC-82271,Sweden,Spaight,Link?ping,YF3 8YD
+A-GXJ-48709,United Kingdom,Tony,Leicester,311-1500
+A-ZRG-63495,France,Anhalt,Nantes,7119
+A-VPA-46238,United Kingdom,Waubesa,London,T40 7GO
+A-LHO-05328,Wales,Red Cloud,Neath,369-0137
+A-WQZ-27159,India,Comanche,Jaipur,A75
+A-UYM-25095,United Kingdom,Graedel,Manchester,EN27 9EG
+A-JTZ-25899,Switzerland,Gerald,Biel/Bienne,PP2 9WB
+A-CCL-00740,Iceland,Fuller,?rborg,66-220
+A-FAW-51424,Germany,Morning,Dortmund,155007
+A-ODE-50455,United Kingdom,Nancy,Birmingham,U6 2WH
+A-SSY-40316,China,Melody,Nanjing,07-320
+A-XOW-72664,United Kingdom,David,Glasgow,372 34
+A-FKM-85259,United Kingdom,Drewry,Southampton,J0 6FH
+A-YQR-56534,Netherlands,Lillian,Utrecht,3060-629
+A-LAT-08036,United Kingdom,Milwaukee,London,FO02 3AE
+A-ZRM-63504,United Kingdom,Clarendon,Liverpool,37-232
+A-AFM-48725,United Kingdom,Utah,London,O16 2JS
+A-YMO-28743,Germany,Autumn Leaf,Essen,AV21 2AB
+A-XEH-13611,Belgium,Nelson,Brussels,HZ86 7CV
+A-MFL-86943,United Kingdom,Blue Bill Park,Manchester,VX1 4NH
+A-SWL-33136,United Kingdom,Blaine,London,195509
+A-GUI-93614,United Kingdom,Schurz,London,WE09 8YK
+A-NKC-85551,Austria,Heath,Sankt P?lten,14400-000
+A-OWW-24046,Portugal,Spaight,Funchal,Z73 2GA
+A-GAG-90322,United Kingdom,Elka,Glasgow,MZ90 6UF
+A-VRD-08242,Norway,Merry,Troms?,520-0111
+A-REO-63491,United Kingdom,Schmedeman,Sheffield,92684 CEDEX
+A-LDN-83295,China,Warrior,Shanghai,MF7 0PV
+A-SSQ-62799,United Kingdom,Southridge,Belfast,HN97 8HY
+A-IFS-92167,United Kingdom,Swallow,London,84019 CEDEX 1
+A-YIM-09350,China,Morrow,Shanghai,W3 6DM
+A-RFX-29943,United Kingdom,Artisan,Portsmouth,2677
+A-HYJ-55966,Finland,Porter,Turku,32605
+A-ROA-96332,United Kingdom,Hoffman,London,2808
+A-UVN-73621,Spain,Fulton,Murcia,86-260
+A-ZKG-23440,South Korea,Weeping Birch,Gwangju,10152
+A-BOC-00085,United Kingdom,1st,Glasgow,S6 2WZ
+A-QJG-65032,Austria,Cambridge,Innsbruck,68500-000
+A-IZS-22890,United States,Oneill,New York City,73800-000
+A-HNL-80787,Belgium,Summerview,Ghent,F3 9QP
+A-KXR-00462,United Kingdom,Loomis,London,NS1 0TD
+A-MGC-06913,China,Daystar,Shanghai,P1A
+A-KBK-53741,Austria,Amoth,Wels,43656
+A-TUO-44400,United Kingdom,Vermont,London,11504
+A-WLZ-69674,Austria,West,Sankt P?lten,2640-394
+A-KSB-84452,Sweden,Hoepker,Malm?,J9P
+A-SHU-74025,United Kingdom,Hansons,Southampton,G6 8YX
+A-OJX-06185,United Kingdom,Morningstar,London,50205
+A-DKJ-73860,United Kingdom,Pierstorff,Birmingham,181370
+A-QZW-01517,United Kingdom,Westport,Edinburgh,97-565
+A-XQT-02648,China,Loomis,Wuhan,U7 1VR
+A-PXD-73061,United Kingdom,Mosinee,Cardiff,92337 CEDEX
+A-RBU-85152,Netherlands,Garrison,The Hague,T88 3CG
+A-XVF-43095,United Kingdom,Karstens,Birmingham,4207
+A-NGP-01097,United Kingdom,Morning,Liverpool,XH4 7FD
+A-QPM-56476,United Kingdom,Sherman,Edinburgh,K64 7YK
+A-ZMX-81399,United Kingdom,Marcy,Aberdeen,OS97 2RJ
+A-LSV-01576,United Kingdom,Mandrake,Bristol,HL66 5QT
+A-ZLV-65190,Northern Ireland,Marcy,Newtownabbey,AE91 6OH
+A-IDV-64946,United Kingdom,Thierer,London,20249
+A-IQL-16620,Japan,Farwell,Kobe,B28 6YO
+A-DML-93628,Netherlands,Ludington,Breda,76420-000
+A-HAS-64357,Ireland,Monterey,Navan,PH8 4WP
+A-QPO-65411,United Kingdom,Delaware,Liverpool,B87 3GX
+A-YTF-04965,Austria,Burning Wood,Dornbirn,KV9 5UJ
+A-RDW-52199,United States,Ilene,New York City,R2 1ZH
+A-SKJ-61914,Switzerland,Del Mar,Geneva,MH56 0NG
+A-ZVG-59252,United Kingdom,Lyons,London,H90 6WL
+A-RZK-11013,Germany,Portage,Hamburg,31300
+A-XBQ-28470,Spain,Memorial,Bilbao,7241
+A-YFU-19025,United Kingdom,Nova,Edinburgh,30001
+A-SJX-57144,United Kingdom,Westerfield,London,300040
+A-CID-18442,Norway,Birchwood,Fredrikstad,161250
+A-UDP-97335,United Kingdom,Butterfield,Cardiff,3378
+A-QOU-55133,United Kingdom,Rieder,London,EB25 1JI
+A-RMJ-64576,Germany,Brown,Berlin,N2B
+A-THM-00750,United Kingdom,Ridge Oak,Sheffield,V7 0BK
+A-GHU-85025,United Kingdom,South,London,P4 3WC
+A-URE-43339,United Kingdom,Corry,Birmingham,J9 6BR
+A-TOU-22688,United Kingdom,Debs,London,811 53
+A-WQW-52009,United Kingdom,Del Sol,Reading,682574
+A-EUA-00391,United Kingdom,Grasskamp,Edinburgh,15600
+A-QJD-79529,United States,Florence,New York City,2248
+A-XLK-23602,United Kingdom,Northview,Leeds,R26 2NG
+A-WXU-92623,United Kingdom,Cascade,London,102 46
+A-VRR-55675,United Kingdom,Sunfield,Nottingham,357637
+A-GNH-00215,United Kingdom,Melby,Birmingham,65715-000
+A-IIZ-28489,United Kingdom,Killdeer,Sheffield,4089
+A-PAI-74178,Sweden,Loeprich,Malm?,O6 7HA
+A-GJB-23307,United Kingdom,Badeau,Portsmouth,398 53
+A-DRV-03457,United States,Eggendart,Philadelphia,Y5 8JZ
+A-BQE-90336,United Kingdom,Homewood,Reading,67130
+A-VTJ-89871,United Kingdom,Del Sol,London,431355
+A-RMR-71399,United Kingdom,Harper,Birmingham,W17 7TX
+A-RWB-58072,Italy,Elmside,Catania,VR8 2EU
+A-SHM-93145,United Kingdom,Loeprich,London,Y39 2CV
+A-THT-73413,Italy,Basil,Rome,175038
+A-TFA-82905,France,Vermont,Montpellier,3500
+A-TKV-49782,United Kingdom,Hooker,London,5152
+A-MSQ-68745,United Kingdom,Acker,London,253048
+A-RXD-79955,China,Farmco,Xi'an,11-042
+A-HSP-66132,United Kingdom,Springview,Newcastle upon Tyne,MD6 8SM
+A-IRR-81268,United Kingdom,Trailsway,Glasgow,VU3 2WT
+A-VTX-04975,South Korea,Fallview,Daegu,X6 7FX
+A-GMO-32903,United Kingdom,Mccormick,Cardiff,KW05 9VJ
+A-LGF-47626,United Kingdom,Summit,Birmingham,5881
+A-ZQZ-36830,United Kingdom,Hoffman,Coventry,5856
+A-PIZ-49895,United Kingdom,Debra,Hull,B6 0CG
+A-XYV-82171,United States,Dahle,Columbus,M18 4AJ
+A-QZP-77777,United Kingdom,Burrows,Edinburgh,I1 7WF
+A-MBA-72481,United Kingdom,Darwin,Aberdeen,69485-000
+A-QKF-92849,France,Evergreen,Marseille,GP11 4WZ
+A-NEC-43945,United Kingdom,Haas,Nottingham,Y5 3CN
+A-FXX-91880,Scotland,Mifflin,Aberdeen,40612
+A-PIE-74764,United Kingdom,Loftsgordon,Sheffield,S91 2AL
+A-VCE-73700,United Kingdom,7th,Manchester,A21 6RL
+A-GLF-37691,United States,Riverside,Los Angeles,352174
+A-YWC-19526,Japan,Gerald,Sapporo,GZ37 8CY
+A-WKV-66631,United Kingdom,Briar Crest,Sheffield,2106
+A-GKF-46248,United Kingdom,1st,London,S54 1VQ
+A-NSS-06108,United Kingdom,Blackbird,Leicester,S2 2VY
+A-IFJ-85317,South Korea,Havey,Daejeon,C14 4GB
+A-IRP-96502,United Kingdom,Nancy,London,14740-000
+A-FUD-98001,Sweden,Monterey,Helsingborg,3570-014
+A-LCT-86449,Sweden,Cody,J?nk?ping,34280
+A-BRW-14033,United Kingdom,Oxford,Cardiff,43-474
+A-ALJ-55175,United Kingdom,Morningstar,Edinburgh,S24 6HP
+A-PKV-69417,Spain,Fairfield,Murcia,Z26 7QG
+A-GGN-36996,China,Farragut,Beijing,1105
+A-YEW-68812,United States,Nova,San Jose,4525-355
+A-XFQ-21161,United Kingdom,Burning Wood,Edinburgh,2840-044
+A-EHK-08169,Italy,Meadow Vale,Palermo,83040 CEDEX 9
+A-CSP-24826,Scotland,Namekagon,Dunfermline,U6 6MO
+A-SET-45973,United Kingdom,Dixon,Southampton,30351
+A-ADD-61038,Italy,Utah,Catania,NS28 0IM
+A-HVP-47038,China,Corscot,Chengdu,27-580
+A-OQN-32617,United Kingdom,Amoth,Newcastle upon Tyne,NW5 0PH
+A-YUU-89098,United Kingdom,Hallows,Coventry,J4 2AP
+A-VDF-59082,United States,Cody,Columbus,XE00 4CD
+A-BGC-35875,United Kingdom,Forster,London,32-437
+A-DPO-06454,Belgium,Brickson Park,Aalst,59-141
+A-ODB-15676,Italy,Kipling,Palermo,6612
+A-KJA-27034,United Kingdom,Buell,Manchester,957-0353
+A-BNH-10962,United Kingdom,Cherokee,Newcastle upon Tyne,20067
+A-PTQ-64398,Belgium,Moland,Ghent,SE7 0PR
+A-IPS-69541,Scotland,Brickson Park,Paisley,GE37 0EG
+A-XGY-83748,United Kingdom,Buena Vista,Edinburgh,4940-025
+A-PEO-16001,Portugal,Crescent Oaks,Coimbra,426-0025
+A-EMV-75759,United States,Loftsgordon,San Antonio,LM09 6BJ
+A-OBM-73502,Norway,Logan,Sandnes,36-030
+A-WBF-16879,United Kingdom,Fisk,Liverpool,36164
+A-RGR-11469,United Kingdom,Arizona,London,UO2 1NV
+A-LVG-79918,United Kingdom,Monument,Glasgow,SC3 8EN
+A-EJL-91111,United Kingdom,Esker,London,9512
+A-SVU-93791,France,Corry,Lyon,CF5 8VT
+A-RZW-26722,United Kingdom,Troy,London,368551
+A-ZWH-69069,Switzerland,Di Loreto,Winterthur,R8 3QL
+A-MZX-10370,United Kingdom,Tomscot,Hull,S3 5KB
+A-MLT-95923,United Kingdom,Golden Leaf,London,F3 6ZP
+A-GHF-09628,United Kingdom,Carberry,Bristol,815 92
+A-RVZ-20037,United Kingdom,Hallows,Newcastle upon Tyne,606084
+A-OLG-83303,United Kingdom,Bellgrove,Nottingham,KQ8 8OL
+A-DPT-44886,China,Oak Valley,Hong Kong,ST8 9NX
+A-XVQ-22350,United States,New Castle,Chicago,9950-325
+A-IEB-59564,China,Rigney,Harbin,98600-000
+A-HFX-27843,Netherlands,Northview,Eindhoven,K08 8WX
+A-JXQ-14185,Northern Ireland,Burning Wood,Bangor,357870
+A-VAR-99444,Germany,Northfield,Stuttgart,14910-000
+A-KNM-45949,France,Elgar,Nice,94237
+A-SNJ-93984,Japan,Muir,Kyoto,J17 5YR
+A-VFD-81350,China,Banding,Wuhan,1005
+A-VIT-62611,United Kingdom,Maple Wood,Newcastle upon Tyne,BD09 4JX
+A-MQU-23539,South Korea,Di Loreto,BUnited Statesn,F2 0YL
+A-FTB-74358,United Kingdom,Dorton,Edinburgh,2420-231
+A-TIZ-24782,Portugal,6th,Queluz,R07 8BC
+A-UFI-56226,United Kingdom,Coolidge,Aberdeen,AW49 2PO
+A-PBJ-42226,United Kingdom,Canary,Portsmouth,P72 3SC
+A-MQO-98534,United Kingdom,Veith,Southampton,5000
+A-ZUT-46446,United Kingdom,Cody,Leeds,H4 2LG
+A-KQL-73902,United Kingdom,Union,London,11403
+A-JUT-18927,United States,Coolidge,Austin,QB7 0BJ
+A-CEN-48020,United Kingdom,Banding,Edinburgh,94110
+A-TAW-66746,Portugal,Sundown,Braga,KH3 7NS
+A-CBS-73058,United Kingdom,Sugar,Reading,K5 2UQ
+A-CLR-09109,Austria,Declaration,Klagenfurt,10220
+A-LAD-05633,Scotland,Knutson,Ayr,EQ84 4KX
+A-CGK-09378,Italy,Mifflin,Bari,MT34 3FJ
+A-KWP-34784,United Kingdom,Gina,Leeds,B23 9DD
+A-BGV-24853,United Kingdom,John Wall,Hull,721 57
+A-IJQ-15681,United Kingdom,Mcbride,Aberdeen,AY0 4DQ
+A-ZDE-67156,United States,5th,Jacksonville,Y4 8FI
+A-ZZY-80768,United Kingdom,Thompson,Glasgow,C0 2FR
+A-TML-90641,United Kingdom,Chinook,Leeds,72029 CEDEX 2
+A-YRZ-45952,United Kingdom,Haas,Portsmouth,5400-006
+A-SPI-53273,Belgium,Menomonie,Bruges,6680
+A-QTU-06974,United Kingdom,South,Edinburgh,468 22
+A-LAE-59686,United Kingdom,Southridge,London,M94 0FO
+A-LJM-59667,United Kingdom,Roxbury,Leeds,20508
+A-KEQ-41571,United Kingdom,Birchwood,Southampton,V05 0VF
+A-OYG-26182,Sweden,Rieder,Link?ping,Z9 2IU
+A-AJJ-15954,United Kingdom,Loomis,Coventry,22119
+A-TJQ-17662,United Kingdom,Waywood,Aberdeen,4011
+A-CIX-91983,India,Porter,Pune,85936
+A-CXA-47437,United Kingdom,Vera,London,13260
+A-JII-43884,United States,Tony,New York City,65200-000
+A-HGE-16486,United Kingdom,Towne,London,FH50 3FZ
+A-GEB-72421,United Kingdom,Johnson,London,G40 2HQ
+A-MMJ-69667,Switzerland,Lighthouse Bay,Zurich,655131
+A-HRP-34167,United States,Goodland,San Francisco,925-0145
+A-EMR-54088,United Kingdom,Ridgeview,London,NX2 0XO
+A-IYC-13702,United States,Iowa,"Washington, D.C.",BE29 3XV
+A-VZC-17407,United Kingdom,Southridge,Manchester,4930-250
+A-UKW-44205,United Kingdom,Park Meadow,London,757 59
+A-KFG-88294,Sweden,Hallows,Norrk?ping,P0 0RJ
+A-DXL-43618,India,Grayhawk,Surat,7220-565
+A-PTX-13323,Japan,Acker,Yokohama,58353
+A-FCT-14531,France,Packers,Montpellier,49170-000
+A-NQU-01987,United States,Novick,San Diego,413028
+A-NRO-05110,United States,Welch,Fort Worth,J3 6VL
+A-ARI-57457,United Kingdom,Stang,Coventry,FD4 9HV
+A-OYJ-02741,United Kingdom,Larry,London,WN2 0BO
+A-RUO-63367,United States,4th,Chicago,34-722
+A-SCR-27327,Italy,Gina,Milan,87505
+A-CAH-53474,United States,Melrose,Denver,636450
+A-IQU-63157,Spain,6th,M¨¢laga,P5E
+A-HEA-58442,United Kingdom,Fremont,Glasgow,623287
+A-DUA-21239,United Kingdom,Arrowood,Glasgow,1290
+A-POE-41197,China,Pierstorff,Shanghai,SB08 2RI
+A-RDY-02139,United Kingdom,Michigan,Reading,2350-323
+A-KGL-05675,United Kingdom,Green,Leicester,ZZ57 3BA
+A-FCW-06581,Norway,Stone Corner,Oslo,54455
+A-JVC-95394,Northern Ireland,Derek,Ballymena,60686
+A-KSK-15379,United Kingdom,Transport,Birmingham,GG49 0JY
+A-IWF-82715,United States,Comanche,Los Angeles,3522
+A-SZH-86572,United Kingdom,Fordem,Reading,445550
+A-LUK-18981,United Kingdom,Stang,London,U64 1HO
+A-SRE-70639,United Kingdom,Superior,London,GN78 2VW
+A-ZZY-14469,United Kingdom,Rieder,Leeds,252 68
+A-YLT-23425,South Korea,Bartillon,Changwon,C08 5MO
+A-YHM-13224,United Kingdom,Summerview,Manchester,3162
+A-VHW-72557,United Kingdom,Sullivan,London,470017
+A-XSC-80700,United Kingdom,Sage,Leeds,IS5 8KY
+A-NOJ-37232,United Kingdom,Old Shore,London,SU1 5XU
+A-YLS-69822,United States,Coolidge,San Jose,L9 4TD
+A-MWT-07707,Northern Ireland,Cambridge,Castlereagh,W0 1ES
+A-KNI-79689,Italy,Clyde Gallagher,Bari,G74 6PL
+A-VXG-59367,United Kingdom,Crowley,Edinburgh,S79 5JH
+A-BCO-59329,Scotland,Rockefeller,Perth,FS6 0VU
+A-DYT-31206,United Kingdom,Texas,London,WS3 0FE
+A-BYG-41550,United Kingdom,Blackbird,Edinburgh,A71 3HX
+A-WJT-14125,United Kingdom,Riverside,Belfast,65213-000
+A-KZW-92140,United Kingdom,Onsgard,London,V8 6DR
+A-SVS-43484,United States,Spenser,Fort Worth,10612
+A-WXK-76748,Denmark,Lakewood,Odense,63104
+A-EYQ-23823,United Kingdom,Buell,Reading,404 32
+A-QRU-94573,France,Arkansas,Lille,XX10 8PE
+A-FBF-05432,Iceland,Mcbride,Hafnarfj?r?ur,75562 CEDEX 12
+A-RMP-54780,Spain,Shelley,Valencia,C78 2KK
+A-ZPQ-78910,Sweden,Redwing,V?ster?s,AH4 2GM
+A-ENU-63550,United Kingdom,Mockingbird,Edinburgh,IU86 8YW
+A-IZZ-78554,United Kingdom,Lake View,Leeds,91841
+A-YKS-47183,India,Myrtle,Hyderabad,413 11
+A-BHZ-23518,United Kingdom,Briar Crest,Manchester,JS47 0AO
+A-UUR-46166,United Kingdom,Coleman,Sheffield,RX3 6BN
+A-QPM-15099,Switzerland,Springview,Lucerne,DQ6 7SG
+A-MXG-84542,United Kingdom,Colorado,Manchester,618460
+A-HJV-00142,United Kingdom,Dapin,London,2720
+A-TEH-58652,United Kingdom,Stuart,London,11009
+A-WTL-88134,United Kingdom,Bartelt,London,393028
+A-YYW-28076,United States,Rusk,"Washington, D.C.",6538
+A-GMD-26335,Germany,7th,Frankfurt,W2 7ZF
+A-TLO-13546,United Kingdom,Fremont,Liverpool,7047
+A-ZHI-58973,United Kingdom,Jackson,Birmingham,N1 2EX
+A-NTZ-42790,United Kingdom,Drewry,Birmingham,859-0413
+A-PTE-45627,United Kingdom,Talisman,Edinburgh,YJ52 2HW
+A-YGN-64592,Switzerland,Ridgeway,Zurich,MP45 2KL
+A-JKE-52922,United Kingdom,Atwood,Manchester,A8 7YA
+A-GCZ-32454,United Kingdom,Cardinal,London,XH7 9OJ
+A-EAY-34601,Netherlands,Melby,Groningen,HH11 2PB
+A-HWW-24459,United Kingdom,Charing Cross,London,I4 9FR
+A-DVK-11724,United Kingdom,Waywood,Edinburgh,55460-000
+A-SHJ-00925,Sweden,Lotheville,V?ster?s,J4 7CB
+A-UIG-75978,United Kingdom,Carpenter,Leeds,691 45
+A-LPI-19356,United Kingdom,Grayhawk,Manchester,H8 8OM
+A-GNI-76639,Scotland,Harper,Livingston,R4 8CM
+A-VUF-41526,United Kingdom,Golden Leaf,Belfast,69281 CEDEX 01
+A-XVD-47281,Netherlands,Mayer,Rotterdam,K95 3OQ
+A-IKL-51929,Northern Ireland,Westerfield,Newtownards,10250
+A-CYM-44377,United States,Talisman,San Antonio,10009
+A-LTM-52652,United Kingdom,Blaine,Bristol,659642
+A-NEH-97159,United Kingdom,Bowman,London,3860-205
+A-DIS-29870,France,Blackbird,Bordeaux,79150-000
+A-VGS-64747,Ireland,Menomonie,Limerick,LH9 2LN
+A-MMA-10445,United Kingdom,Rieder,London,64058 CEDEX 9
+A-RYE-30653,Scotland,Esker,Edinburgh,3423
+A-VBF-66169,United Kingdom,High Crossing,Bristol,439 23
+A-BXA-22860,United States,Lyons,San Francisco,H9K
+A-NJO-69296,United Kingdom,Texas,Leeds,U96 2SS
+A-MLK-68383,India,Bay,Delhi,U5 1ND
+A-AOJ-73434,United Kingdom,Harbort,London,VJ3 2GK
+A-NTW-08882,Germany,Marcy,Munich,692425
+A-POA-38149,United Kingdom,Continental,Newcastle upon Tyne,3523
+A-UBD-07568,United Kingdom,Banding,Sheffield,99-320
+A-RUP-04758,China,Sunfield,Changchun,252 82
+A-FIA-60158,United Kingdom,South,London,I4 9AJ
+A-JSK-62208,United Kingdom,Heffernan,London,9913
+A-JES-02285,United Kingdom,Comanche,Leeds,CM6 5OF
+A-TNX-59660,United Kingdom,Spenser,London,47405
+A-XXK-61880,Northern Ireland,Truax,Belfast,748
+A-DOJ-14511,Belgium,Fisk,Brussels,250258
+A-ZYN-60769,United Kingdom,Larry,Edinburgh,UV09 4OF
+A-ICS-07582,United Kingdom,Oxford,London,2000
+A-AXQ-42281,United Kingdom,Sauthoff,London,Q47 7AW
+A-YIG-95564,China,East,Suzhou,38-247
+A-HAK-86449,Spain,Basil,Madrid,W83 8CS
+A-KUU-19784,United Kingdom,Waubesa,Belfast,H0 3JQ
+A-SCX-81237,United Kingdom,Clove,Edinburgh,14016
+A-TJU-52466,United Kingdom,Grasskamp,Glasgow,EK4 7DB
+A-HUE-68155,United States,Linden,Jacksonville,6802
+A-FZP-81251,Netherlands,Arizona,Nijmegen,AS67 4BI
+A-ZJY-02828,Portugal,Summit,Coimbra,152850
+A-NCS-94857,Finland,International,Pori,UO95 6DV
+A-VAI-84449,United Kingdom,Manitowish,Manchester,F8 2UJ
+A-QQJ-48657,Portugal,Linden,Vila Nova de Gaia,Y02 7BN
+A-BIS-07742,Switzerland,Nelson,Basel,75419 CEDEX 08
+A-XIO-28726,United Kingdom,Linden,London,L-8069
+A-QPX-72312,United Kingdom,Rusk,Portsmouth,EL34 7YR
+A-UGW-89615,United Kingdom,Banding,Sheffield,SC7 4WZ
+A-DUL-87166,United Kingdom,Village Green,London,YO95 5TI
+A-DLG-56415,United Kingdom,Fuller,Leeds,U8 9XE
+A-LAG-16695,United Kingdom,Warner,London,65110
+A-AGX-69017,China,Roth,Shanghai,96970
+A-EWB-32684,United States,Thierer,Denver,K86 9IM
+A-XMT-71040,United Kingdom,Ramsey,Coventry,90110
+A-ICC-99521,United Kingdom,Lighthouse Bay,Manchester,3109
+A-ZMQ-52290,United States,Sundown,Philadelphia,2154
+A-HNP-76876,United Kingdom,Mayer,London,34-322
+A-MSX-56988,United Kingdom,Hazelcrest,Leicester,OH0 4RI
+A-CCC-65669,Sweden,Havey,Gothenburg,4404
+A-MGU-19135,United Kingdom,Grasskamp,Hull,3007
+A-PXE-28439,China,Walton,Wuhan,96970
+A-WTV-24522,Germany,Fremont,Essen,A7 1NH
+A-LJM-32158,Germany,Laurel,D¨¹sseldorf,GT1 7IF
+A-UPU-24968,Scotland,Russell,East Kilbride,K94 7TI
+A-KRK-98174,United Kingdom,Sundown,London,CB0 7ZC
+A-QQU-83626,United States,Rusk,Seattle,FH0 3SR
+A-IAS-82699,United Kingdom,Bultman,London,72011
+A-PLW-49583,United Kingdom,Buhler,London,U93 8OJ
+A-KTB-11837,Northern Ireland,Spaight,Lisburn,4323
+A-UUD-00518,Spain,Graedel,Zaragoza,73-121
+A-ULU-83468,Austria,Melby,Salzburg,ZW7 1JU
+A-MPT-86934,United Kingdom,Declaration,Portsmouth,10315
+A-OWM-68688,United States,Jenna,Charlotte,N20 0EQ
+A-GAZ-03231,United Kingdom,Corry,London,601136
+A-NUH-67861,United Kingdom,Coleman,Aberdeen,SD79 2GU
+A-ZGI-84369,Germany,5th,Frankfurt,369228
+A-APC-01768,Spain,School,Barcelona,58322-000
+A-ZIJ-65662,Iceland,Knutson,Mosfellsb?r,44984 CEDEX
+A-PYM-68349,Denmark,Mayfield,Gentofte,N1 8WT
+A-YQU-81456,United Kingdom,Prentice,Hull,34800-000
+A-DBP-24429,Italy,Carey,Florence,CJ03 2GZ
+A-VSM-53471,United Kingdom,Elka,Leeds,GG4 9PV
+A-FOO-44106,United Kingdom,American Ash,Cardiff,U9 8AE
+A-XTK-90532,United Kingdom,Lawn,London,TG08 5WZ
+A-DDE-74819,United Kingdom,Pleasure,London,5616
+A-BSH-38777,United States,Burning Wood,Chicago,W3 9CI
+A-FMY-46392,United Kingdom,Thackeray,Birmingham,K0 3IO
+A-UDK-78779,United Kingdom,Welch,Portsmouth,AU0 6EQ
+A-SBV-33758,France,Dovetail,Strasbourg,94049 CEDEX
+A-QHK-74746,United Kingdom,Randy,Cardiff,V52 6JC
+A-KDM-30579,United Kingdom,Memorial,Coventry,T23 9HT
+A-JCQ-09224,United Kingdom,Huxley,London,150627
+A-QNA-93735,Spain,Corry,Barcelona,95719 CEDEX 1
+A-ZWJ-10125,United Kingdom,Gina,Leeds,9261
+A-LTD-38334,Switzerland,Red Cloud,Lucerne,8521
+A-VEU-52201,Austria,Everett,Linz,603 86
+A-QTN-24773,United Kingdom,Talmadge,Manchester,5050-401
+A-RRC-98678,Portugal,Rutledge,Braga,9212
+A-FMK-45964,United Kingdom,Veith,Reading,68704 CEDEX
+A-QMB-42913,United Kingdom,Ridge Oak,Reading,N6 4XV
+A-VML-90123,Germany,Forster,Dortmund,9494
+A-QGZ-86770,Wales,Westerfield,Wrexham,22-610
+A-QNK-21884,India,Fallview,Ahmedabad,452 24
+A-RCE-74356,United Kingdom,Grim,Manchester,453259
+A-QUK-15821,United Kingdom,Laurel,Sheffield,2802
+A-XLR-65815,France,Roth,Lyon,V35 4SL
+A-AFW-66138,United Kingdom,Golf,London,6160-402
+A-IQS-21743,China,Graedel,Beijing,181370
+A-PNA-60587,Spain,Stang,Palma,J3 9OD
+A-PFB-50825,United Kingdom,Erie,London,4650-127
+A-KNV-44610,United Kingdom,Transport,Manchester,GH49 3GI
+A-IXR-04321,United Kingdom,Continental,Newcastle upon Tyne,NR29
+A-UIJ-93892,United Kingdom,Springview,Manchester,49003
+A-TPX-63014,United Kingdom,Prairie Rose,Birmingham,UL0 1HW
+A-VSI-91745,Wales,Troy,Llanelli,U35 6CT
+A-TGR-48548,Sweden,Crest Line,Uppsala,78700-000
+A-FJN-80678,United Kingdom,Buhler,Southampton,1600
+A-NDT-13901,United Kingdom,Village,Sheffield,69-210
+A-QZA-08469,United Kingdom,Cordelia,Nottingham,54801
+A-BEJ-75137,United Kingdom,Sugar,Sheffield,N3 5DG
+A-AHO-09209,Switzerland,Sherman,Bern,120 30
+A-QKN-03516,China,Muir,Shanghai,636330
+A-BGN-68986,United Kingdom,Lerdahl,London,319-1111
+A-VWR-42732,Norway,Birchwood,Trondheim,94180
+A-NLW-98713,United Kingdom,Farwell,London,H11 5GC
+A-IHQ-86490,United Kingdom,Ronald Regan,Belfast,761517
+A-CIH-52506,China,Paget,Nanjing,4187
+A-LED-69134,United Kingdom,Judy,Liverpool,90160
+A-MIP-26327,United Kingdom,Vidon,Portsmouth,CM88 2BL
+A-UFI-48558,United Kingdom,3rd,Southampton,90035
+A-JVA-90505,United Kingdom,Buell,Bristol,U92 1PO
+A-YXL-14030,Germany,Graedel,Cologne,10514
+A-CIT-45280,Portugal,Anderson,Set¨²bal,13230
+A-HTD-12367,Netherlands,Goodland,Tilburg,C65 3AL
+A-EXR-99791,United Kingdom,Jenna,Leeds,T52 7XV
+A-SNM-90126,South Korea,Green,Ulsan,LL15 9JG
+A-FPS-10159,United Kingdom,Atwood,London,Q44 0OM
+A-AIR-77248,United Kingdom,Iowa,London,413067
+A-EOV-29622,United Kingdom,Barnett,London,511 01
+A-RVQ-69259,United States,Drewry,New York City,QU51 4WX
+A-UGM-39967,Austria,Little Fleur,Salzburg,C3 5PM
+A-JQX-01785,United Kingdom,Brown,Birmingham,OP76 6YV
+A-HMM-87657,United Kingdom,Kipling,Manchester,U0 9VS
+A-JDZ-46807,Italy,Independence,Naples,984-0075
+A-TZZ-56960,China,Reindahl,Chengdu,6010
+A-LQW-93851,Switzerland,Graceland,Lugano,369-1201
+A-FLN-91785,United Kingdom,Mitchell,Coventry,60070
+A-QLM-68637,United Kingdom,Knutson,London,GB0 1LG
+A-FUF-54113,United Kingdom,Colorado,Manchester,55407
+A-ZCE-14171,Germany,Brickson Park,Cologne,GJ49 2GX
+A-GKG-61060,Austria,Morning,Villach,416372
+A-YNC-00796,India,Mariners Cove,Chennai,D90 6QK
+A-DCD-29828,China,Susan,Beijing,41200
+A-CYT-48537,Norway,Loomis,Drammen,2424
+A-JRR-80185,United Kingdom,Mayer,Southampton,4425
+A-VPI-04430,Italy,Mitchell,Rome,DF80 8NH
+A-TRS-30767,United Kingdom,Ohio,Manchester,607614
+A-JWN-82668,United Kingdom,Ruskin,Sheffield,10505
+A-TXO-90762,United Kingdom,Carioca,Edinburgh,42275 CEDEX
+A-EQH-41157,United Kingdom,Pepper Wood,London,3505-209
+A-UHS-19087,United Kingdom,Merchant,London,ZQ9 6EQ
+A-XDV-26179,United Kingdom,Nobel,Southampton,X44 4KQ
+A-DDK-78895,United Kingdom,Cordelia,London,WK3 5RQ
+A-NWB-87449,United Kingdom,Oriole,Manchester,B8 2DV
+A-PPQ-61775,United Kingdom,Anderson,London,92398 CEDEX
+A-UGL-64107,United Kingdom,Bobwhite,London,IY2 8JP
+A-KZN-82278,Italy,Schlimgen,Turin,371 23
+A-GCV-82748,Belgium,Sugar,Aalst,6525
+A-VRD-83323,United Kingdom,Crowley,Birmingham,MX63 7JE
+A-ZPC-98889,Wales,Delaware,Cwmbran,NF5 2XS
+A-YVL-56905,United Kingdom,Veith,Leeds,83120
+A-QVD-94116,United Kingdom,Bonner,Bristol,JO13 5BA
+A-FZR-57246,United Kingdom,Hudson,London,S5 2ZK
+A-FND-75160,United Kingdom,Butterfield,Liverpool,D23 5OV
+A-QXK-22891,United Kingdom,Kinsman,Nottingham,11205
+A-AKM-37896,United Kingdom,Jana,London,LZ88 2BF
+A-BCR-00831,Belgium,Lawn,Leuven,46130
+A-ZLW-45405,United Kingdom,Westend,Edinburgh,KI7 0BR
+A-UZT-05381,China,Westport,Shanghai,DH0 9TP
+A-QBZ-02779,France,Almo,Nantes,N71 7OW
+A-UQK-28043,Scotland,Grasskamp,Hamilton,1728
+A-DOF-13139,China,Old Shore,Beijing,8301
+A-NEM-81652,United Kingdom,Rieder,London,UY90 5MH
+A-QOU-48886,Germany,Starling,Leipzig,RG79 7PL
+A-ZFY-12077,United Kingdom,Glendale,Bristol,5719
+A-AJF-50197,United Kingdom,Elmside,Glasgow,L52 1XJ
+A-UKT-19648,United Kingdom,Summer Ridge,London,11-130
+A-DDF-99711,United Kingdom,Namekagon,Birmingham,2415-177
+A-RWJ-49085,United Kingdom,Clyde Gallagher,London,453444
+A-EEF-42944,United Kingdom,Bunting,Bristol,Z57 4YI
+A-JMH-88330,Finland,Ridgeview,Espoo,RO55 4RH
+A-EGX-96267,United Kingdom,Susan,Aberdeen,2710-470
+A-HCI-82099,United States,Jay,Houston,142717
+A-GOO-46071,United Kingdom,Pond,London,5155-505
+A-MBO-11389,Spain,Comanche,Palma,B56 1JT
+A-YJB-45844,Spain,Marquette,Zaragoza,2416
+A-QYD-59778,Belgium,Hanson,Namur,US21 3RL
+A-LWE-18087,United Kingdom,Jenifer,Leeds,75729 CEDEX 15
+A-MCY-44994,Denmark,Saint Paul,Esbjerg,D24 1XN
+A-OTL-23680,United Kingdom,Warrior,London,X7 2KR
+A-FSF-24402,South Korea,Montana,Suwon,742-0021
+A-PXO-00479,United Kingdom,Loftsgordon,Edinburgh,620995
+A-FXX-31379,United Kingdom,Scott,London,W72 5IB
+A-NOK-69162,Norway,Blue Bill Park,Kristiansand,DK84 1BR
+A-UEI-48215,United Kingdom,Hudson,Leeds,352574
+A-HEA-28649,France,Magdeline,Paris,45045 CEDEX 1
+A-NBL-63912,United Kingdom,Spenser,London,EI5 4BI
+A-XOO-91709,Sweden,Sundown,J?nk?ping,4610-695
+A-ITF-74124,United Kingdom,Tennyson,Edinburgh,79600-000
+A-IMV-36141,United Kingdom,Hollow Ridge,Newcastle upon Tyne,95201
+A-HAA-52810,United Kingdom,Helena,London,UL0 1ZL
+A-EQB-05280,United Kingdom,Bartelt,London,Z96 4WU
+A-IHO-25195,Iceland,Messerschmidt,Reykjanesb?r,9401
+A-ZVR-05991,Belgium,Sunnyside,Namur,86-055
+A-NBG-71108,United Kingdom,Blackbird,Aberdeen,5850
+A-JFI-74685,Switzerland,Beilfuss,Winterthur,38-535
+A-EYW-62171,United Kingdom,Forest,London,RU2 5QO
+A-AYP-00297,United Kingdom,Dapin,London,446849
