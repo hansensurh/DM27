@@ -4,45 +4,73 @@ output: html_document
 date: "2024-03-05"
 ---
 
-```{r} 
+
+```{r loop,message=FALSE,warning=FALSE,attr.source='.numberLines'}
+
+all_files <- list.files("/cloud/project/Data/")
+
+for (variable in all_files) {
+  this_filepath <- paste0("/cloud/project/Data/",variable)
+  this_file_contents <- readr::read_csv(this_filepath)
+  
+  number_of_rows <- nrow(this_file_contents)
+  number_of_columns <- ncol(this_file_contents)
+  
+  print(paste0("The file: ",variable,
+              " has: ",
+              format(number_of_rows,big.mark = ","),
+              " rows and ",
+              number_of_columns," columns"))
+}
+
+
+```
+
+## Check if the first column of each file is a primary 
+
+```{r checkprimary,message=FALSE,warning=FALSE,attr.source='.numberLines'}
+
+for (variable in all_files) {
+  this_filepath <- paste0("/cloud/project/Data/",variable)
+  this_file_contents <- readr::read_csv(this_filepath)
+  number_of_rows <- nrow(this_file_contents)
+  
+  print(paste0("Checking for: ",variable))
+  
+  print(paste0(" is ",nrow(unique(this_file_contents[,1]))==number_of_rows))
+}
+
+```
+
+```{r checkprimary,message=FALSE,warning=FALSE,attr.source='.numberLines'}
+# Read the data
+for (variable in all_files) {
+  this_filepath <- paste0("/cloud/project/Data/",variable)
+  this_file_contents <- readr::read_csv(this_filepath)
+  frame_name <- (gsub("\\d+\\.csv$", "", variable))
+  assign(frame_name, readr::read_csv(this_filepath))
+}
+
+```
+
+
+# Load Files in an sqlite database 
+
+```{r loadsqlite,warning=FALSE,error=FALSE,message=FALSE,attr.source='.numberLines'}
+# Load the library
 library(RSQLite)
 library(DBI)
 library(tidyverse)
-```
 
-```{r message=FALSE}
-setwd("/cloud/project/Modified Data")
-TRANSACTION <- read_csv("TRANSACTION1.csv")
-SUPPLY <- read_csv("SUPPLY1.csv")
-SUPPLIER <- read_csv("SUPPLIER1.csv")
-SHIPMENT <- read_csv("SHIPMENT1.csv")
-REVIEW <- read_csv("REVIEW1.csv")
-PRODUCT <- read_csv("PRODUCT1.csv")
-ORDER <- read_csv("ORDER1.csv")
-CUSTOMER <- read_csv("CUSTOMER1.csv")
-CATEGORY <- read_csv("CATEGORY1.csv")
-SUPPLIER_address <- read_csv("SUPPLIER_address1.csv")
-CUSTOMER_address <- read_csv("CUSTOMER_address1.csv")
-SHIPMENT_address <- read_csv("SHIPMENT_address1.csv")
+#setup the connection
+project <- RSQLite::dbConnect(RSQLite::SQLite(),"project.db")
 
 ```
 
-
-```{r} 
-project <- dbConnect(RSQLite::SQLite(),"project.db") 
-```
-
-```{r}
-REVIEW$review_date <- as.character(REVIEW$review_date)
-TRANSACTION$transaction_date <- as.character(TRANSACTION$transaction_date)
-ORDER$order_date <- as.character(ORDER$order_date)
-
-```
 
 ```{sql connection=project}  
 CREATE TABLE 'customer' (  
     'customer_id' VARCHAR(200) PRIMARY KEY,  
-    'username' VARCHAR(200) NOT NULL UNIQUE, 
     'caddress_id' VARCHAR(200) NOT NULL,
     'first_name' VARCHAR(200) NOT NULL,  
     'last_name' VARCHAR(200) NOT NULL, 
@@ -50,14 +78,13 @@ CREATE TABLE 'customer' (
     'email' VARCHAR(200) NOT NULL UNIQUE,  
     'mobile' VARCHAR(20) NOT NULL UNIQUE,  
     'membership' INT,  
+    'age' INT,
+    'gender' VARCHAR(20),
     FOREIGN KEY ('caddress_id') REFERENCES customer_address('caddress_id')
 )
 ```
 
 
-```{r}  
-dbWriteTable(conn = project, name = "customer", value = CUSTOMER, append = TRUE, row.names = FALSE)
-```
 
 ```{sql connection=project}  
 CREATE TABLE 'supplier'(  
@@ -69,9 +96,6 @@ CREATE TABLE 'supplier'(
  )  
 ```
 
-```{r}
-dbWriteTable(conn = project, name = "supplier", value = SUPPLIER, append = TRUE, row.names = FALSE)
-```
 
 ```{sql connection=project}  
 CREATE TABLE 'supply'(  
@@ -83,9 +107,6 @@ CREATE TABLE 'supply'(
 )  
 ``` 
 
-```{r}
-dbWriteTable(conn = project, name = "supply", value = SUPPLY, append = TRUE, row.names = FALSE)
-```
 
 ```{sql connection=project}  
 CREATE TABLE 'product' (  
@@ -100,9 +121,6 @@ CREATE TABLE 'product' (
 )  
 ```  
 
-```{r}
-dbWriteTable(conn = project, name = "product", value = PRODUCT, append = TRUE, row.names = FALSE)
-```
 
 ```{sql connection=project}  
 CREATE TABLE 'category' (  
@@ -121,44 +139,20 @@ CREATE TABLE 'category_parent' (
 )  
 ```  
 
-```{r}
-dbWriteTable(conn = project, name = "category", value = CATEGORY, append = TRUE, row.names = FALSE)
-dbWriteTable(conn = project, name = "category_parent", value = CATEGORY_parent, append = TRUE, row.names = FALSE)
-
-```
-
-
 ```{sql connection=project}  
-CREATE TABLE 'order' (  
+CREATE TABLE 'orders' (  
     'order_id' VARCHAR(200) PRIMARY KEY,  
     'order_date' DATE NOT NULL,  
     'customer_id' VARCHAR(200),  
     'product_id' VARCHAR(200), 
     'quantity' INT NOT NULL, 
+    'transaction_status' TEXT NOT NULL,
+    'transaction_method' TEXT NOT NULL,
     FOREIGN KEY ('customer_id') REFERENCES customer('customer_id'),  
     FOREIGN KEY ('product_id') REFERENCES product('product_id')
 )  
 ```  
 
-```{r}
-dbWriteTable(conn = project, name = "order", value = ORDER, append = TRUE, row.names = FALSE)
-```
-
-```{sql connection=project}  
-DROP TABLE IF EXISTS 'transaction';
-CREATE TABLE 'transaction' (  
-    'transaction_id' VARCHAR(200) PRIMARY KEY,  
-    'transaction_date' DATE NOT NULL,   
-    'transaction_status' TEXT NOT NULL,   
-    'transaction_method' TEXT NOT NULL, 
-    'order_id' VARCHAR(200),
-    FOREIGN KEY ('order_id') REFERENCES 'order'('order_id') 
-) 
-```  
-
-```{r}
-dbWriteTable(conn = project, name = "transaction", value = TRANSACTION, append = TRUE, row.names = FALSE)
-```
 
 ```{sql connection=project}  
 CREATE TABLE 'review' (  
@@ -173,29 +167,19 @@ CREATE TABLE 'review' (
 )  
 ``` 
 
-```{r}
-dbWriteTable(conn = project, name = "review", value = REVIEW, append = TRUE, row.names = FALSE)
-```
-
-```{sql connection=project}
-SELECT *
-FROM review
-```
 
 ```{sql connection=project}  
-DROP TABLE IF EXISTS 'shipment';
 CREATE TABLE 'shipment' (  
     'shipment_id' VARCHAR(200) PRIMARY KEY,  
-    'shipping_status' VARCHAR(200) NOT NULL,  
+    'shipment_status' VARCHAR(200) NOT NULL,  
     'shipment_method' VARCHAR(200) NOT NULL,
     'saddress_id' VARCHAR(200) NOT NULL,
-    FOREIGN KEY ('saddress_id') REFERENCES shipment_address('saddress_id')  
+    'order_id' VARCHAR(200) NOT NULL,
+    FOREIGN KEY ('saddress_id') REFERENCES shipment_address('saddress_id') 
+    FOREIGN KEY ('order_id') REFERENCES orders('order_id') 
 )  
 ``` 
 
-```{r}
-dbWriteTable(conn = project, name = "shipment", value = SHIPMENT, append = TRUE, row.names = FALSE)
-```
 
 ```{sql connection=project}  
 CREATE TABLE 'shipment_address' (  
@@ -208,7 +192,6 @@ CREATE TABLE 'shipment_address' (
 ``` 
 
 ```{sql connection=project}  
-DROP TABLE IF EXISTS 'supplier_address';
 CREATE TABLE 'supplier_address' (  
     'supaddress_id' VARCHAR(200) PRIMARY KEY,  
     'country' VARCHAR (200) NOT NULL, 
@@ -228,31 +211,53 @@ CREATE TABLE 'customer_address' (
 )  
 ``` 
 
-```{r}
-dbWriteTable(conn = project, name = "shipment_address", value = SHIPMENT_address, append = TRUE, row.names = FALSE)
-dbWriteTable(conn = project, name = "supplier_address", value = SUPPLIER_address, append = TRUE, row.names = FALSE)
-dbWriteTable(conn = project, name = "customer_address", value = CUSTOMER_address, append = TRUE, row.names = FALSE)
+
+
+```{r message=FALSE}
+
+for (variable in all_files) {
+  this_filepath <- paste0("/cloud/project/Data/",variable)
+  this_file_contents <- readr::read_csv(this_filepath)
+  table_name <- tolower(gsub("\\d+\\.csv$", "", variable))
+  RSQLite::dbWriteTable(project,table_name, this_file_contents, append=TRUE, row.names = FALSE)
+}
+```
+
+# Check the database
+
+```{r listtables}
+# Get a list of tables from the database that we already created
+RSQLite::dbListTables(project)
+
+```
+
+```{sql connection=project}
+UPDATE orders
+SET order_date = DATE('1970-01-01', order_date || ' day');
+
+```
+
+```{sql connection=project}
+UPDATE review
+SET review_date = DATE('1970-01-01', review_date || ' day');
+
 ```
 
 ```{sql connection=project}
 SELECT *
-FROM "transaction"
+FROM orders
 ```
 
-```{r} 
-tables <- dbListTables(project) 
-print(tables) 
-``` 
 
 ```{r} 
-sch_sup <- dbGetQuery(project, "PRAGMA table_info(suppliers)") 
+sch_sup <- dbGetQuery(project, "PRAGMA table_info(supplier)") 
 sch_cat <- dbGetQuery(project, "PRAGMA table_info(category)") 
 sch_cus <- dbGetQuery(project, "PRAGMA table_info(customer)") 
-sch_ord <- dbGetQuery(project, "PRAGMA table_info(order)") 
+sch_ord <- dbGetQuery(project, "PRAGMA table_info(orders)") 
 sch_prod <- dbGetQuery(project, "PRAGMA table_info(product)") 
 sch_ret <- dbGetQuery(project, "PRAGMA table_info(supply)") 
 sch_rev <- dbGetQuery(project, "PRAGMA table_info(review)") 
-sch_trans <- dbGetQuery(project, "PRAGMA table_info(transaction)") 
+sch_trans <- dbGetQuery(project, "PRAGMA table_info(transactions)") 
 sch_ship<- dbGetQuery(project, "PRAGMA table_info(shipment)") 
 ``` 
 
@@ -260,10 +265,8 @@ sch_ship<- dbGetQuery(project, "PRAGMA table_info(shipment)")
 # Checking for duplicate entries
 ```{sql connection=project}
 SELECT email, COUNT(*)
-FROM customers
+FROM customer
 GROUP BY email
 HAVING COUNT(*) > 1;
 
 ```
-
-

@@ -1,0 +1,339 @@
+---
+title: "DATA"
+author: "Xuanhao Yang"
+date: "2024-03-01"
+output: html_document
+---
+
+```{r include=FALSE}
+library(tidyverse)
+library(readr)
+```
+
+# Input data from mockaroo
+```{r include=FALSE}
+setwd("/cloud/project/Raw Data")
+TRANSACTION <- read_csv("TRANSACTION.csv")
+SUPPLY <- read_csv("SUPPLY.csv")
+SUPPLIER <- read_csv("SUPPLIER.csv")
+SHIPMENT <- read_csv("SHIPMENT.csv")
+REVIEW <- read_csv("REVIEW.csv")
+PRODUCT <- read_csv("PRODUCT.csv")
+ORDER <- read_csv("ORDER.csv")
+CUSTOMER <- read_csv("CUSTOMER.csv")
+CATEGORY <- read_csv("CATEGORY.csv")
+```
+# Data Processing
+
+## Order
+```{r}
+set.seed(123)
+# Ensure the data in the date format
+ORDER$order_date <- as.Date(ORDER$order_date, format="%m/%d/%Y")
+# Deal with ORDER product id
+ORDER$product_id <- sample(PRODUCT$product_id, nrow(ORDER), replace = TRUE)
+```
+
+## Transaction
+```{r}
+set.seed(123)
+# Deal with transaction date and order date
+# Combine two sheets
+ORDER_TRANSACTION <- merge(ORDER, TRANSACTION, by = "order_id")
+
+set.seed(123)
+# Defining Date function
+check_order_date <- function(order_date) {
+  # Assign the date within the same day or up to 2 days after the order date.
+  delay <- sample(0:2, 1) 
+  order_date + delay # transaction date
+}
+ORDER_TRANSACTION$transaction_date <- sapply(ORDER_TRANSACTION$order_date, check_order_date)
+
+# Update transaction
+TRANSACTION <- ORDER_TRANSACTION[, c("transaction_id","transaction_date","transaction_status","transaction_method","order_id")]
+TRANSACTION$transaction_date <- as.Date(TRANSACTION$transaction_date, origin = "1970-01-01")
+```
+
+## Category
+```{r}
+# Category sheet cleaning
+CATEGORY <- CATEGORY %>% select("category_id", "category_name", "filter_by") %>% na.omit()
+
+# Rename the category_id
+NEWID <- c("1001-1","1002-1","1003-1","1003-2","1003-3","1004-1","1005-1","1006-1","1007-1","1007-2","1008-1","1009-1")
+mapping_category_id <- data.frame(
+  old_category_id = CATEGORY$category_id,
+  new_category_id = NEWID
+)
+
+# Update category sheet
+CATEGORY$category_id <- mapping_category_id$new_category_id
+```
+
+## Parent category
+```{r}
+# Adding parent categories
+parentid <- c(101,102,103,103,103,101,101,101,103,103,104,105)
+parentcat <- c("Home & Lifestyle","Sports & Outdoor Activities","Fashion & Beauty","Fashion & Beauty","Fashion & Beauty","Home & Lifestyle","Home & Lifestyle","Home & Lifestyle","Fashion & Beauty","Fashion & Beauty","Electronics & Technology","Others")
+
+CATEGORY$parent_id <- parentid
+CATEGORY$parent_category <- parentcat
+
+# Separate category table
+CATEGORY_parent <- CATEGORY %>% select(parent_id,parent_category) %>% unique()
+CATEGORY$parent_category <- NULL 
+```
+
+## Product
+```{r}
+# Update product sheet
+PRODUCT <- merge(PRODUCT, mapping_category_id, by.x = "category_id", by.y = "old_category_id")
+PRODUCT$category_id <- PRODUCT$new_category_id
+PRODUCT$new_category_id <- NULL
+
+# Description
+PRODUCT$product_description <- NULL
+
+# Change the brand name in product
+PRODUCT <- PRODUCT %>%
+  mutate(brand_name = str_replace(brand_name, "^Ench(.*)", "Enchant")) %>% 
+  select(product_id, everything())
+
+
+```
+
+## Customer address
+```{r}
+set.seed(123)
+# Create new table for address
+CUSTOMER_address <- CUSTOMER %>% select(customer_id,country:city)
+
+## Add primary key `customer address id` for CUSTOMER_address
+CUSTOMER_address$caddress_id <- paste0("A",CUSTOMER_address$customer_id)
+CUSTOMER_address <- CUSTOMER_address %>% select(caddress_id, customer_id:city)
+CUSTOMER_address <- CUSTOMER_address %>% select(caddress_id, country:city)
+
+# Filled the missing value in postcode
+
+## Defining postal code function
+postcode_func <- function(n=1) {
+  letters <- toupper(LETTERS[1:26])
+  numbers <- 0:9
+  
+set.seed(123)
+  # Function of generate the first and second parts
+  generate_first <- function() {
+    # The first part(1-2 letters, 1-2 numbers)
+    part1 <- paste0(sample(letters, sample(1:2, 1), replace = TRUE), collapse = "")
+    part2 <- paste0(sample(numbers, sample(1:2, 1), replace = TRUE), collapse = "")
+    return(paste0(part1, part2))
+  }
+  set.seed(123)
+  generate_second <- function() {
+    # The second part(1 number, 2 letters)
+    part3 <- paste0(sample(numbers, 1), collapse = "")
+    part4 <- paste0(sample(letters, 2, replace = TRUE), collapse = "")
+    return(paste0(part3, part4))
+  }
+  
+  # Combine two parts
+  postal_codes <- replicate(n, paste0(generate_first(), " ", generate_second()))
+  return(postal_codes)
+}
+
+# Update the table
+missing_indices <- which(is.na(CUSTOMER_address$postcode))
+CUSTOMER_address$postcode[missing_indices] <- postcode_func(length(missing_indices))
+
+```
+
+## Customer
+```{r}
+set.seed(123)
+# Email format
+## Defining Email Format checking function
+check_email_format <- function(emails) {
+  pattern <- "^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  grepl(pattern, emails)
+}
+valid_emails <- check_email_format(CUSTOMER$email)
+
+## Print the amount of invalid email address
+print(sum(!valid_emails))
+
+# customer address id
+CUSTOMER$caddress_id <- CUSTOMER_address$caddress_id
+
+# arrange customer table
+CUSTOMER <- CUSTOMER %>% select(customer_id:membership, caddress_id)
+
+# generate gender and age
+set.seed(123)
+CUSTOMER$gender <- sample(c("Male","Female"),nrow(CUSTOMER),replace = TRUE)
+CUSTOMER$age <- round(pmin(pmax(rnorm(nrow(CUSTOMER), mean = 40, sd = 15), 15), 65))
+
+# membership
+CUSTOMER$membership <- ifelse(is.na(CUSTOMER$membership), "No", "Yes")
+
+# Username
+CUSTOMER$username <- NULL
+
+```
+
+## Shipment and shipment address
+```{r}
+## SHIPMENT
+# Create new table for address
+SHIPMENT <- SHIPMENT %>% filter(!is.na(street))
+
+SHIPMENT_address <- SHIPMENT %>% select(shipment_id,country:postcode)
+
+SHIPMENT_address$saddress_id <- paste0("A-",SHIPMENT_address$shipment_id)
+
+SHIPMENT_address <- SHIPMENT_address %>% select(country:saddress_id) %>% select(saddress_id, everything())
+
+SHIPMENT$saddress_id <- SHIPMENT_address$saddress_id
+
+
+
+# Filled missing value in postcode
+missing_indices2 <- which(is.na(SHIPMENT_address$postcode))
+
+SHIPMENT_address$postcode[missing_indices2] <- postcode_func(length(missing_indices2))
+
+SHIPMENT <- SHIPMENT %>% select(shipment_id:shipment_status, saddress_id)
+set.seed(123)
+SHIPMENT$order_id <- sample(ORDER$order_id, nrow(SHIPMENT), replace = FALSE)
+```
+
+## SUPPLIER
+```{r}
+# Create new table for address
+SUPPLIER_address <- SUPPLIER %>% select(supplier_id,country:postcode)
+
+SUPPLIER_address$supaddress_id <- paste0("A-",SUPPLIER_address$supplier_id)
+
+SUPPLIER_address <- SUPPLIER_address %>% select(supaddress_id, country:postcode)
+
+SUPPLIER$supaddress_id <- SUPPLIER_address$supaddress_id
+
+# Filled missing value in postcode
+missing_indices3 <- which(is.na(SUPPLIER_address$postcode))
+
+SUPPLIER_address$postcode[missing_indices3] <- postcode_func(length(missing_indices3))
+
+SUPPLIER <- SUPPLIER %>% select(supplier_id:supplier_phone,supaddress_id)
+
+set.seed(123)
+SUPPLY$product_id <- sample(PRODUCT$product_id, nrow(SUPPLY), replace = TRUE)
+
+```
+
+## Review
+```{r}
+set.seed(123)
+# Deal with review
+## Add order id, the consist product id, and order date
+REVIEW$order_id <- ORDER$order_id
+REVIEW$product_id <- NULL
+REVIEW$customer_id <- NULL
+REVIEW_ORDER <- merge(REVIEW, ORDER, by = "order_id")
+REVIEW_TRANSACTION <- merge(REVIEW_ORDER, TRANSACTION, by = "order_id")
+
+## Defining review date function
+set.seed(123)
+check_review_date <- function(transaction_date) {
+  # Assign the date within the same day or up to 2 days after the order date.
+  delay <- sample(0:7, 1) 
+  transaction_date + delay # review date
+}
+REVIEW_TRANSACTION$review_date <- sapply(REVIEW_TRANSACTION$transaction_date, check_review_date)
+
+## Update review
+REVIEW <- REVIEW_TRANSACTION[, c("review_id","review_date","reviews","product_id","ratings", "order_id")]
+REVIEW$review_date <- as.Date(REVIEW$review_date, origin = "1970-01-01")
+
+```
+
+## Removed Transaction
+```{r}
+merged_O_T <- merge(ORDER, TRANSACTION, by = "order_id")
+ORDER <- merged_O_T %>% select("order_id", "product_id", "quantity", "customer_id", "order_date", "transaction_status", "transaction_method")
+
+```
+
+
+
+
+## Sampling from Data
+```{r}
+customer_sub <- CUSTOMER[1:200, ]
+customer_address_sub <- CUSTOMER_address %>% filter(caddress_id %in% customer_sub$caddress_id)
+order_sub <- ORDER %>% filter(customer_id %in% customer_sub$customer_id)
+review_sub <- REVIEW %>% filter(order_id %in% order_sub$order_id)
+shipment_sub <- SHIPMENT %>% filter(order_id %in% order_sub$order_id)
+shipment_address_sub <- SHIPMENT_address %>% filter(saddress_id%in% shipment_sub$saddress_id)
+product_sub <- PRODUCT %>% filter(product_id %in% order_sub$product_id)
+category_sub <- CATEGORY %>% filter(category_id %in% product_sub$category_id)
+category_parent_sub <- CATEGORY_parent
+supplier_sub <- SUPPLIER
+supplier_address_sub <- SUPPLIER_address
+supply_sub <- SUPPLY %>% filter(product_id %in% product_sub$product_id)
+
+```
+
+# Data for validation
+```{r}
+customer_val <- CUSTOMER[201:400,]
+customer_address_val <- CUSTOMER_address %>% filter(caddress_id %in% customer_val$caddress_id)
+order_val <- ORDER %>% filter(customer_id %in% customer_val$customer_id)
+review_val <- REVIEW %>% filter(order_id %in% order_val$order_id)
+shipment_val <- SHIPMENT %>% filter(order_id %in% order_val$order_id)
+shipment_address_val <- SHIPMENT_address %>% filter(saddress_id%in% shipment_val$saddress_id)
+product_val <- PRODUCT %>% filter(product_id %in% order_val$product_id)
+category_val <- CATEGORY %>% filter(category_id %in% product_val$category_id)
+category_parent_val <- CATEGORY_parent
+supplier_val <- SUPPLIER
+supplier_address_val <- SUPPLIER_address
+supply_val <- SUPPLY %>% filter(product_id %in% product_val$product_id)
+
+```
+
+```{r}
+# Print data
+setwd("/cloud/project/Data")
+write_csv(customer_sub, "CUSTOMER1.csv")
+write_csv(category_sub, "CATEGORY1.csv")
+write_csv(category_parent_sub, "CATEGORY_parent1.csv")
+write_csv(order_sub, "ORDERS1.csv")
+write_csv(review_sub, "REVIEW1.csv")
+write_csv(shipment_sub, "SHIPMENT1.csv")
+write_csv(supply_sub, "SUPPLY1.csv")
+write_csv(supplier_sub, "SUPPLIER1.csv")
+write_csv(product_sub, "PRODUCT1.csv")
+write_csv(supplier_address_sub, "SUPPLIER_address1.csv")
+write_csv(customer_address_sub, "CUSTOMER_address1.csv")
+write_csv(shipment_address_sub, "SHIPMENT_address1.csv")
+
+
+```
+
+# Data for validation
+```{r}
+setwd("/cloud/project/Validation Data")
+write_csv(customer_val, "CUSTOMER2.csv")
+write_csv(category_val, "CATEGORY2.csv")
+write_csv(category_parent_val, "CATEGORY_parent2.csv")
+write_csv(order_val, "ORDERS2.csv")
+write_csv(review_val, "REVIEWS2.csv")
+write_csv(shipment_val, "SHIPMENT2.csv")
+write_csv(supply_val, "SUPPLY2.csv")
+write_csv(supplier_val, "SUPPLIER2.csv")
+write_csv(product_val, "PRODUCT2.csv")
+write_csv(supplier_address_val, "SUPPLIER_address2.csv")
+write_csv(customer_address_val, "CUSTOMER_address2.csv")
+write_csv(shipment_address_val, "SHIPMENT_address2.csv")
+
+
+```
