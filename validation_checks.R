@@ -853,8 +853,8 @@ df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from SHIPMENT_ADDRESS')
 table_name <- 'SHIPMENT_ADDRESS'
 prim_key = 'saddress_id'
 
-df_customer_excel <- df_customer_excel[,c(5,1,2,3,4)]
-df_customer_db <- df_customer_db[,c(5,1,2,3,4)]
+df_customer_excel <- df_customer_excel[,c(1,2,3,4,5)]
+df_customer_db <- df_customer_db[,c(1,2,3,4,5)]
 
 
 inner_join_df <- data.frame()
