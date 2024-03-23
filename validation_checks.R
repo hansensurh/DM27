@@ -57,7 +57,7 @@ check_ref_integrity <- function(inp_df, list_of_values, key) {
 conn <- RSQLite::dbConnect(RSQLite::SQLite(), "project.db")
 a <- 1:50
 # ------------------------------------------------ Customer address data checks --------------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/CUSTOMER_address1.csv')
+df_customer_excel <- read_csv('Data/CUSTOMER_address1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from CUSTOMER_ADDRESS')
 table_name <- 'CUSTOMER_ADDRESS'
 prim_key = 'caddress_id'
@@ -142,7 +142,7 @@ if (nrow(insertion_df) > 0) {
   append_table(table_name, insertion_df)
 } 
 # ------------------------------------------------- Customer Data checks -----------------------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/CUSTOMER1.csv')
+df_customer_excel <- read_csv('Data/CUSTOMER1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from CUSTOMER')
 table_name <- 'CUSTOMER'
 prim_key = 'customer_id'
@@ -265,7 +265,7 @@ if (nrow(valid_record) > 0) {
   append_table(table_name, valid_record)
 }
 # --------------------------------------------- Category Parent Checks --------------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/CATEGORY_parent1.csv')
+df_customer_excel <- read_csv('Data/CATEGORY_parent1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from category_parent')
 table_name <- 'category_parent'
 prim_key = 'parent_id'
@@ -350,7 +350,7 @@ if (nrow(insertion_df) > 0) {
   append_table(table_name, insertion_df)
 } 
 # ------------------------------------------------ Category data validation ---------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/CATEGORY1.csv')
+df_customer_excel <- read_csv('Data/CATEGORY1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from category')
 table_name <- 'category'
 prim_key = 'category_id'
@@ -450,7 +450,7 @@ if (nrow(valid_record) > 0) {
   append_table(table_name, valid_record)
 }
 # ----------------------------------------------------- Products -----------------------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/PRODUCT1.csv')
+df_customer_excel <- read_csv('Data/PRODUCT1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from product')
 table_name <- 'product'
 prim_key = 'product_id'
@@ -555,7 +555,7 @@ if (nrow(valid_record) > 0) {
   append_table(table_name, valid_record)
 }
 # --------------------------------------------------- Supplier Address validation --------------------------------------------
-df_customer_excel <- read_csv('Modified Data/SUPPLIER_address1.csv')
+df_customer_excel <- read_csv('Data/SUPPLIER_address1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from supplier_address')
 table_name <- 'supplier_address'
 prim_key = 'supaddress_id'
@@ -641,7 +641,7 @@ if (nrow(insertion_df) > 0) {
   append_table(table_name, insertion_df)
 } 
 # -------------------------------------------------- Supplier validation -------------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/SUPPLIER1.csv')
+df_customer_excel <- read_csv('Data/SUPPLIER1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from supplier')
 table_name <- 'supplier'
 prim_key = 'supplier_id'
@@ -750,7 +750,7 @@ if (nrow(valid_record) > 0) {
   append_table(table_name, valid_record)
 }
 # ------------------------------------------------------ supply validation --------------------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/SUPPLY1.csv')
+df_customer_excel <- read_csv('Data/SUPPLY1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from supply')
 table_name <- 'supply'
 prim_key = 'supply_id'
@@ -856,7 +856,7 @@ if (nrow(valid_record) > 0) {
   append_table(table_name, valid_record)
 }
 # --------------------------------------------- Shipment address validation ----------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/SHIPMENT_address1.csv')
+df_customer_excel <- read_csv('Data/SHIPMENT_address1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from SHIPMENT_ADDRESS')
 table_name <- 'SHIPMENT_ADDRESS'
 prim_key = 'saddress_id'
@@ -947,7 +947,7 @@ if (nrow(insertion_df) > 0) {
   append_table(table_name, insertion_df)
 } 
 # ------------------------------------------------- Shipment validation ------------------------------------------------------------
-df_customer_excel <- read_csv('Modified Data/SHIPMENT1.csv')
+df_customer_excel <- read_csv('Data/SHIPMENT1.csv')
 df_customer_db <- RSQLite::dbGetQuery(conn, 'Select * from SHIPMENT')
 table_name <- 'SHIPMENT'
 prim_key = 'shipment_id'
