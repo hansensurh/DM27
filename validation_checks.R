@@ -170,14 +170,6 @@ sanity_check_customer <- function(inp_df) {
   }
   
   inp_df <- unique_df
-  unique_df <- inp_df[!duplicated(inp_df$username),] 
-  duplicated_df <- inp_df[duplicated(inp_df$username),]
-  
-  if(nrow(duplicated_df) > 0) {
-    duplicated_data <- rbind(duplicated_data, duplicated_df )
-  }
-  
-  inp_df <- unique_df
   unique_df <- inp_df[!duplicated(inp_df$email),] 
   duplicated_df <- inp_df[duplicated(inp_df$email),]
   
@@ -199,7 +191,7 @@ sanity_check_customer <- function(inp_df) {
   n_df <- nrow(inp_df)
   
   for (i in 1:n_df) {
-    if(is.na(inp_df[i, 'customer_id']) | is.na(inp_df[i, 'username']) | is.na(inp_df[i, 'caddress_id']) | is.na(inp_df[i, 'first_name']) | 
+    if(is.na(inp_df[i, 'customer_id']) | is.na(inp_df[i, 'caddress_id']) | is.na(inp_df[i, 'first_name']) | 
        is.na(inp_df[i, 'last_name']) | is.na(inp_df[i, 'password']) | is.na(inp_df[i, 'email']) | is.na(inp_df[i, 'mobile'])) {
       bad_df <- rbind(bad_df, inp_df[i,])
     }
