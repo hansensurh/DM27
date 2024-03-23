@@ -458,8 +458,8 @@ invalid_record <- data.frame()
 non_modified_df <- data.frame()
 rem_records_excel_df <- data.frame()
 
-df_customer_excel <- df_customer_excel[,c(2,3,4,5,6,7,1)]
-df_customer_db <- df_customer_db[,c(2,3,4,5,6,7,1)]
+df_customer_excel <- df_customer_excel[,c(1,2,3,4,5,6,7)]
+df_customer_db <- df_customer_db[,c(1,2,3,4,5,6,7)]
 
 # Unique values of product id
 product_id_list <- unique(df_customer_excel$product_id)
